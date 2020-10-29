@@ -58,7 +58,11 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','session');
+// This load the database
+// $autoload['libraries'] = array('database','session');
+
+// This is not load the database, UI development purpose, just comment code below and uncomment code above to enable database connection
+$autoload['libraries'] = array('session');
 
 /*
 | -------------------------------------------------------------------

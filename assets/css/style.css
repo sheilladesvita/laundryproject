@@ -71,3 +71,32 @@ div.halaman {
 	padding: 30px 20px;
 	background-color: #dcdcdc;
 }
+
+/* This project style */
+
+.logo-image {
+	width: 90px;
+	height: 40px;
+	/*margin-top: -8px;*/
+}
+
+.test-red {
+	border: 1px solid red;
+}
+
+.test-blue {
+	border: 1px solid blue;
+}
+
+.test-green {
+	border: 1px solid green;
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 1080px) {
+}
