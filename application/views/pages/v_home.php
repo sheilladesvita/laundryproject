@@ -29,6 +29,51 @@
         height: 40px;
         /*margin-top: -8px;*/
     }
+      h3 {
+      text-align: center;
+      font-style: italic;
+    }
+    .display-3{
+      color: white;
+      font-style:italic;
+      font-size: 3.5rem;
+      font-weight: 300;
+      line-height: 1.2;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .img-thumb{
+      width: 200px; 
+    /* display:inline;  */
+      height: 200px;
+    }
+    .img-thumb-2{
+      float: left;
+      margin: 5px;
+    }
+    .text-right{
+      text-align: right;
+    }
+    div {
+    padding-top: 8px;
+    padding-right: 5px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    }
+    .jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-image: url("assets/background-1.jpg");
+  /* background-color: #cccccc; */
+  background-repeat: no-repeat;
+  /* position:fixed; */
+  width: 100%;
+  height: 350px;
+  background-size:100% 350px;
+  border-radius: 0.3rem;
+}
+  .button-1{
+    text-align: center;
+  }
     </style>
   </head>
 
@@ -66,8 +111,12 @@
          </ul>
         
         <form class="form-inline my-2 my-lg-0 pull-right">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
+        <div class="btn-group">
+          <button type="button" class="btn btn-outline-info active btn-sm">MASUK</button>
+          <button type="button" class="btn btn-outline-info btn-sm">Daftar Member</button>
+        </div>
+          <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
         </form>
       </div>
     </nav>
@@ -77,18 +126,21 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <center><h2 class="display-3">Welcome to home page</h2></center>
+        <!-- <img src="assets/background-1.jpg" class="img-thumb" alt="Cinque Terre">  -->
+          <center><h2 class="display-3"><i>Super Fast, Super Clean, Super Fresh</i></h2>
+          <button class="btn btn-outline-warning my-2 my-sm-0 " type="button"><i>Laundry Now</i></button>
+          </center>
         </div>
       </div>
 
 
 
    <main role="main">
-	 <div class="container" >
+      <div class="container" >
         <!-- Example row of columns   -->
         <div class="row">
           <div class="col-md-4">
-            <h2>Heading</h2>
+                  <h2>Heading</h2>
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
           </div>
@@ -102,9 +154,9 @@
             <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
           </div>
-        </div>
-		</div>
-		    <hr>
+        </div> -->
+      </div>
+      <hr>
 
     </main>
 
