@@ -22,4 +22,9 @@ class ViewOnly extends CI_Controller {
 	{
 		$this->load->view('dev/index');
 	}
+
+	public function layanan()
+	{
+		$this->load->view('pages/v_layanan');
+	}
 }
