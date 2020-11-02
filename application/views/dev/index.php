@@ -90,7 +90,7 @@
 							Layanan
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Kiloan</a>
+							<a class="dropdown-item" href="<?php echo base_url();?>index.php/viewonly/layanan">Kiloan</a>
 							<a class="dropdown-item" href="#">Satuan</a>
 						</div>
 					</li>
