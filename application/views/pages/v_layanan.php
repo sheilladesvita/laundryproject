@@ -86,53 +86,41 @@
         padding-bottom: 100px;
         background-color: #FFFFFD;
       }
-
       .flex-row {
         display:flex;
         flex-wrap:wrap;
         padding: 0 4px;
       }
-
       .flex-column {
         flex:25%;
         max-width: 25%;
         padding: 0 4px;
         background-color: #FFFFFD;
+        position: relative;
       }
-
-      @media (max-width: 1200px) {
-        .flex-column {
-            flex: 50%;
-            max-width: 50%;
-            padding-top:50px;
-        }
-      }
-
-      @media (max-width: 600px) {
-        .flex-column {
-            flex: 100%;
-            max-width: 100%;
-        }
-      }
-
       .box-content {
+        opacity: 1;
+        display:block;
         width:275px;
-        height:400px;
-        margin: auto auto;
+        height:375px;
+        position: relative;
+        left: 28px;
+        border-radius: 5px;
+        /* margin: auto auto; */
         background-color: rgb(252, 252, 252);
         box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+        transition: .5s ease;
+        backface-visibility: hidden;
       }
-
       .box-title {
         width:213px;
         height:50px;
-        border-radius: 5px;
+        border-radius:5px;
         position: relative;
         top:-25px;
         left:31px;
         background-color: #f9c74A;
       }
-
       .box-title p {
         text-align: center;
         font-style: normal;
@@ -140,10 +128,9 @@
         font-size: 14px;
         line-height: 21px;
         position: relative;
-        top: 15px;
+        top:8px;
         color: #FFFFFD;
       }
-
       p {
         font-style: normal;
         font-weight: normal;
@@ -153,6 +140,88 @@
         position: relative;
         top:100px;
         color:black;
+      }
+      .box-service {
+        position: absolute;
+        width:275px;
+        height:400px;
+        top:-25px;
+        left: 32px;
+        border-radius: 5px;
+        background-color: #f9c74A;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+        opacity: 0;
+        transition: .5s ease;
+      }
+      .box-service p {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 21px;
+          text-align: center;
+          position: relative;
+          top:50px;
+          color:white;
+      }
+      .box-service-title {
+          width:213px;
+          height:50px;
+          border-radius: 5px;
+          position: relative;
+          top:0px;
+          left:31px;
+          background-color: #f9c74A;
+      }
+      .box-service-title p {
+          text-align: center;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 21px;
+          position: relative;
+          top: 8px;
+          color: #FFFFFD;
+      }
+      .dot {
+          height: 100px;
+          width: 100px;
+          border: 3px solid #FFFFFD;
+          border-radius: 50%;
+          position: relative;
+          top:20px;
+          left: 87px;
+      }
+      .dot img {
+          width: 64px;
+          height: 64x;
+          position: absolute;
+          top:15px;
+          left:15px;
+      }
+      .flex-column:hover .box-content{
+          opacity: 0.3;
+      }
+      .flex-column:hover .box-service{
+          opacity: 1;
+      }
+      @media (max-width: 1200px) {
+          .flex-column {
+              flex: 50%;
+              max-width: 50%;
+              padding-top:50px;
+          }
+          .box-service {
+              top:25px;
+          }
+      }
+      @media (max-width: 600px) {
+          .flex-column {
+              flex: 100%;
+              max-width: 100%;
+          }
+          .box-service {
+              top:25px;
+          }
       }
     </style>
   </head>
@@ -203,41 +272,77 @@
 
     <main role="main">
       <div class="flex-container">
-        <div class="flex-row">
-            <div class="flex-column">
-                <div class="box-content">
-                    <div class="box-title">
-                        <p>SERVICE 1<p>
+            <div class="flex-row">
+                <div class="flex-column">
+                    <div class="box-content">
+                        <div class="box-title">
+                            <p>SERVICE 1<p>
+                        </div>
+                        <p>Some short description about this service</p>
                     </div>
-                    <p>Some short description about this service</p>
+                    <div class="box-service">
+                        <div class="box-service-title">
+                            <p>SERVICE 1</p>
+                        </div>
+                        <div class="dot">
+                            <img src="<?php echo base_url();?>assets/images/puzzle-piece(1).png">
+                        </div>
+                        <p>Some benefit use this service</p>
+                    </div>
+                </div>
+                <div class="flex-column">
+                    <div class="box-content">
+                        <div class="box-title">
+                            <p>SERVICE 2</p>
+                        </div>
+                        <p>Some short description about this service</p>
+                    </div>
+                    <div class="box-service">
+                        <div class="box-service-title">
+                            <p>SERVICE 2</p>
+                        </div>
+                        <div class="dot">
+                            <img src="<?php echo base_url();?>assets/images/kilograms.png">
+                        </div>
+                        <p>Some benefit use this service</p>
+                    </div>
+                </div>
+                <div class="flex-column">
+                    <div class="box-content">
+                        <div class="box-title">
+                            <p>SERVICE 3</p>
+                        </div>
+                        <p>Some short description about this service</p>
+                    </div>
+                    <div class="box-service">
+                        <div class="box-service-title">
+                            <p>SERVICE 3</p>
+                        </div>
+                        <div class="dot">
+                            <img src="<?php echo base_url();?>assets/images/membership.png">
+                        </div>
+                        <p>Some benefit use this service</p>
+                    </div>
+                </div>
+                <div class="flex-column">
+                    <div class="box-content">
+                        <div class="box-title">
+                            <p>SERVICE 4</p>
+                        </div>
+                        <p>Some short description about this service</p>
+                    </div>
+                    <div class="box-service">
+                        <div class="box-service-title">
+                            <p>SERVICE 4</p>
+                        </div>
+                        <div class="dot">
+                            <img src="<?php echo base_url();?>assets/images/mosque.png">
+                        </div>
+                        <p>Some benefit use this service</p>
+                    </div>
                 </div>
             </div>
-            <div class="flex-column">
-                <div class="box-content">
-                    <div class="box-title">
-                        <p>SERVICE 2</p>
-                    </div>
-                    <p>Some short description about this service</p>
-                </div>
-            </div>
-            <div class="flex-column">
-                <div class="box-content">
-                    <div class="box-title">
-                        <p>SERVICE 3</p>
-                    </div>
-                    <p>Some short description about this service</p>
-                </div>
-            </div>
-            <div class="flex-column">
-                <div class="box-content">
-                    <div class="box-title">
-                        <p>SERVICE 4</p>
-                    </div>
-                    <p>Some short description about this service</p>
-                </div>
-            </div>
-          </div>
-      </div>
+        </div>
     </main>
 
     <footer class="container">
