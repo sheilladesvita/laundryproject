@@ -24,6 +24,11 @@
 			crossorigin="anonymous"
 		/>
 
+		<!-- Google font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
 		<!-- Fontawesome -->
 		<link
 			rel="stylesheet"
@@ -47,7 +52,7 @@
 
 	<body>
 		<nav
-			class="navbar navbar-expand-lg sticky-top navbar-light bg-light test-blue"
+			class="navbar navbar-expand-lg fixed-top bg-transparent text-default-white"
 		>
 			<button
 				class="navbar-toggler"
@@ -58,7 +63,7 @@
 				aria-expanded="false"
 				aria-label="Toggle navigation"
 			>
-				<span class="navbar-toggler-icon"></span>
+				<i class="fas fa-bars"></i>
 			</button>
 			<a class="navbar-brand" href="#">
 				<img
@@ -66,19 +71,15 @@
 					src="<?php echo base_url();?>assets/images/als logo.png"
 					class="img-fluid"
 			/></a>
-			<div
-				class="collapse navbar-collapse justify-content-center"
-				id="navbar-link"
-			>
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="#"
-							>Beranda <span class="sr-only">(current)</span></a
-						>
+			<!-- <div class="collapse navbar-collapse"></div> -->
+			<div class="collapse navbar-collapse" id="navbar-link">
+				<ul class="navbar-nav text-default-white navbar-center text-uppercase">
+					<li class="nav-item nav-item-bg active">
+						<a class="nav-link nav-btn" href="#">Beranda</a>
 					</li>
-					<li class="nav-item dropdown">
+					<li class="nav-item nav-item-bg dropdown">
 						<a
-							class="nav-link dropdown-toggle"
+							class="nav-link nav-btn dropdown-toggle"
 							href="#"
 							id="navbarDropdown"
 							role="button"
@@ -93,75 +94,124 @@
 							<a class="dropdown-item" href="#">Satuan</a>
 						</div>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contact">Promo</a>
+					<li class="nav-item nav-item-bg">
+						<a class="nav-link nav-btn" href="contact">Promo</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contact">Bantuan</a>
+					<li class="nav-item nav-item-bg">
+						<a class="nav-link nav-btn" href="contact">Bantuan</a>
 					</li>
 				</ul>
 			</div>
-			<div>
-				<div class="btn-group" role="group" aria-label="Basic example">
-					<a class="btn btn-success">Masuk</a>
-					<a class="btn btn-outline-success">Daftar Member</a>
-				</div>
+			<div
+				class="btn-group text-uppercase"
+				role="group"
+				aria-label="Basic example"
+			>
+				<a class="btn btn-success">Masuk</a>
+				<a class="btn btn-outline-success bg-default-white">Daftar Member</a>
 			</div>
 		</nav>
 
-		<div class="row justify-content-between test-green">
-			<div class="col-md-1 test-red">THISISRED</div>
-
-			<div class="col-md-6 test-red">CONTENT</div>
-			<div class="col-md-1 test-red">asdqwe</div>
+		<div class="bg-image">
+			<div class="main-banner">
+				<div class="d-block text-center">
+					<div class="text-default-white text-32 text-bold font-italic">
+						Super Fast. Super Clean. Super Fresh.
+					</div>
+					<div class="text-default-yellow text-14">Some short slogan</div>
+				</div>
+				<a
+					class="btn-banner text-decoration-none text-default-yellow font-italic text-18 text-semi-bold"
+					href="#"
+					>LAUNDRY NOW</a
+				>
+			</div>
 		</div>
-		<!-- 
-    <main role="main">
 
-      Main jumbotron for a primary marketing message or call to action
-      <div class="jumbotron">
-        <div class="container">
-          <center><h2 class="display-3">Welcome to home page</h2></center>
-        </div>
-      </div>
+		<!-- <div class="container">
+			<h3>On Scroll Sticky Header</h3>
+			<p>
+				The header will stick to the top when you reach its scroll position.
+			</p>
+			<p>Scroll back up to remove the sticky effect.</p>
+			<p>
+				Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum
+				definitiones no quo, maluisset concludaturque et eum, altera fabulas ut
+				quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert
+				laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no
+				molestiae voluptatibus.
+			</p>
+		</div> -->
 
+		<footer class="text-12 text-default-white">
+			<div class="container-fluid">
+				<div class="row text-default-black m-0">
+					<div class="col-sm-3 text-left">
+						<div
+							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
+						>
+							contact us
+						</div>
+						<div class="footer-segment-body text-default-black">
+							<ul class="p-0">
+								<li class="unstyled-list my-3">
+									<i class="far fa-map"></i>
+									<span
+										>Ruko Jl. Babakan Laksana No. 121 (Depan Resto d'DSL)</span
+									>
+								</li>
+								<li class="unstyled-list my-3">
+									<i class="fas fa-phone-alt"></i>
+									<span>+62 815 8413 6637</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 text-left">
+						<div
+							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
+						>
+							location
+						</div>
+						<div class="footer-segment-body">
+							<div id="map"></div>
+						</div>
+					</div>
+					<div class="col-sm-3 text-left">
+						<div
+							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
+						>
+							instagram's image
+						</div>
+						<div class="footer-segment-body text-default-black">Address</div>
+					</div>
+					<div class="col-sm-3text-left">
+						<div
+							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
+						>
+							menu
+						</div>
+						<div class="footer-segment-body text-default-black">
+							<ul class="p-0">
+								<li class="unstyled-list my-3"><a class="" href="">News</a></li>
+								<li class="unstyled-list my-3"><a class="" href="">Blog</a></li>
+								<li class="unstyled-list my-3"><a class="" href="">FAQs</a></li>
+								<li class="unstyled-list my-3">
+									<a class="" href="">About Us</a>
+								</li>
+								<li class="unstyled-list my-3">
+									<a class="" href="">Terms of Service</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright bg-default-blue text-center">
+				&copy; Company 2017-2018
+			</div>
+		</footer>
 
-
-   <main role="main">
-	 <div class="container" v/...e2 v/...e2dreyujas
-        Example row of columns  
-        <div class="row">
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-        </div>
-		</div>
-		    <hr>
-
-    </main> -->
-
-		<!-- <footer class="container">
-			<p><center>&copy; Company 2017-2018</center></p>
-		</footer> -->
-
-		<!-- Bootstrap core JavaScript
-    ================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3Uklc'[; ENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-		<!-- <script>window.jQuery || document.write('<script src="<?php echo base_url();?>assets/js/vendor/jquery-slim.min.js"><\/script>')</script> -->
-		<!-- <script src="<?php echo base_url();?>assets/js/bootstrap/popper.min.js"></script> -->
 		<script
 			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -177,6 +227,13 @@
 			integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
 			crossorigin="anonymous"
 		></script>
-		<script src="<?php echo base_url();?>assets/js/bootstrap/bootstrap.min.js"></script>
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaX28G01ffhZrkfjj4mq4NgQofSncL-9w&callback=initMap&libraries=&v=weekly"
+			defer
+		></script>
+
+		<script src="<?php echo base_url()?>assets/js/maps.js"></script>
+		<script src="<?php echo base_url()?>assets/js/script.js"></script>
+		<!-- <script src="<?php echo base_url();?>assets/js/bootstrap/bootstrap.min.js"></script> -->
 	</body>
 </html>

@@ -1,85 +1,154 @@
 body {
-	background-color: #dcdcdc;
-	font-size: 16px;
-	color: #dcdcdc;
-	font-family: sans-serif;
+	background-color: #fffffa;
+	font-family: "Poppins", sans-serif;
+	font-size: 12pt;
+	color: #161212;
+	font-weight: 300;
 }
-
-.content {
-	width: 80%;
-	margin: 10px auto;
-}
-
-/*header*/
-header {
-	background-color: #c0c0c0;
-	padding: 20px 10px;
-	border-radius: 5px;
-	border: 1px solid;
-	margin-bottom: 10px;
-}
-
-header h1.judul,
-header h3.deskripsi {
-	text-align: center;
-}
-
-/*menu navigasi*/
-.menu {
-	background-color: #dcdcdc;
-	border: 1px solid #f0f0f0;
-	border-radius: 8px;
-	margin-bottom: 10px;
-}
-
-div.menu ul {
-	list-style: none;
-	overflow: hidden;
-}
-
-div.menu ul li {
-	float: left;
-	text-transform: uppercase;
-}
-
-div.menu ul li a {
-	display: block;
-	padding: 0 20px;
-	text-decoration: none;
-	color: #ff7f50;
-	font-family: sans-serif;
-	font-size: 15px;
-	font-weight: 400;
-	transition: all 0.3s ease-in-out;
-}
-
-div.menu ul li a:hover,
-div.menu ul li a.hoverover {
-	cursor: pointer;
-	color: #ff7f50;
-}
-
-div.badan {
-	background-color: #dcdcdc;
-	border-radius: 5px;
-	border: 1px solid #f0f0f0;
-	margin-bottom: 10px;
-}
-
-div.halaman {
-	text-align: center;
-	padding: 30px 20px;
-	background-color: #dcdcdc;
-}
-
-/* This project style */
 
 .logo-image {
-	width: 90px;
-	height: 40px;
-	/*margin-top: -8px;*/
+	width: 99px;
+	height: 44px;
 }
 
+/* Design system background color */
+.bg-default-black {
+	background-color: #161212;
+}
+
+.bg-default-white {
+	background-color: #fffffa;
+}
+
+.bg-default-yellow {
+	background-color: #fec42f;
+}
+
+.bg-default-blue {
+	background-color: #0078a3;
+}
+
+.bg-default-sky {
+	background-color: #5bc2d4;
+}
+
+/* Design system font color */
+.text-default-black {
+	color: #161212;
+}
+
+.text-default-white {
+	color: #fffffa;
+}
+
+.text-default-yellow {
+	color: #fec42f;
+}
+
+.text-default-blue {
+	color: #0078a3;
+}
+
+.text-default-sky {
+	color: #5bc2d4;
+}
+
+.inherit-color {
+	color: inherit;
+}
+
+.text-default-black-important {
+	color: #161212 !important;
+}
+
+.text-default-white-important {
+	color: #fffffa !important;
+}
+
+.text-default-yellow-important {
+	color: #fec42f !important;
+}
+
+.text-default-blue-important {
+	color: #0078a3 !important;
+}
+
+.text-default-sky-important {
+	color: #5bc2d4 !important;
+}
+
+.inherit-color {
+	color: inherit;
+}
+
+/* Design system font size */
+.text-12 {
+	font-size: 12pt;
+}
+
+.text-14 {
+	font-size: 14pt;
+}
+
+.text-18 {
+	font-size: 18pt;
+}
+
+.text-24 {
+	font-size: 24pt;
+}
+
+.text-28 {
+	font-size: 28pt;
+}
+
+.text-32 {
+	font-size: 32pt;
+}
+
+/* Design system font weight */
+.text-thin {
+	font-weight: 100;
+}
+
+.text-extra-light {
+	font-weight: 200;
+}
+
+.text-light {
+	font-weight: 300;
+}
+
+.text-regular {
+	font-weight: 400;
+}
+
+.text-medium {
+	font-weight: 500;
+}
+
+.text-semi-bold {
+	font-weight: 600;
+}
+
+.text-bold {
+	font-weight: 700;
+}
+
+.text-extra-bold {
+	font-family: 800;
+}
+
+.text-black {
+	font-weight: 900;
+}
+
+/* Desain system display */
+.d-inline-block {
+	display: inline-block;
+}
+
+/* Border test */
 .test-red {
 	border: 1px solid red;
 }
@@ -90,6 +159,107 @@ div.halaman {
 
 .test-green {
 	border: 1px solid green;
+}
+
+.navbar-nav.navbar-center {
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+}
+
+.nav-item-bg {
+	border-radius: 5px;
+	margin: 0 0.5rem;
+	transition: 0.4s;
+}
+
+.nav-item-bg.show {
+	background-color: #5bc2d4;
+	color: #fffffa;
+}
+
+.nav-item-bg:hover {
+	background-color: #5bc2d4;
+	color: #fffffa;
+}
+
+.nav-item-bg:hover a {
+	color: #fffffa !important;
+}
+
+.nav-item-bg.active {
+	pointer-events: none;
+	background-color: #5bc2d4 !important;
+	color: #fffffa;
+}
+
+.nav-item-bg.active a,
+.nav-item-bg.show a {
+	color: inherit !important;
+}
+
+.nav-btn {
+	padding-right: 1rem !important;
+	padding-left: 1rem !important;
+	color: inherit;
+}
+
+.navbar.scrolled {
+	background-color: #fffffa !important;
+	transition: background-color 200ms ease-in-out;
+}
+
+.bg-image {
+	height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(to bottom, #161212cc, #ff000000),
+		url("https://images.unsplash.com/photo-1549520685-70830303fa4a?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.main-banner {
+	width: 100%;
+	height: 100%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+
+.btn-banner {
+	position: absolute;
+	padding: 0.5rem 1rem;
+	border: 4px solid #fec42f;
+	bottom: 7%;
+	transition: 300ms ease-in-out;
+}
+
+.btn-banner:hover {
+	background-color: #fec42f;
+	color: #fffffa;
+}
+
+.footer-segment-header {
+	margin: 0.5rem 0;
+}
+
+.footer-segment-body {
+	margin: 1rem 0;
+}
+
+.unstyled-list {
+	list-style-type: none;
+}
+
+#map {
+	height: 13rem;
+	width: 100%;
+}
+
+.copyright {
+	padding: 0.5rem 0;
 }
 
 @media only screen and (min-width: 768px) {
