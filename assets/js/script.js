@@ -1,6 +1,6 @@
 $(function () {
 	$(document).scroll(function () {
-		var $nav = $(".navbar");
+		var $nav = $(".fixed-top");
 		var $navbarNav = $(".navbar-nav");
 
 		$nav.toggleClass("scrolled shadow-sm", $(this).scrollTop() > $nav.height());

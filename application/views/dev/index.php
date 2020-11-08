@@ -90,7 +90,11 @@
 							Layanan
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="<?php echo base_url();?>index.php/viewonly/layanan">Kiloan</a>
+							<a
+								class="dropdown-item"
+								href="<?php echo base_url();?>index.php/viewonly/layanan"
+								>Kiloan</a
+							>
 							<a class="dropdown-item" href="#">Satuan</a>
 						</div>
 					</li>
@@ -174,7 +178,16 @@
 							location
 						</div>
 						<div class="footer-segment-body">
-							<div id="map"></div>
+							<!-- <div id="map"></div> -->
+							<iframe
+								width="100%"
+								height="100%"
+								frameborder="0"
+								style="border: 0"
+								src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCaX28G01ffhZrkfjj4mq4NgQofSncL-9w&q=Jalan+Babakan+Laksana,Pangalengan"
+								allowfullscreen
+							>
+							</iframe>
 						</div>
 					</div>
 					<div class="col-sm-3 text-left">
@@ -183,7 +196,20 @@
 						>
 							instagram's image
 						</div>
-						<div class="footer-segment-body text-default-black">Address</div>
+						<div class="footer-segment-body text-default-black">
+							<div class="row m-0">
+								<div class="col-2 ig-photos">1</div>
+								<div class="col-2 ig-photos">2</div>
+								<div class="col-2 ig-photos">3</div>
+								<div class="col-2 ig-photos">4</div>
+								<div class="col-2 ig-photos">5</div>
+								<div class="col-2 ig-photos">6</div>
+								<div class="col-2 ig-photos">7</div>
+								<div class="col-2 ig-photos">8</div>
+								<div class="col-2 ig-photos">9</div>
+								<div class="col-2 ig-photos">10</div>
+							</div>
+						</div>
 					</div>
 					<div class="col-sm-3text-left">
 						<div
@@ -227,10 +253,10 @@
 			integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
 			crossorigin="anonymous"
 		></script>
-		<script
+		<!-- <script
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaX28G01ffhZrkfjj4mq4NgQofSncL-9w&callback=initMap&libraries=&v=weekly"
 			defer
-		></script>
+		></script> -->
 
 		<script src="<?php echo base_url()?>assets/js/maps.js"></script>
 		<script src="<?php echo base_url()?>assets/js/script.js"></script>
