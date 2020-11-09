@@ -74,16 +74,16 @@
 			<div class="collapse navbar-collapse" id="navbar-link">
 				<ul class="navbar-nav text-default-white navbar-center text-uppercase">
 					<li class="nav-item nav-item-bg active">
-						<a class="nav-link nav-btn" href="/laundryproject">Beranda</a>
+						<a class="nav-link nav-btn color-inherit" href="/laundryproject">Beranda</a>
 					</li>
 					<li class="nav-item nav-item-bg dropdown">
 						<a
-							class="nav-link nav-btn d-inline-block active"
+							class="nav-link nav-btn color-inherit d-inline-block active"
 							href="<?php echo base_url();?>viewonly/layanan"
 							>Layanan
 						</a>
 						<a
-							class="dropdown-toggle text-default-white d-inline-block padding-r-1-rem"
+							class="dropdown-toggle d-inline-block padding-r-1-rem color-inherit"
 							id="navbarDropdown"
 							role="button"
 							data-toggle="dropdown"
@@ -96,10 +96,10 @@
 						</div>
 					</li>
 					<li class="nav-item nav-item-bg">
-						<a class="nav-link nav-btn" href="contact">Promo</a>
+						<a class="nav-link color-inherit nav-btn" href="contact">Promo</a>
 					</li>
 					<li class="nav-item nav-item-bg">
-						<a class="nav-link nav-btn" href="contact">Bantuan</a>
+						<a class="nav-link color-inherit nav-btn" href="contact">Bantuan</a>
 					</li>
 				</ul>
 			</div>

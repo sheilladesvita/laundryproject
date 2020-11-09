@@ -1,5 +1,7 @@
-    <hr />
-  
+    <div class="container-fluid">
+      <hr />
+    </div>
+    
     <footer class="text-12 text-default-white">
 			<div class="container-fluid">
 				<div class="row text-default-black m-0">
@@ -31,7 +33,6 @@
 							location
 						</div>
 						<div class="footer-segment-body">
-							<!-- <div id="map"></div> -->
 							<iframe
 								width="100%"
 								height="100%"
@@ -64,7 +65,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-3text-left">
+					<div class="col-sm-3 text-left">
 						<div
 							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
 						>
