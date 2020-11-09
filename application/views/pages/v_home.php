@@ -1,3 +1,19 @@
+<div class="bg-image">
+	<div class="main-banner">
+		<div class="d-block text-center">
+			<div class="text-default-white text-32 text-bold font-italic">
+				Super Fast. Super Clean. Super Fresh.
+			</div>
+			<div class="text-default-yellow text-14">Some short slogan</div>
+		</div>
+		<a
+			class="btn-banner text-decoration-none text-default-yellow font-italic text-18 text-semi-bold"
+			href="#"
+			>LAUNDRY NOW</a
+		>
+	</div>
+</div>
+
 <main role="main">
 	<div
 		class="text-32 text-default-black text-bold font-italic text-uppercase text-center my-3"

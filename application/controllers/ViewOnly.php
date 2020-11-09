@@ -22,15 +22,16 @@ class ViewOnly extends CI_Controller
   public function index()
   {
     $data["active_link"] = "home";
-    $this->load->view('partials/home_header_only', $data);
+    $this->load->view('partials/header', $data);
+    $this->load->view('pages/v_home');
     $this->load->view('partials/footer');
   }
 
   public function test()
   {
-    $data["active_link"] = "home";
-    $this->load->view('partials/home_header_only', $data);
-    $this->load->view('pages/v_home');
+    $data["active_link"] = "promo";
+    $this->load->view('partials/header', $data);
+    $this->load->view('pages/v_promo');
     $this->load->view('partials/footer');
   }
 

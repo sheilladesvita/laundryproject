@@ -16,7 +16,6 @@
 		<title>ALS Laundry Pickup Delivery</title>
 
 		<!-- Bootstrap core CSS -->
-		<!-- <link href="<?php echo base_url();?>assets/css/bootstrap/bootstrap.min.css" rel="stylesheet"/> -->
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -43,16 +42,11 @@
 			rel="stylesheet"
 		/>
 
-		<!-- Bootstrap core CSS -->
-		<!-- <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-
-		<!-- Custom styles for this template -->
-		<!-- <link href="jumbotron.css" rel="stylesheet"> -->
 	</head>
 
 	<body>
 		<nav
-			class="navbar navbar-expand-lg sticky-top bg-default-white text-default-black shadow-sm"
+			class="navbar navbar-expand-lg <?php if($active_link == "home") { echo "fixed-top bg-transparent text-default-white"; } else { echo "sticky-topbg-default-white text-default-black"; }?> shadow-sm"
 		>
 			<button
 				class="navbar-toggler"
@@ -65,25 +59,25 @@
 			>
 				<i class="fas fa-bars"></i>
 			</button>
-			<a class="navbar-brand" href="/laundryproject">
+			<a class="navbar-brand" href="">
 				<img
 					class="logo-image"
 					src="<?php echo base_url();?>assets/images/als logo.png"
 					class="img-fluid"
 			/></a>
 			<div class="collapse navbar-collapse" id="navbar-link">
-				<ul class="navbar-nav text-default-black navbar-center text-uppercase">
+				<ul class="navbar-nav navbar-center text-uppercase">
 					<li class="nav-item nav-item-bg  <?php if($active_link == "home") echo "active" ?>">
-						<a class="nav-link nav-btn" href="/laundryproject">Beranda</a>
+						<a class="nav-link nav-btn color-inherit" href="/laundryproject">Beranda</a>
 					</li>
 					<li class="nav-item nav-item-bg dropdown <?php if($active_link == "layanan") echo "active" ?>">
 						<a
-							class="nav-link nav-btn d-inline-block"
-							href="<?php echo base_url();?>viewonly/layanan"
+							class="nav-link nav-btn color-inherit d-inline-block"
+							href="viewonly/layanan"
 							>Layanan
 						</a>
 						<a
-							class="dropdown-toggle text-default-black d-inline-block padding-r-1-rem"
+							class="dropdown-toggle  color-inherit d-inline-block padding-r-1-rem"
 							id="navbarDropdown"
 							role="button"
 							data-toggle="dropdown"
@@ -96,10 +90,10 @@
 						</div>
 					</li>
 					<li class="nav-item nav-item-bg  <?php if($active_link == "promo") echo "active" ?>">
-						<a class="nav-link nav-btn" href="contact">Promo</a>
+						<a class="nav-link nav-btn color-inherit" href="contact">Promo</a>
 					</li>
 					<li class="nav-item nav-item-bg  <?php if($active_link == "bantuan") echo "active" ?>">
-						<a class="nav-link nav-btn" href="contact">Bantuan</a>
+						<a class="nav-link nav-btn color-inherit" href="contact">Bantuan</a>
 					</li>
 				</ul>
 			</div>
