@@ -42,4 +42,12 @@ class ViewOnly extends CI_Controller
     $this->load->view('pages/v_layanan');
     $this->load->view('partials/footer');
   }
+
+  public function layanan_satuan()
+  {
+    $data["active_link"] = "layanan_satuan";
+    $this->load->view('partials/header', $data);
+    $this->load->view('pages/v_layanan_satuan');
+    $this->load->view('partials/footer');
+  }
 }

@@ -10,17 +10,19 @@
 
 					<p>Some short description about this service</p>
 				</div>
-				<div class="box-service">
-					<div class="box-service-title">
-						<p>SERVICE 1</p>
+				<a href="<?php echo base_url();?>viewonly/layanan_satuan">
+					<div class="box-service">
+						<div class="box-service-title">
+							<p>SERVICE 1</p>
+						</div>
+						<div class="dot">
+							<img
+								src="<?php echo base_url();?>assets/images/puzzle-piece(1).png"
+							/>
+						</div>
+						<p>Some benefit use this service</p>
 					</div>
-					<div class="dot">
-						<img
-							src="<?php echo base_url();?>assets/images/puzzle-piece(1).png"
-						/>
-					</div>
-					<p>Some benefit use this service</p>
-				</div>
+				</a>
 			</div>
 			<div class="flex-column">
 				<div class="box-content">
