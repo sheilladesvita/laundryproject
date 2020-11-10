@@ -31,15 +31,17 @@
 					</div>
 					<p>Some short description about this service</p>
 				</div>
-				<div class="box-service">
-					<div class="box-service-title">
-						<p>SERVICE 2</p>
+				<a href="<?php echo base_url();?>viewonly/layanan_kiloan">
+					<div class="box-service">
+						<div class="box-service-title">
+							<p>SERVICE 2</p>
+						</div>
+						<div class="dot">
+							<img src="<?php echo base_url();?>assets/images/kilograms.png" />
+						</div>
+						<p>Some benefit use this service</p>
 					</div>
-					<div class="dot">
-						<img src="<?php echo base_url();?>assets/images/kilograms.png" />
-					</div>
-					<p>Some benefit use this service</p>
-				</div>
+				</a>
 			</div>
 			<div class="flex-column">
 				<div class="box-content">
@@ -48,15 +50,17 @@
 					</div>
 					<p>Some short description about this service</p>
 				</div>
-				<div class="box-service">
-					<div class="box-service-title">
-						<p>SERVICE 3</p>
+				<a href="<?php echo base_url();?>viewonly/layanan_member">
+					<div class="box-service">
+						<div class="box-service-title">
+							<p>SERVICE 3</p>
+						</div>
+						<div class="dot">
+							<img src="<?php echo base_url();?>assets/images/membership.png">
+						</div>
+						<p>Some benefit use this service</p>
 					</div>
-					<div class="dot">
-						<img src="<?php echo base_url();?>assets/images/membership.png" />
-					</div>
-					<p>Some benefit use this service</p>
-				</div>
+				</a>
 			</div>
 			<div class="flex-column">
 				<div class="box-content">
@@ -65,15 +69,17 @@
 					</div>
 					<p>Some short description about this service</p>
 				</div>
-				<div class="box-service">
-					<div class="box-service-title">
-						<p>SERVICE 4</p>
+				<a href="<?php echo base_url();?>viewonly/layanan_masjid">
+					<div class="box-service">
+						<div class="box-service-title">
+							<p>SERVICE 4</p>
+						</div>
+						<div class="dot">
+							<img src="<?php echo base_url();?>assets/images/mosque.png">
+						</div>
+						<p>Some benefit use this service</p>
 					</div>
-					<div class="dot">
-						<img src="<?php echo base_url();?>assets/images/mosque.png" />
-					</div>
-					<p>Some benefit use this service</p>
-				</div>
+				</a>
 			</div>
 		</div>
 	</div>
