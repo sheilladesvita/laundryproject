@@ -7,7 +7,7 @@
 				<div class="row text-default-black m-0">
 					<div class="col-sm-3 text-left">
 						<div
-							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
+							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
 						>
 							contact us
 						</div>
@@ -28,12 +28,12 @@
 					</div>
 					<div class="col-sm-3 text-left">
 						<div
-							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
+							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
 						>
 							location
 						</div>
 						<div class="footer-segment-body">
-							<iframe
+							<!-- <iframe
 								width="100%"
 								height="100%"
 								frameborder="0"
@@ -41,12 +41,12 @@
 								src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCaX28G01ffhZrkfjj4mq4NgQofSncL-9w&q=Jalan+Babakan+Laksana,Pangalengan"
 								allowfullscreen
 							>
-							</iframe>
+							</iframe> -->
 						</div>
 					</div>
 					<div class="col-sm-3 text-left">
 						<div
-							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
+							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
 						>
 							instagram's image
 						</div>
@@ -67,7 +67,7 @@
 					</div>
 					<div class="col-sm-3 text-left">
 						<div
-							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
+							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
 						>
 							menu
 						</div>

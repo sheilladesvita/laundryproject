@@ -45,7 +45,7 @@ class ViewOnly extends CI_Controller
 
   public function layanan_satuan()
   {
-    $data["active_link"] = "layanan_satuan";
+    $data["active_link"] = "layanan";
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_layanan_satuan');
     $this->load->view('partials/footer');
@@ -53,25 +53,25 @@ class ViewOnly extends CI_Controller
 
   public function layanan_kiloan()
   {
-    $data["active_link"] = "layanan_kiloan";
+    $data["active_link"] = "layanan";
     $this->load->view('partials/header', $data);
-    $this->load->view('pages/v_layanan_kiloan backup');
+    $this->load->view('pages/v_layanan_kiloan');
     $this->load->view('partials/footer');
   }
 
   public function layanan_member()
   {
-    $data["active_link"] = "layanan_member";
+    $data["active_link"] = "layanan";
     $this->load->view('partials/header', $data);
-    $this->load->view('pages/v_layanan_member backup');
+    $this->load->view('pages/v_layanan_member');
     $this->load->view('partials/footer');
   }
 
   public function layanan_masjid()
   {
-    $data["active_link"] = "layanan_masjid";
+    $data["active_link"] = "layanan";
     $this->load->view('partials/header', $data);
-    $this->load->view('pages/v_layanan_masjid backup');
+    $this->load->view('pages/v_layanan_masjid');
     $this->load->view('partials/footer');
   }
 }

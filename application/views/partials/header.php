@@ -46,7 +46,7 @@
 
 	<body>
 		<nav
-			class="navbar navbar-expand-lg <?php if($active_link == "home") { echo "fixed-top bg-transparent text-default-white"; } else { echo "sticky-topbg-default-white text-default-black"; }?> shadow-sm"
+			class="navbar navbar-expand-lg <?php if($active_link == "home") { echo "fixed-top bg-transparent text-default-white"; } else { echo "sticky-top bg-default-white text-default-black shadow-sm"; }?>"
 		>
 			<button
 				class="navbar-toggler"
@@ -59,7 +59,7 @@
 			>
 				<i class="fas fa-bars"></i>
 			</button>
-			<a class="navbar-brand" href="">
+			<a class="navbar-brand" href="<?php echo base_url();?>">
 				<img
 					class="logo-image"
 					src="<?php echo base_url();?>assets/images/als logo.png"
@@ -67,17 +67,17 @@
 			/></a>
 			<div class="collapse navbar-collapse" id="navbar-link">
 				<ul class="navbar-nav navbar-center text-uppercase">
-					<li class="nav-item nav-item-bg  <?php if($active_link == "home") echo "active" ?>">
-						<a class="nav-link nav-btn color-inherit" href="/laundryproject">Beranda</a>
+					<li class="nav-item nav-item-bg <?php if($active_link == "home") echo "active" ?>">
+						<a class="nav-link nav-btn color-inherit" href="<?php echo base_url();?>">Beranda</a>
 					</li>
 					<li class="nav-item nav-item-bg dropdown <?php if($active_link == "layanan") echo "active" ?>">
 						<a
 							class="nav-link nav-btn color-inherit d-inline-block"
-							href="viewonly/layanan"
+							href="<?php echo base_url();?>viewonly/layanan"
 							>Layanan
 						</a>
 						<a
-							class="dropdown-toggle  color-inherit d-inline-block padding-r-1-rem"
+							class="dropdown-toggle color-inherit d-inline-block padding-r-1-rem"
 							id="navbarDropdown"
 							role="button"
 							data-toggle="dropdown"
@@ -85,15 +85,17 @@
 							aria-expanded="false"
 						></a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Kiloan</a>
-							<a class="dropdown-item" href="#">Satuan</a>
+							<a class="dropdown-item text-default-light" href="<?php echo base_url();?>viewonly/layanan_satuan">Satuan</a>
+							<a class="dropdown-item text-default-light" href="<?php echo base_url();?>viewonly/layanan_kiloan">Kiloan</a>
+							<a class="dropdown-item text-default-light" href="<?php echo base_url();?>viewonly/layanan_member">Paket Member</a>
+							<a class="dropdown-item text-default-light" href="<?php echo base_url();?>viewonly/layanan_masjid">Paket Masjid</a>
 						</div>
 					</li>
-					<li class="nav-item nav-item-bg  <?php if($active_link == "promo") echo "active" ?>">
-						<a class="nav-link nav-btn color-inherit" href="contact">Promo</a>
+					<li class="nav-item nav-item-bg <?php if($active_link == "promo") echo "active" ?>">
+						<a class="nav-link nav-btn color-inherit" href="<?php echo base_url();?>viewonly/promo">Promo</a>
 					</li>
-					<li class="nav-item nav-item-bg  <?php if($active_link == "bantuan") echo "active" ?>">
-						<a class="nav-link nav-btn color-inherit" href="contact">Bantuan</a>
+					<li class="nav-item nav-item-bg <?php if($active_link == "bantuan") echo "active" ?>">
+						<a class="nav-link nav-btn color-inherit" href="<?php echo base_url();?>viewonly/about_us">Tentang Kami</a>
 					</li>
 				</ul>
 			</div>
@@ -102,7 +104,80 @@
 				role="group"
 				aria-label="Basic example"
 			>
-				<a class="btn btn-success">Masuk</a>
-				<a class="btn btn-outline-success bg-default-white">Daftar Member</a>
+				<a class="btn btn-success btn-auth=modal" id="login-modal-btn" data-toggle="modal" data-target="#authModal">Masuk</a>
+				<a class="btn btn-outline-success bg-default-white btn-auth=modal" id="register-modal-btn" data-toggle="modal" data-target="#authModal">Daftar Member</a>
 			</div>
-		</nav>
+    </nav>
+    
+    <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <ul class="nav nav-tabs nav-fill nav-justified" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link auth-form" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">LOG IN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link auth-form" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">REGISTER</a>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <form class="form m-3"  autocomplete="off">
+                  <div class="input-group">
+                    <input type="text" name="email" id="email" autocomplete="off" required/>
+                    <label for="email" class="input-label">
+                      <span class="label-content">Alamat Email</span>
+                    </label>
+                  </div>
+                  <div class="input-group">
+                    <input type="password" name="password" id="password" autocomplete="off" required/>
+                    <label for="password" class="input-label">
+                      <span class="label-content">Kata Sandi</span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-block bg-default-sky text-default-white btn-auth">LOG IN</button>
+                </form>
+              </div>
+
+              <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                <form class="form m-3">
+                  <div class="input-group">
+                    <input type="text" name="nama" id="nama" autocomplete="off" required/>
+                    <label for="nama" class="input-label">
+                      <span class="label-content">Nama</span>
+                    </label>
+                  </div>
+                  <div class="input-group">
+                    <input type="text" name="email" id="email" autocomplete="off" required/>
+                    <label for="email" class="input-label">
+                      <span class="label-content">Alamat Email</span>
+                    </label>
+                  </div>
+                  <div class="input-group">
+                    <input type="password" name="password" id="password" autocomplete="off" required/>
+                    <label for="pssword" class="input-label">
+                      <span class="label-content">Kata Sandi</span>
+                    </label>
+                  </div>
+                  <div class="input-group">
+                    <input type="text" name="phone" id="phone" autocomplete="off" required/>
+                    <label for="phone" class="input-label">
+                      <span class="label-content">Nomor Telepon (Whatsapp)</span>
+                    </label>
+                  </div>
+                  <div class="input-group">
+                    <input type="text" name="address" id="address" autocomplete="off" required/>
+                    <label for="address" class="input-label">
+                      <span class="label-content">Alamat Rumah</span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-block bg-default-sky text-default-white btn-auth">REGISTER</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

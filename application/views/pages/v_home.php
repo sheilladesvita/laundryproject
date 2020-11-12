@@ -1,13 +1,13 @@
 <div class="bg-image">
 	<div class="main-banner">
 		<div class="d-block text-center">
-			<div class="text-default-white text-32 text-bold font-italic">
+			<div class="text-default-white text-32 text-default-bold font-italic">
 				Super Fast. Super Clean. Super Fresh.
 			</div>
 			<div class="text-default-yellow text-14">Some short slogan</div>
 		</div>
 		<a
-			class="btn-banner text-decoration-none text-default-yellow font-italic text-18 text-semi-bold"
+			class="btn-banner text-decoration-none text-default-yellow font-italic text-18 text-default-semi-bold"
 			href="#"
 			>LAUNDRY NOW</a
 		>
@@ -16,7 +16,7 @@
 
 <main role="main">
 	<div
-		class="text-32 text-default-black text-bold font-italic text-uppercase text-center my-3"
+		class="text-32 text-default-black text-default-bold font-italic text-uppercase text-center my-3"
 	>
 		kenapa harus als?
 	</div>
@@ -30,7 +30,7 @@
 			</div>
 			<div class="col-md-8">
 				<div
-					class="text-24 text-uppercase font-italic text-default-black text-semi-bold text-right my-3 mx-5"
+					class="text-24 text-uppercase font-italic text-default-black text-default-semi-bold text-right my-3 mx-5"
 				>
 					super fast
 				</div>
@@ -45,7 +45,7 @@
 		<div class="row justify-content-center" id="slide-left-animation-2">
 			<div class="col-md-8">
 				<div
-					class="text-24 text-uppercase font-italic text-default-black text-semi-bold my-3 mx-5"
+					class="text-24 text-uppercase font-italic text-default-black text-default-semi-bold my-3 mx-5"
 				>
 					super clean
 				</div>
@@ -66,7 +66,7 @@
 			</div>
 			<div class="col-md-8">
 				<div
-					class="text-24 text-uppercase font-italic text-default-black text-semi-bold text-right my-3 mx-5"
+					class="text-24 text-uppercase font-italic text-default-black text-default-semi-bold text-right my-3 mx-5"
 				>
 					super fresh
 				</div>
@@ -81,7 +81,7 @@
 		<div class="row justify-content-center" id="slide-left-animation-4">
 			<div class="col-md-8">
 				<div
-					class="text-24 text-uppercase font-italic text-default-black text-semi-bold my-3 mx-5"
+					class="text-24 text-uppercase font-italic text-default-black text-default-semi-bold my-3 mx-5"
 				>
 					antar-jemput fleksibel
 				</div>

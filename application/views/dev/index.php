@@ -119,13 +119,13 @@
 		<div class="bg-image">
 			<div class="main-banner">
 				<div class="d-block text-center">
-					<div class="text-default-white text-32 text-bold font-italic">
+					<div class="text-default-white text-32 text-default-bold font-italic">
 						Super Fast. Super Clean. Super Fresh.
 					</div>
 					<div class="text-default-yellow text-14">Some short slogan</div>
 				</div>
 				<a
-					class="btn-banner text-decoration-none text-default-yellow font-italic text-18 text-semi-bold"
+					class="btn-banner text-decoration-none text-default-yellow font-italic text-18 text-default-semi-bold"
 					href="#"
 					>LAUNDRY NOW</a
 				>
@@ -152,7 +152,7 @@
 				<div class="row text-default-black m-0">
 					<div class="col-sm-3 text-left">
 						<div
-							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
+							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
 						>
 							contact us
 						</div>
@@ -173,7 +173,7 @@
 					</div>
 					<div class="col-sm-3 text-left">
 						<div
-							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
+							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
 						>
 							location
 						</div>
@@ -192,7 +192,7 @@
 					</div>
 					<div class="col-sm-3 text-left">
 						<div
-							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
+							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
 						>
 							instagram's image
 						</div>
@@ -213,7 +213,7 @@
 					</div>
 					<div class="col-sm-3text-left">
 						<div
-							class="footer-segment-header text-default-black text-14 text-capitalize text-semi-bold"
+							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
 						>
 							menu
 						</div>
