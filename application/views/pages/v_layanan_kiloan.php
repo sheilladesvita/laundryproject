@@ -1,8 +1,8 @@
 <main role="main">
 	<h1 class="my-5">LAUNDRY PER KILO</h1>
 	<div class="container-table mb-5">
-		<table class="table table-bordered modules-table">
-			<thead>
+		<table class="table table-bordered modules-table m-0">
+			<thead class="text-14">
 				<tr>
 					<th scope="col">Barang</th>
 					<th scope="col">Harga</th>

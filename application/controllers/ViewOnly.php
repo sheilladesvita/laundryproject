@@ -67,11 +67,25 @@ class ViewOnly extends CI_Controller
     $this->load->view('partials/footer');
   }
 
-  public function layanan_masjid()
+  public function layanan_masjid() 
   {
     $data["active_link"] = "layanan";
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_layanan_masjid');
+    $this->load->view('partials/footer');
+  }
+
+  public function promo(){
+    $data["active_link"] = "promo";
+    $this->load->view('partials/header', $data);
+    $this->load->view('pages/v_layanan_masjid');
+    $this->load->view('partials/footer');
+  }
+
+  public function about_us(){
+    $data["active_link"] = "tentang_kami";
+    $this->load->view('partials/header', $data);
+    $this->load->view('pages/v_about');
     $this->load->view('partials/footer');
   }
 }

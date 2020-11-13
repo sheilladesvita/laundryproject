@@ -1,4 +1,4 @@
-<div class="bg-image">
+<div class="bg-image-home">
 	<div class="main-banner">
 		<div class="d-block text-center">
 			<div class="text-default-white text-32 text-default-bold font-italic">

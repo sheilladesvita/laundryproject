@@ -72,12 +72,12 @@
 					</li>
 					<li class="nav-item nav-item-bg dropdown <?php if($active_link == "layanan") echo "active" ?>">
 						<a
-							class="nav-link nav-btn color-inherit d-inline-block"
+							class="nav-link padding-l-1-rem color-inherit d-inline-block padding-r-025-rem"
 							href="<?php echo base_url();?>viewonly/layanan"
 							>Layanan
 						</a>
 						<a
-							class="dropdown-toggle color-inherit d-inline-block padding-r-1-rem"
+							class="dropdown-toggle color-inherit d-inline-block padding-l-025-rem padding-r-1-rem"
 							id="navbarDropdown"
 							role="button"
 							data-toggle="dropdown"
@@ -94,7 +94,7 @@
 					<li class="nav-item nav-item-bg <?php if($active_link == "promo") echo "active" ?>">
 						<a class="nav-link nav-btn color-inherit" href="<?php echo base_url();?>viewonly/promo">Promo</a>
 					</li>
-					<li class="nav-item nav-item-bg <?php if($active_link == "bantuan") echo "active" ?>">
+					<li class="nav-item nav-item-bg <?php if($active_link == "tentang_kami") echo "active" ?>">
 						<a class="nav-link nav-btn color-inherit" href="<?php echo base_url();?>viewonly/about_us">Tentang Kami</a>
 					</li>
 				</ul>
@@ -110,15 +110,15 @@
     </nav>
     
     <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-dialog modal-dialog-centered modal-max-width" role="document">
         <div class="modal-content">
           <div class="modal-body">
             <ul class="nav nav-tabs nav-fill nav-justified" id="myTab" role="tablist">
               <li class="nav-item">
-                <a class="nav-link auth-form" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">LOG IN</a>
+                <a class="nav-link text-default-blue auth-form" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">LOG IN</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link auth-form" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">REGISTER</a>
+                <a class="nav-link text-default-blue auth-form" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">REGISTER</a>
               </li>
             </ul>
 
@@ -139,6 +139,9 @@
                   </div>
                   <button type="submit" class="btn btn-block bg-default-sky text-default-white btn-auth">LOG IN</button>
                 </form>
+                <div class="text-center text-10 text-default-blue">
+                  <a href="#" class="color-inherit">Forgot password?</a>
+                </div>
               </div>
 
               <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
