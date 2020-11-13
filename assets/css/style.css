@@ -164,6 +164,42 @@ body {
 	font-weight: 900;
 }
 
+.text-default-thin-important {
+	font-weight: 100 !important;
+}
+
+.text-default-extra-light {
+	font-weight: 200;
+}
+
+.text-default-light-important {
+	font-weight: 300 !important;
+}
+
+.text-default-regular-important {
+	font-weight: 400 !important;
+}
+
+.text-default-medium {
+	font-weight: 500;
+}
+
+.text-default-semi-bold {
+	font-weight: 600;
+}
+
+.text-default-bold {
+	font-weight: 700;
+}
+
+.text-default-extra-bold {
+	font-weight: 800;
+}
+
+.text-default-weight-black {
+	font-weight: 900;
+}
+
 /* Desain system display */
 .d-inline-block {
 	display: inline-block;
@@ -627,10 +663,10 @@ table.table-bordered > tbody > tr > td {
 /* About Us style */
 
 .bg-about-us {
-	height: 50vh;
+	height: 100vh;
 	width: 100%;
-	background-image: linear-gradient(to top left, #fec42f, #ff00000f),
-		url("https://images.unsplash.com/photo-1545173168-9f1947eebb7f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80");
+	background-image: linear-gradient(to top left, #fec32fe0, #0078a3e0),
+		url("https://images.unsplash.com/photo-1550025005-05b9002486c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -642,6 +678,29 @@ table.table-bordered > tbody > tr > td {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.btn-about-us {
+	border: 3px solid #fffffa;
+	border-radius: 0;
+	padding: 0.6rem 1.6rem;
+	/* color: #0078a3; */
+}
+
+.btn-about-us:hover {
+	background-color: #0078a3 !important;
+	border: 3px solid #0078a3;
+	color: #fffffa;
+}
+
+.btn-about-us:hover + u {
+	background-color: #0078a3;
+}
+
+.bg-gradient-about-us {
+	width: 100%;
+	/* background-image: linear-gradient(to top left, #fec32f, #0078a3), */
+	background-image: linear-gradient(to top right, #0078a3, #fec32f);
 }
 
 /* background-color: #161212;

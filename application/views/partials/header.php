@@ -46,7 +46,7 @@
 
 	<body>
 		<nav
-			class="navbar navbar-expand-lg <?php if($active_link == "home") { echo "fixed-top bg-transparent text-default-white"; } else { echo "sticky-top bg-default-white text-default-black shadow-sm"; }?>"
+			class="navbar navbar-expand-lg <?php if($active_link == "home" || $active_link == "tentang_kami") { echo "fixed-top bg-transparent text-default-white"; } else { echo "sticky-top bg-default-white text-default-black shadow-sm"; }?>"
 		>
 			<button
 				class="navbar-toggler"

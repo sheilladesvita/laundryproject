@@ -5,7 +5,7 @@
 			<thead>
 				<tr>
 					<th scope="col">Barang</th>
-					<th scope="col">Harga</th>
+					<th scope="col">Harga (Rp)</th>
 				</tr>
 			</thead>
 			<tbody>
