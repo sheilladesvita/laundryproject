@@ -233,6 +233,21 @@
 					</div>
 				</div>
 			</div>
+			<div class="x-column x-md x-1-3">
+			<!-- </div> -->
+			<div class="media">
+				<div class="footer-segment-header text-default-black text-12 text-capitalize text-semi-bold">
+							Stay Connected
+				</div>
+			<!-- <ul> -->
+				<a class="wrapp" href="https://www.instagram.com/alslaundry/" target="_blank">
+					<i id="social-in" class="fa fa-instagram fa-2x social" aria-hidden="true"></i>
+				</a>
+				<a class="wrapp" href="https://api.whatsapp.com/send?phone=089526210215" target="_blank">
+					<i id="social-in" class="fa fa-whatsapp fa-2x social" aria-hidden="true"></i>
+				</a>
+			<!-- </ul> -->
+			</div>
 			<div class="copyright bg-default-blue text-center">
 				&copy; Company 2017-2018
 			</div>
