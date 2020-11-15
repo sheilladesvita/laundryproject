@@ -24,7 +24,7 @@ class ViewOnly extends CI_Controller
     $data["active_link"] = "home";
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_home');
-    $this->load->view('partials/footer');
+    $this->load->view('partials/footer', $data);
   }
 
   public function test()
@@ -32,7 +32,7 @@ class ViewOnly extends CI_Controller
     $data["active_link"] = "promo";
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_promo');
-    $this->load->view('partials/footer');
+    $this->load->view('partials/footer', $data);
   }
 
   public function layanan()
@@ -40,7 +40,7 @@ class ViewOnly extends CI_Controller
     $data["active_link"] = "layanan";
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_layanan');
-    $this->load->view('partials/footer');
+    $this->load->view('partials/footer', $data);
   }
 
   public function layanan_satuan()
@@ -48,7 +48,7 @@ class ViewOnly extends CI_Controller
     $data["active_link"] = "layanan";
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_layanan_satuan');
-    $this->load->view('partials/footer');
+    $this->load->view('partials/footer', $data);
   }
 
   public function layanan_kiloan()
@@ -56,7 +56,7 @@ class ViewOnly extends CI_Controller
     $data["active_link"] = "layanan";
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_layanan_kiloan');
-    $this->load->view('partials/footer');
+    $this->load->view('partials/footer', $data);
   }
 
   public function layanan_member()
@@ -64,7 +64,7 @@ class ViewOnly extends CI_Controller
     $data["active_link"] = "layanan";
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_layanan_member');
-    $this->load->view('partials/footer');
+    $this->load->view('partials/footer', $data);
   }
 
   public function layanan_masjid() 
@@ -72,20 +72,20 @@ class ViewOnly extends CI_Controller
     $data["active_link"] = "layanan";
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_layanan_masjid');
-    $this->load->view('partials/footer');
+    $this->load->view('partials/footer', $data);
   }
 
   public function promo(){
     $data["active_link"] = "promo";
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_layanan_masjid');
-    $this->load->view('partials/footer');
+    $this->load->view('partials/footer', $data);
   }
 
   public function about_us(){
     $data["active_link"] = "tentang_kami";
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_about');
-    $this->load->view('partials/footer');
+    $this->load->view('partials/footer', $data);
   }
 }

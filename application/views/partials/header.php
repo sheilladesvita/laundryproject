@@ -46,10 +46,10 @@
 
 	<body>
 		<nav
-			class="navbar navbar-expand-lg <?php if($active_link == "home" || $active_link == "tentang_kami") { echo "fixed-top bg-transparent text-default-white"; } else { echo "sticky-top bg-default-white text-default-black shadow-sm"; }?>"
+			class="navbar navbar-expand-lg <?php if($active_link == "home" || $active_link == "tentang_kami") { echo "fixed-top bg-transparent text-default-white"; } else { echo "sticky-top bg-default-white text-default-black shadow-sm"; }?> justify-content-start"
 		>
 			<button
-				class="navbar-toggler"
+				class="navbar-toggler inherit-color"
 				type="button"
 				data-toggle="collapse"
 				data-target="#navbar-link"
@@ -57,15 +57,29 @@
 				aria-expanded="false"
 				aria-label="Toggle navigation"
 			>
-				<i class="fas fa-bars"></i>
+				<i id="collapse-bar-btn" class="fas fa-bars"></i>
 			</button>
-			<a class="navbar-brand" href="<?php echo base_url();?>">
+			<a class="navbar-brand hideable-brand p-0 m-0" href="<?php echo base_url();?>">
 				<img
 					class="logo-image"
 					src="<?php echo base_url();?>assets/images/als logo.png"
 					class="img-fluid"
-			/></a>
-			<div class="collapse navbar-collapse" id="navbar-link">
+      /></a>
+        <div
+          class="btn-group text-uppercase  btn-group-auth"
+          role="group"
+          aria-label="Basic example"
+        >
+        <!-- <div
+          class="btn-group text-uppercase position-absolute right-0 top-0 mr-4 btn-group-auth"
+          role="group"
+          aria-label="Basic example"
+        > -->
+          <a class="btn bg-default-yellow btn-auth=modal text-default-white btn-auth-login" id="login-modal-btn" data-toggle="modal" data-target="#authModal">Masuk</a>
+          <a class="btn border-default-yellow btn-auth=modal text-default-yellow btn-auth-register" id="register-modal-btn" data-toggle="modal" data-target="#authModal">Daftar Member</a>
+        </div>
+        
+			<div class="collapse navbar-collapse inherit-bg" id="navbar-link">
 				<ul class="navbar-nav navbar-center text-uppercase">
 					<li class="nav-item nav-item-bg <?php if($active_link == "home") echo "active" ?>">
 						<a class="nav-link nav-btn color-inherit" href="<?php echo base_url();?>">Beranda</a>
@@ -84,7 +98,7 @@
 							aria-haspopup="true"
 							aria-expanded="false"
 						></a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item text-default-light" href="<?php echo base_url();?>viewonly/layanan_satuan">Satuan</a>
 							<a class="dropdown-item text-default-light" href="<?php echo base_url();?>viewonly/layanan_kiloan">Kiloan</a>
 							<a class="dropdown-item text-default-light" href="<?php echo base_url();?>viewonly/layanan_member">Paket Member</a>
@@ -98,14 +112,6 @@
 						<a class="nav-link nav-btn color-inherit" href="<?php echo base_url();?>viewonly/about_us">Tentang Kami</a>
 					</li>
 				</ul>
-			</div>
-			<div
-				class="btn-group text-uppercase"
-				role="group"
-				aria-label="Basic example"
-			>
-				<a class="btn btn-success btn-auth=modal" id="login-modal-btn" data-toggle="modal" data-target="#authModal">Masuk</a>
-				<a class="btn btn-outline-success bg-default-white btn-auth=modal" id="register-modal-btn" data-toggle="modal" data-target="#authModal">Daftar Member</a>
 			</div>
     </nav>
     
@@ -126,13 +132,13 @@
               <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
                 <form class="form m-3"  autocomplete="off">
                   <div class="input-group">
-                    <input type="text" name="email" id="email" autocomplete="off" required/>
+                    <input type="text" name="email" id="email-login" autocomplete="off" required/>
                     <label for="email" class="input-label">
                       <span class="label-content">Alamat Email</span>
                     </label>
                   </div>
                   <div class="input-group">
-                    <input type="password" name="password" id="password" autocomplete="off" required/>
+                    <input type="password" name="password" id="password-login" autocomplete="off" required/>
                     <label for="password" class="input-label">
                       <span class="label-content">Kata Sandi</span>
                     </label>
@@ -153,13 +159,13 @@
                     </label>
                   </div>
                   <div class="input-group">
-                    <input type="text" name="email" id="email" autocomplete="off" required/>
+                    <input type="text" name="email" id="email-register" autocomplete="off" required/>
                     <label for="email" class="input-label">
                       <span class="label-content">Alamat Email</span>
                     </label>
                   </div>
                   <div class="input-group">
-                    <input type="password" name="password" id="password" autocomplete="off" required/>
+                    <input type="password" name="password" id="password-register" autocomplete="off" required/>
                     <label for="pssword" class="input-label">
                       <span class="label-content">Kata Sandi</span>
                     </label>
