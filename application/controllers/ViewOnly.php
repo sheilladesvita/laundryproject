@@ -78,7 +78,7 @@ class ViewOnly extends CI_Controller
   public function promo(){
     $data["active_link"] = "promo";
     $this->load->view('partials/header', $data);
-    $this->load->view('pages/v_layanan_masjid');
+    $this->load->view('pages/v_promo');
     $this->load->view('partials/footer', $data);
   }
 

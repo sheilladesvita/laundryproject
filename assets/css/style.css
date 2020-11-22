@@ -251,6 +251,12 @@ a {
 	display: inline-block;
 }
 
+/* dimension and size */
+
+.h-100px {
+	height: 200px;
+}
+
 /* Border test */
 
 .test-red {
@@ -266,12 +272,6 @@ a {
 }
 
 /* Header style */
-
-.navbar-center {
-	position: absolute;
-	left: 50%;
-	transform: translatex(-50%);
-}
 
 .nav-item-bg {
 	border-radius: 5px;
@@ -291,6 +291,11 @@ a {
 
 .nav-item-bg:hover a {
 	color: #fffffa !important;
+}
+
+#navbar-link {
+	flex-grow: 1;
+	justify-content: center;
 }
 
 .nav-item-bg.active {
@@ -330,9 +335,17 @@ a {
 }
 
 .btn-group-auth {
-	position: absolute;
-	right: 0;
-	transform: translatex(-5%);
+	display: flex;
+	justify-content: center;
+}
+
+.btn-group-auth .btn-group {
+	width: 100%;
+}
+
+.flex-c {
+	display: flex;
+	flex-grow: 1;
 }
 
 .btn-auth-login:hover {
@@ -572,7 +585,7 @@ a {
 	color: #fffffd;
 }
 
-p {
+p.card-service {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 14px;
@@ -686,7 +699,6 @@ h1 {
 }
 
 .container-table {
-	max-width: 50vw;
 	margin: auto auto;
 	background-color: #fffffa;
 	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
@@ -701,7 +713,7 @@ table.table-bordered {
 
 table.table-bordered > thead > tr > th {
 	border: none;
-	border-bottom: 2px solid #000000;
+	border-bottom: 3px solid #000000;
 }
 
 table.table-bordered > tbody > tr > td {
@@ -908,24 +920,52 @@ h5 {
 }
 
 @media only screen and (max-width: 575px) {
+	.container-table {
+		max-width: 90vw;
+	}
+
+	.navbar-nav {
+		width: 100%;
+	}
+
 	.modal-max-width {
 		max-width: 100%;
 	}
 }
 
 @media only screen and (min-width: 578px) {
+	.container-table {
+		max-width: 70vw;
+	}
+
+	.navbar-nav {
+		width: 100%;
+	}
+
 	.modal-max-width {
 		max-width: 60%;
 	}
 }
 
 @media only screen and (min-width: 769px) {
+	.container-table {
+		max-width: 60vw;
+	}
+
 	.modal-max-width {
 		max-width: 350px;
 	}
 }
 
 @media only screen and (min-width: 992px) {
+	.container-table {
+		max-width: 45vw;
+	}
+
+	.navbar-nav {
+		width: unset;
+	}
+
 	.modal-max-width {
 		max-width: 370px;
 	}

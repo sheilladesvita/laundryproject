@@ -8,7 +8,7 @@
 						<p></p>
 					</div>
 
-					<p>Some short description about this service</p>
+					<p class="card-service">Some short description about this service</p>
 				</div>
 				<a href="<?php echo base_url();?>viewonly/layanan_satuan">
 					<div class="box-service">
@@ -29,7 +29,7 @@
 					<div class="box-title">
 						<p>SERVICE 2</p>
 					</div>
-					<p>Some short description about this service</p>
+					<p class="card-service">Some short description about this service</p>
 				</div>
 				<a href="<?php echo base_url();?>viewonly/layanan_kiloan">
 					<div class="box-service">
@@ -48,7 +48,7 @@
 					<div class="box-title">
 						<p>SERVICE 3</p>
 					</div>
-					<p>Some short description about this service</p>
+					<p class="card-service">Some short description about this service</p>
 				</div>
 				<a href="<?php echo base_url();?>viewonly/layanan_member">
 					<div class="box-service">
@@ -67,7 +67,7 @@
 					<div class="box-title">
 						<p>SERVICE 4</p>
 					</div>
-					<p>Some short description about this service</p>
+					<p class="card-service">Some short description about this service</p>
 				</div>
 				<a href="<?php echo base_url();?>viewonly/layanan_masjid">
 					<div class="box-service">
