@@ -88,4 +88,12 @@ class ViewOnly extends CI_Controller
     $this->load->view('pages/v_about');
     $this->load->view('partials/footer', $data);
   }
+
+  public function admin_login(){
+    $this->load->view('pages/v_admin_login');
+  }
+
+  public function admin(){
+    $this->load->view('pages/v_admin');
+  }
 }

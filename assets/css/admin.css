@@ -1,0 +1,102 @@
+body {
+	background-color: #fffffa;
+	font-family: "Poppins", sans-serif;
+	font-size: 12pt;
+	color: #161212;
+	font-weight: 300;
+}
+
+a {
+	outline: none;
+}
+
+.logo-image {
+	width: 90px;
+	height: 40px;
+}
+
+.h-10 {
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	position: relative;
+}
+
+.p-absolute {
+	position: absolute;
+}
+
+.circle-8rem {
+	height: 8rem;
+	width: 8rem;
+	position: relative;
+	top: -4.5rem;
+	background-color: #161212;
+	border-radius: 50%;
+}
+
+.mt-9 {
+	margin-top: 4.5rem;
+}
+
+.form input.admin {
+	width: 100%;
+	height: 100%;
+	color: #fffffa;
+	padding-top: 14pt;
+	border: none;
+	outline: none;
+	font-weight: 300;
+}
+
+.form label {
+	position: absolute;
+	margin: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	border-bottom: 1px solid #504a4a;
+}
+
+.form label::after {
+	content: "";
+	bottom: -1px;
+	left: 0;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	border-bottom: 2px solid #0078a3;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease-in-out;
+}
+
+.label-content {
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.form input:focus + .input-label .label-content,
+.form input:valid + .input-label .label-content {
+	transform: translateY(-16pt);
+	font-size: 9pt;
+	color: #0078a3;
+}
+
+.form input:invalid {
+	outline: none;
+	box-shadow: none !important;
+}
+
+.form input:focus + .input-label::after,
+.form input:valid + .input-label::after {
+	transform: translateX(0%);
+}
+
+.btn-auth:hover {
+	background-color: #0078a3;
+	color: #fffffa;
+}
