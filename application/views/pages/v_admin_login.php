@@ -37,32 +37,35 @@
 		/>
 	</head>
 
-	<body>
+	<body class="bg-default-blue">
 		<div class="h-10 align-items-center justify-content-center">
-			<div class="card d-flex bg-default-blue mt-9" style="width: 25rem">
+			<div class="card d-flex mt-9" style="width: 22rem">
 				<div class="d-flex p-absolute justify-content-center w-100">
-					<div class="circle-8rem"></div>
+					<div class="circle-8rem shadow bg-default-sky">
+						<img
+							src="<?php echo base_url();?>assets/images/als-icon.png"
+							width="90%"
+						/>
+					</div>
 				</div>
 				<form class="form mb-5 mx-4 mt-9" autocomplete="off">
 					<div class="input-group">
 						<input
 							type="text"
-							name="email"
-							id="email-login"
+							name="id"
+							id="id-employee"
 							autocomplete="off"
-							class="bg-default-blue admin"
 							required
 						/>
 						<label for="email" class="input-label">
-							<span class="label-content">Alamat Email</span>
+							<span class="label-content">ID Karyawan</span>
 						</label>
 					</div>
 					<div class="input-group">
 						<input
 							type="password"
 							name="password"
-							id="password-login"
-							class="bg-default-blue admin"
+							id="password-employee"
 							autocomplete="off"
 							required
 						/>
@@ -72,14 +75,11 @@
 					</div>
 					<button
 						type="submit"
-						class="btn btn-block bg-default-yellow text-default-white btn-auth"
+						class="btn btn-block bg-default-yellow text-default-white btn-auth-admin"
 					>
-						LOG IN
+						LOG IN <i class="fas fa-sign-in-alt"></i>
 					</button>
 				</form>
-				<div class="text-center text-10 text-default-white mb-5">
-					<a href="#" class="color-inherit">Forgot password?</a>
-				</div>
 			</div>
 		</div>
 

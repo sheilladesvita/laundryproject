@@ -63,6 +63,70 @@ a {
 	border: 1px solid #5bc2d4;
 }
 
+.border-dashed-black {
+	border: 2px dashed #161212;
+}
+
+.border-dashed-white {
+	border: 2px dashed #fffffa;
+}
+
+.border-dashed-yellow {
+	border: 2px dashed #fec42f;
+}
+
+.border-dashed-blue {
+	border: 2px dashed #0078a3;
+}
+
+.border-dashed-sky {
+	border: 2px dashed #5bc2d4;
+}
+
+.no-border {
+	border: none;
+}
+
+/* btn hover */
+
+.btn-yellow-hover:hover {
+	color: #fffffa;
+	background-color: #e7ac16 !important;
+}
+
+.btn-sky-hover:hover {
+	color: #fffffa;
+	background-color: #44abbd !important;
+}
+
+.btn-outline-yellow-hover:hover {
+	color: #fffffa;
+	background-color: #fec42f !important;
+}
+
+.btn-outline-blue-hover:hover {
+	color: #fffffa;
+	background-color: #0078a3 !important;
+}
+
+.btn-outline-sky-hover:hover {
+	color: #fffffa;
+	background-color: #5bc2d4 !important;
+}
+
+/* btn focus */
+
+.no-btn-focus:focus,
+.no-btn-focus.focus {
+	box-shadow: none !important;
+}
+
+/* opacity */
+
+.opacity-10 {
+	opacity: 10%;
+}
+
 /* position */
 
 .right-0 {
@@ -213,8 +277,8 @@ a {
 	font-weight: 100 !important;
 }
 
-.text-default-extra-light {
-	font-weight: 200;
+.text-default-extra-light-important {
+	font-weight: 200 !important;
 }
 
 .text-default-light-important {
@@ -225,31 +289,27 @@ a {
 	font-weight: 400 !important;
 }
 
-.text-default-medium {
-	font-weight: 500;
+.text-default-medium-important {
+	font-weight: 500 !important;
 }
 
-.text-default-semi-bold {
-	font-weight: 600;
+.text-default-semi-bold-important {
+	font-weight: 600 !important;
 }
 
-.text-default-bold {
-	font-weight: 700;
+.text-default-bold-important {
+	font-weight: 700 !important;
 }
 
-.text-default-extra-bold {
-	font-weight: 800;
+.text-default-extra-bold-important {
+	font-weight: 800 !important;
 }
 
-.text-default-weight-black {
-	font-weight: 900;
+.text-default-weight-black-important {
+	font-weight: 900 !important;
 }
 
 /* Desain system display */
-
-.d-inline-block {
-	display: inline-block;
-}
 
 /* dimension and size */
 

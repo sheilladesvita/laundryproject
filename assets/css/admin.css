@@ -30,13 +30,16 @@ a {
 	height: 8rem;
 	width: 8rem;
 	position: relative;
-	top: -4.5rem;
-	background-color: #161212;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	top: -4rem;
+	background-color: #ffffff;
 	border-radius: 50%;
 }
 
 .mt-9 {
-	margin-top: 4.5rem;
+	margin-top: 5.5rem;
 }
 
 .form input.admin {
@@ -96,7 +99,11 @@ a {
 	transform: translateX(0%);
 }
 
-.btn-auth:hover {
-	background-color: #0078a3;
+.btn-auth-admin:hover {
+	background-color: #f3b314;
 	color: #fffffa;
+}
+
+.r-0 {
+	right: 0 !important;
 }

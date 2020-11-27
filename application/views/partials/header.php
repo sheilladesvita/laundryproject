@@ -245,7 +245,7 @@
 										type="submit"
 										class="btn btn-block bg-default-sky text-default-white btn-auth"
 									>
-										LOG IN
+										LOG IN <i class="fas fa-sign-in-alt"></i>
 									</button>
 								</form>
 								<div class="text-center text-10 text-default-blue">
@@ -326,7 +326,7 @@
 										type="submit"
 										class="btn btn-block bg-default-sky text-default-white btn-auth"
 									>
-										REGISTER
+										REGISTER <i class="fas fa-user-plus"></i>
 									</button>
 								</form>
 							</div>
