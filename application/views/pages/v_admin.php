@@ -3,7 +3,13 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Login</title>
+
+		<link
+			rel="icon"
+			href="<?php echo base_url();?>assets/images/als-icon.ico"
+		/>
+
+		<title>ALS Admin</title>
 
 		<!-- Bootstrap core CSS -->
 		<link
@@ -48,7 +54,10 @@
 		<nav
 			class="navbar sticky-top navbar-expand-lg navbar-light bg-default-white shadow"
 		>
-			<a class="navbar-brand mr-auto" href="#">
+			<a
+				class="navbar-brand mr-auto"
+				href="<?php echo base_url(); ?>viewonly/admin"
+			>
 				<img
 					class="logo-image"
 					src="<?php echo base_url();?>assets/images/als logo.png"
@@ -116,6 +125,8 @@
 
 				<div class="collapse pt-3 mb-3" id="service-form">
 					<div class="card card-body bg-default-white">
+						<div class="text-18 text-default-semi-bold">Buat Layanan Baru</div>
+						<hr />
 						<form>
 							<div class="form-row">
 								<div class="col-sm-12 col-lg-3 py-1">
@@ -168,6 +179,8 @@
 
 				<div class="collapse no-border pt-3 mb-3" id="promo-form">
 					<div class="card card-body bg-default-white">
+						<div class="text-18 text-default-semi-bold">Buat Promo Baru</div>
+						<hr />
 						pariatur cliche reprehenderit, enim eiusmod high life accusamus
 						terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
 						labore wes anderson cred nesciunt sapiente ea proident.
@@ -183,20 +196,20 @@
 				>
 					<thead>
 						<tr class="text-center">
-							<th>Nama Layanan</th>
-							<th>Harga</th>
-							<th>Jenis Layanan</th>
-							<th>Ubah/Hapus</th>
+							<th class="text-default-medium-important">Nama Layanan</th>
+							<th class="text-default-medium-important">Harga</th>
+							<th class="text-default-medium-important">Jenis Layanan</th>
+							<th class="text-default-medium-important">Ubah/Hapus</th>
 						</tr>
 					</thead>
 
 					<tbody>
-						<tr>
+						<tr id="1">
 							<td>Blazer/Sweater</td>
 							<td class="text-right">12000</td>
 							<td class="text-center">Laundry Satuan</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -206,6 +219,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -218,7 +233,7 @@
 							<td class="text-right">20000</td>
 							<td class="text-center">Laundry Satuan</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -228,6 +243,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -240,7 +257,7 @@
 							<td class="text-right">15000</td>
 							<td class="text-center">Laundry Satuan</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -250,6 +267,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -262,7 +281,7 @@
 							<td class="text-right">9000</td>
 							<td class="text-center">Laundry Satuan</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -272,6 +291,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -284,7 +305,7 @@
 							<td class="text-right">40000</td>
 							<td class="text-center">Laundry Satuan</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -294,6 +315,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -306,7 +329,7 @@
 							<td class="text-right">15000</td>
 							<td class="text-center">Laundry Satuan</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -316,6 +339,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -328,7 +353,7 @@
 							<td class="text-right">10000</td>
 							<td class="text-center">Laundry Satuan</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -338,6 +363,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -350,7 +377,7 @@
 							<td class="text-right">5000</td>
 							<td class="text-center">Laundry Kiloan</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -360,6 +387,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -372,7 +401,7 @@
 							<td class="text-right">5000</td>
 							<td class="text-center">Laundry Kiloan</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -382,6 +411,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -394,7 +425,7 @@
 							<td class="text-right">10000</td>
 							<td class="text-center">Laundry Kiloan</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -404,6 +435,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -416,7 +449,7 @@
 							<td class="text-right">300000</td>
 							<td class="text-center">Paket Member Smart Hemat</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -426,6 +459,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -438,7 +473,7 @@
 							<td class="text-right">440000</td>
 							<td class="text-center">Paket Member Smart Hemat</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -448,6 +483,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -460,7 +497,7 @@
 							<td class="text-right">580000</td>
 							<td class="text-center">Paket Member Smart Hemat</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -470,6 +507,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -482,7 +521,7 @@
 							<td class="text-right">15000</td>
 							<td class="text-center">Paket Masjid/Mushola</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -492,6 +531,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -504,7 +545,7 @@
 							<td class="text-right">12000</td>
 							<td class="text-center">Paket Masjid/Mushola</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -514,6 +555,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -526,7 +569,7 @@
 							<td class="text-right">5000</td>
 							<td class="text-center">Paket Masjid/Mushola</td>
 							<td class="text-center">
-								<div class="btn-group" role="group" aria-label="Basic example">
+								<div class="btn-group" role="group">
 									<a
 										class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
 										href=""
@@ -536,6 +579,8 @@
 									<a
 										class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
 										href=""
+										data-toggle="modal"
+										data-target="#serviceDeleteModal"
 									>
 										<i class="fas fa-trash-alt mx-2"></i>
 									</a>
@@ -917,6 +962,38 @@
 				</table>
 			</div>
 		</main>
+
+		<!-- Modal -->
+		<div
+			class="modal fade"
+			id="serviceDeleteModal"
+			tabindex="-1"
+			aria-labelledby="serviceDeleteModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body">
+						Anda akan <b>menghapus</b> layanan (bla bla bla). Anda yakin untuk
+						menhapusnya?
+					</div>
+					<div class="d-inline-block text-right mr-4 my-4">
+						<button
+							type="button"
+							class="btn bg-transparent border-default-yellow text-default-yellow btn-outline-yellow-hover"
+							data-dismiss="modal"
+						>
+							Cancel
+						</button>
+						<a
+							type="button"
+							class="btn bg-default-yellow text-default-white btn-yellow-hover"
+							>Delete</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<script
 			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

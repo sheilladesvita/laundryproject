@@ -99,6 +99,11 @@ a {
 	background-color: #44abbd !important;
 }
 
+.btn-blue-hover:hover {
+	color: #fffffa;
+	background-color: #00658a !important;
+}
+
 .btn-outline-yellow-hover:hover {
 	color: #fffffa;
 	background-color: #fec42f !important;
