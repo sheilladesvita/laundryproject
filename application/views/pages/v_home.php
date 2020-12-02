@@ -8,7 +8,7 @@
 		</div>
 		<a
 			class="btn-banner text-decoration-none text-default-yellow font-italic text-18 text-default-semi-bold"
-			href="#"
+			href="<?php echo base_url(); ?>viewonly/order"
 			>LAUNDRY NOW</a
 		>
 	</div>

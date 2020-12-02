@@ -13,7 +13,7 @@
 			href="<?php echo base_url();?>assets/images/als-icon.ico"
 		/>
 
-		<title>ALS Laundry Pickup Delivery</title>
+		<title>ALS Laundry</title>
 
 		<!-- Bootstrap core CSS -->
 		<link
@@ -45,8 +45,7 @@
 
 	<body>
 		<nav class="navbar navbar-expand-lg
-		<?php if($active_link == "home" || $active_link == "tentang_kami") { echo "fixed-top bg-transparent text-default-white"; } else { echo "sticky-top bg-default-white text-default-black shadow-sm"; }?>
-		justify-content-start" >
+		<?php if($active_link == "home" || $active_link == "tentang_kami") { echo 'fixed-top bg-transparent text-default-white'; } else { echo 'sticky-top bg-default-white text-default-black shadow-sm'; }?> justify-content-start" >
       <button
         class="navbar-toggler inherit-color"
         type="button"
