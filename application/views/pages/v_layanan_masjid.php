@@ -24,18 +24,17 @@
 				</tr>
 			</thead>
 			<tbody>
+			<?php
+				$no = 1; 
+				foreach($service_item as $s) {
+			?>
 				<tr>
-					<td>Permadani</td>
-					<td>15.000</td>
+				<td><?php echo $s->nama_serviceitem ?></td>
+					<td><?php echo $s->harga ?></td>
 				</tr>
-				<tr>
-					<td>Karpet Tebal</td>
-					<td>12.000</td>
-				</tr>
-				<tr>
-					<td>Mukena / Sarung</td>
-					<td>5.000</td>
-				</tr>
+			<?php 
+				}
+			?>
 			</tbody>
 		</table>
 	</div>

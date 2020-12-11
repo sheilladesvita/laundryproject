@@ -19,6 +19,13 @@ class ViewOnly extends CI_Controller
    * map to /index.php/welcome/<method_name>
    * @see https://codeigniter.com/user_guide/general/urls.html
    */
+  function __construct()
+  {
+    parent::__construct();
+    $this->load->model('service_item');
+    $this->load->helper('url');  
+  }
+  
   public function index()
   {
     $data["active_link"] = "home";
@@ -46,32 +53,36 @@ class ViewOnly extends CI_Controller
   public function layanan_satuan()
   {
     $data["active_link"] = "layanan";
+    $data1['service_item'] = $this->service_item->listServiceItemByServiceId('S01')->result();
     $this->load->view('partials/header', $data);
-    $this->load->view('pages/v_layanan_satuan');
+    $this->load->view('pages/v_layanan_satuan', $data1);
     $this->load->view('partials/footer', $data);
   }
 
   public function layanan_kiloan()
   {
     $data["active_link"] = "layanan";
+    $data1['service_item'] = $this->service_item->listServiceItemByServiceId('S02')->result();
     $this->load->view('partials/header', $data);
-    $this->load->view('pages/v_layanan_kiloan');
+    $this->load->view('pages/v_layanan_kiloan',$data1);
     $this->load->view('partials/footer', $data);
   }
 
   public function layanan_member()
   {
     $data["active_link"] = "layanan";
+    $data1['service_item'] = $this->service_item->listServiceItemByServiceId('S04')->result();
     $this->load->view('partials/header', $data);
-    $this->load->view('pages/v_layanan_member');
+    $this->load->view('pages/v_layanan_member',$data1);
     $this->load->view('partials/footer', $data);
   }
 
   public function layanan_masjid() 
   {
     $data["active_link"] = "layanan";
+    $data1['service_item'] = $this->service_item->listServiceItemByServiceId('S03')->result();
     $this->load->view('partials/header', $data);
-    $this->load->view('pages/v_layanan_masjid');
+    $this->load->view('pages/v_layanan_masjid',$data1);
     $this->load->view('partials/footer', $data);
   }
 

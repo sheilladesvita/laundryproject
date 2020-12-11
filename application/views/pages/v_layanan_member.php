@@ -24,26 +24,17 @@
 				</tr>
 			</thead>
 			<tbody>
+			<?php
+				$no = 1; 
+				foreach($service_item as $s) {
+			?>
 				<tr>
-					<td>50 KG</td>
-					<td>300.000</td>
+				<td><?php echo $s->nama_serviceitem ?></td>
+					<td><?php echo $s->harga ?></td>
 				</tr>
-				<tr>
-					<td>60 KG</td>
-					<td>370.000</td>
-				</tr>
-				<tr>
-					<td>70 KG</td>
-					<td>440.000</td>
-				</tr>
-				<tr>
-					<td>80 KG</td>
-					<td>510.000</td>
-				</tr>
-				<tr>
-					<td>90 KG</td>
-					<td>580.000</td>
-				</tr>
+			<?php 
+				}
+			?>
 			</tbody>
 		</table>
 	</div>
