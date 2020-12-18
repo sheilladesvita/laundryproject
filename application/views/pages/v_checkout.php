@@ -43,12 +43,58 @@
 					<span class="label-content">Alamat</span>
 				</label>
 			</div>
-			<button
+			<!-- <button
 				type="submit"
+				href="<?php echo base_url();?>viewonly/buy"
 				class="btn btn-block bg-default-sky text-default-white btn-auth"
 			>
 				SEND ORDER <i class="fas fa-shopping-cart"></i>
-			</button>
+			</button> -->
+			<div class="container text-center">
+				<a 
+					href="<?php echo base_url();?>viewonly/buy"
+					class="btn btn-block bg-default-sky text-default-white btn-auth"
+					type="submit"
+				>
+					SEND ORDER <i class="fas fa-shopping-cart"></i>
+				</a>
+			</div>
 		</form>
 	</div>
+	<div class="container">
+		<div class="text-24 text-default-medium">Daftar Pesanan</div>
+		<table
+			id="order-table"
+			class="table table-striped table-sm dt-responsive table-responsive-sm"
+			style="width: 100%"
+		>
+			<thead>
+				<tr class="text-center">
+					<th>Nama Layanan</th>
+					<th>Harga</th>
+					<th>Jenis Layanan</th>
+					<th>Jumlah</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php 
+					$max=sizeof($_SESSION['cart']);
+					for($i=0; $i<$max; $i++) {
+				?>
+				<tr>
+					<td class="text-center"><?php echo $_SESSION['cart'][$i]['serviceitem_name'];?></td>
+					<td class="text-center"><?php echo $_SESSION['cart'][$i]['price'];?></td>
+					<td class="text-center"><?php echo $_SESSION['cart'][$i]['service_name'];?></td>
+					<td class="text-center"><?php echo $_SESSION['cart'][$i]['qty'];?></td>
+					<td class="text-center"><?php echo $_SESSION['cart'][$i]['qty'];?></td>
+				</tr>
+				<?php
+					}
+				?>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript" src="<?php echo base_url().'assets/js/jquery-3.3.1.js'?>"></script>
+	<script type="text/javascript" src="<?php echo base_url().'assets/js/bootstrap/bootstrap.js'?>"></script>
 </main>

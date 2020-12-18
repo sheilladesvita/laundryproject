@@ -115,12 +115,50 @@ class ViewOnly extends CI_Controller
     echo json_encode($data);
   }
 
+  function cart(){
+    $service_id = $this->input->post('service_id');
+    $service_name = $this->input->post('service_name');
+    $serviceitem_id = $this->input->post('serviceitem_id');
+    $serviceitem_name = $this->input->post('serviceitem_name');
+    $qty = $this->input->post('qty');
+    
+    $price = $this->service_item->getServiceCart($serviceitem_id)->result();
+    foreach($price as $row) {
+      $pr = $row->harga;
+    }
+
+    if(!isset($_SESSION['cart'])){
+      $_SESSION['cart']=array(
+        array("service_id"=>$service_id,
+              "service_name"=>$service_name,
+              "serviceitem_id"=>$serviceitem_id,
+              "serviceitem_name"=>$serviceitem_name,
+              "price"=>$pr,
+              "qty"=>$qty));
+    }else{
+      $b=array("service_id"=>$service_id,
+                "service_name"=>$service_name,
+                "serviceitem_id"=>$serviceitem_id,
+                "serviceitem_name"=>$serviceitem_name,
+                "price"=>$pr,
+                "qty"=>$qty);
+      array_push($_SESSION['cart'],$b);
+    }
+
+    echo json_encode($price);
+  }
+
   public function checkout(){
     $data["active_link"] = "checkout";
     $data1['service'] = $this->service->getService()->result();
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_checkout',$data1);
     $this->load->view('partials/footer', $data);
+  }
+
+  public function buy() {
+    unset($_SESSION['cart']);
+    redirect('viewonly/order');
   }
 
   public function admin_login(){

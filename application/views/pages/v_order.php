@@ -3,7 +3,7 @@
 		<form class="form py-5" autocomplete="off">
 			<div class="input-group">
 				<div class="form-border-bottom">
-					<select name="service" id="service" required>
+					<select name="service" id="service" class="service" required>
 						<option value="" selected>Pilih layanan:</option>
 						<?php foreach($service as $row):?>
 						<option value="<?php echo $row->id_service;?>"><?php echo $row->nama_service;?></option>
@@ -13,7 +13,7 @@
 			</div>
 			<div class="input-group">
 				<div class="form-border-bottom">
-					<select name="service_item" id="service_item" required>
+					<select name="service_item" id="service_item" class="service_item" required>
 					<option>Pilih sub layanan:</option>
 					</select>
 				</div>
@@ -25,15 +25,13 @@
 					</div>
 				</div>
 			</div>
-
-			<button
-				type="submit"
-				class="btn btn-block bg-default-sky text-default-white btn-auth"
-				name="add_service"
-				id="add_service"
-			>
-				ADD
-			</button>
+			<input 
+				class="btn btn-block bg-default-sky text-white btn-auth"
+				style="padding:10px"
+				type="button" 
+				name="add_service" 
+				id="add_service" 
+				value="ADD">
 		</form>
 	</div>
 	<div class="container">
@@ -53,43 +51,23 @@
 					<th></th>
 				</tr>
 			</thead>
-
 			<tbody>
+				<?php 
+					if(isset($_SESSION['cart'])){
+						$max=sizeof($_SESSION['cart']);
+						for($i=0; $i<$max; $i++) {
+				?>
 				<tr>
-					<td>Blazer/Sweater</td>
-					<td class="text-center">12000</td>
-					<td class="text-center">Laundry Satuan</td>
-					<td class="text-center">1</td>
-					<td class="text-center">12000</td>
-					<td class="text-center">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<a
-								class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-								href=""
-							>
-								<i class="fas fa-trash-alt mx-2"></i>
-							</a>
-						</div>
-					</td>
+					<td class="text-center"><?php echo $_SESSION['cart'][$i]['serviceitem_name'];?></td>
+					<td class="text-center"><?php echo $_SESSION['cart'][$i]['price'];?></td>
+					<td class="text-center"><?php echo $_SESSION['cart'][$i]['service_name'];?></td>
+					<td class="text-center"><?php echo $_SESSION['cart'][$i]['qty'];?></td>
+					<td class="text-center"><?php echo $_SESSION['cart'][$i]['qty'];?></td>
 				</tr>
-
-				<tr>
-					<td>Long Dress Pendek</td>
-					<td class="text-center">20000</td>
-					<td class="text-center">Laundry Satuan</td>
-					<td class="text-center">2</td>
-					<td class="text-center">40000</td>
-					<td class="text-center">
-						<div class="btn-group" role="group" aria-label="Basic example">
-							<a
-								class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-								href=""
-							>
-								<i class="fas fa-trash-alt mx-2"></i>
-							</a>
-						</div>
-					</td>
-				</tr>
+				<?php
+						}
+					}
+				?>
 			</tbody>
 		</table>
 		<div class="container text-center width-form-25">
@@ -101,6 +79,7 @@
 				CHECKOUT <i class="fas fa-shopping-cart"></i>
 			</a>
 		</div>
+		<div id="result"></div>
 	</div>
 	<script 
 		type="text/javascript" 
@@ -109,9 +88,6 @@
 	<script
 		type="text/javascript"
 		src="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.js"
-	></script>
-	<script 
-		src="<?php echo base_url()?>assets/js/admin-page.js"
 	></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -130,6 +106,32 @@
 							html += '<option value='+data[i].id_serviceitem+'>'+data[i].nama_serviceitem+'</option>';
 						}
 						$('#service_item').html(html);
+					}
+				});
+				return false;
+			});
+			
+			$("#add_service").click(function(){
+				var service_id = $("select.service").children("option:selected").val();
+				var service_name = $("select.service").children("option:selected").text();
+				var serviceitem_id = $("select.service_item").children("option:selected").val();
+				var serviceitem_name = $("select.service_item").children("option:selected").text();
+				var qty = $("#quantity").val();
+				
+				$.ajax({
+					url : "<?php echo site_url('viewonly/cart');?>",
+					method : "POST",
+					data : {
+							service_id: service_id,
+							service_name: service_name,
+							serviceitem_id: serviceitem_id,
+							serviceitem_name: serviceitem_name,
+							qty: qty
+							},
+					async : true,
+					dataType : 'json',
+					success: function(data){
+						location.reload();
 					}
 				});
 				return false;
