@@ -55,16 +55,25 @@
 				<?php 
 					if(isset($_SESSION['cart'])){
 						$max=sizeof($_SESSION['cart']);
-						for($i=0; $i<$max; $i++) {
+						$i = 0;
+						$count = 0;
+						while($count<$max){
+							if(isset($_SESSION['cart'][$i])){
 				?>
 				<tr>
 					<td class="text-center"><?php echo $_SESSION['cart'][$i]['serviceitem_name'];?></td>
 					<td class="text-center"><?php echo $_SESSION['cart'][$i]['price'];?></td>
 					<td class="text-center"><?php echo $_SESSION['cart'][$i]['service_name'];?></td>
 					<td class="text-center"><?php echo $_SESSION['cart'][$i]['qty'];?></td>
-					<td class="text-center"><?php echo $_SESSION['cart'][$i]['qty'];?></td>
+					<td class="text-center"><?php echo $_SESSION['cart'][$i]['qty']*$_SESSION['cart'][$i]['price'];?></td>
+					</td><td class='text-center'><div class='btn-group' role='group' aria-label='Basic example'>
+                    <a	class='btn btn-sm bg-default-blue text-default-white btn-blue-hover' href='<?php echo base_url();?>viewonly/delete_cart/<?php echo $_SESSION['cart'][$i]['serviceitem_id'];?>'><i class='fas fa-trash-alt mx-2'></i></a></div>
+                    </td>
 				</tr>
 				<?php
+								$count++;
+							}
+							$i++;
 						}
 					}
 				?>
@@ -89,6 +98,8 @@
 		type="text/javascript"
 		src="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.js"
 	></script>
+	<!-- <script src="<?php echo base_url()?>assets/js/order-page.js"
+	></script> -->
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#service').change(function(){ 
@@ -131,7 +142,7 @@
 					async : true,
 					dataType : 'json',
 					success: function(data){
-						location.reload();
+						location.reload(); 
 					}
 				});
 				return false;

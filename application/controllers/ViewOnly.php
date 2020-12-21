@@ -24,6 +24,8 @@ class ViewOnly extends CI_Controller
     parent::__construct();
     $this->load->model('service_item');
     $this->load->model('service');
+    $this->load->model('customer');
+    $this->load->model('member');
     $this->load->helper('url');  
   }
   
@@ -115,6 +117,15 @@ class ViewOnly extends CI_Controller
     echo json_encode($data);
   }
 
+  public function searchById($id) {
+    foreach ($_SESSION['cart'] as $key => $cart) { 
+      if ($cart['serviceitem_id'] == $id) {
+        return $key;
+      }
+    }   
+    return null; 
+  } 
+
   function cart(){
     $service_id = $this->input->post('service_id');
     $service_name = $this->input->post('service_name');
@@ -136,27 +147,78 @@ class ViewOnly extends CI_Controller
               "price"=>$pr,
               "qty"=>$qty));
     }else{
-      $b=array("service_id"=>$service_id,
-                "service_name"=>$service_name,
-                "serviceitem_id"=>$serviceitem_id,
-                "serviceitem_name"=>$serviceitem_name,
-                "price"=>$pr,
-                "qty"=>$qty);
-      array_push($_SESSION['cart'],$b);
+      $key = $this->searchById($serviceitem_id);
+      if($key==null){
+        $b=array("service_id"=>$service_id,
+                  "service_name"=>$service_name,
+                  "serviceitem_id"=>$serviceitem_id,
+                  "serviceitem_name"=>$serviceitem_name,
+                  "price"=>$pr,
+                  "qty"=>$qty);
+        array_push($_SESSION['cart'],$b);
+      }else{
+        $_SESSION['cart'][$key]['qty'] += $qty; 
+      }
     }
 
     echo json_encode($price);
   }
 
+  public function delete_cart($id) {
+    $key = $this->searchById($id);
+    if($key !== null){
+      unset($_SESSION['cart'][$key]);
+    }
+    redirect('viewonly/order');
+  }
+
+  public function getTotalPrice() {
+    $total = 0;
+    foreach ($_SESSION['cart'] as $key => $cart) { 
+      $total += $cart['price'] * $cart['qty'];
+    } 
+    return $total;
+  }
+
   public function checkout(){
     $data["active_link"] = "checkout";
     $data1['service'] = $this->service->getService()->result();
+    $data1['total'] = $this->getTotalPrice();
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_checkout',$data1);
     $this->load->view('partials/footer', $data);
   }
 
   public function buy() {
+    $nama = $this->input->post('name');
+    $email = $this->input->post('email');
+    $phone_number = $this->input->post('phone-number');
+    $alamat = $this->input->post('alamat');
+    $date = $this->input->post('datepicker');
+    $catatan = $this->input->post('catatan');
+
+    $customer = $this->customer->getCustomer()->result();
+    $member = $this->member->getNotMember()->result();
+    $count = (count($customer)) + 1;
+    $id_customer = "ID_" . strval($count);
+    $count = (count($member)) + 1;
+    $id_member = "IDN_" . strval($count);
+    $type = "not_member";
+    $id_order = $id_customer . time() . mt_rand();
+
+    $data = array(
+      'id_customer' => $id_customer,
+      'id' => $id_member,
+      'id_customertype' => $type,
+      'nama' => $nama,
+      'email' => $email,
+      'nomor_telepon' => $phone_number,
+      'alamat' => $alamat
+    );
+
+    $this->customer->addCustomer($id_customer,$type);
+    $this->member->addNotMember($data);
+
     unset($_SESSION['cart']);
     redirect('viewonly/order');
   }
