@@ -86,7 +86,7 @@
 						><i class="fas fa-user-plus"></i> Buat Akun Admin</a
 					>
 					<a class="dropdown-item text-default-light-important" href="#"
-						><i class="fas fa-sign-out-alt"></i> Keluar</a
+						><i class="fas fa-sign-out-alt" href="<?php echo base_url('c_login_admin/logout') ?>"></i> Keluar</a
 					>
 				</div>
 			</div>

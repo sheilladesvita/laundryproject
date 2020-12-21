@@ -52,11 +52,11 @@
 						/>
 					</div>
 				</div>
-				<form class="form mb-5 mx-4 mt-9" autocomplete="off">
+				<form class="form mb-5 mx-4 mt-9" autocomplete="off"  method='post' action="<?php echo base_url('c_login_admin/aksi_login');?>">
 					<div class="input-group">
 						<input
 							type="text"
-							name="id"
+							name="ad_username"
 							id="id-employee"
 							autocomplete="off"
 							required

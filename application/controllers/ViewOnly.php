@@ -23,6 +23,7 @@ class ViewOnly extends CI_Controller
   {
     parent::__construct();
     $this->load->model('service_item');
+    // $this->load->model('m_admin_login');
     $this->load->model('service');
     $this->load->model('customer');
     $this->load->model('member');
@@ -228,6 +229,11 @@ class ViewOnly extends CI_Controller
   }
 
   public function admin(){
-    $this->load->view('pages/v_admin');
+    // $this->load->view('pages/v_admin');
+    $data['content_div'] = $this->load->view('pages/v_admin', '', true);	
+        $this->load->view('pages/v_admin', $data);
   }
+
+
+  
 }

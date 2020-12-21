@@ -17,5 +17,6 @@ class service_item extends CI_Model {
         WHERE s.id_service = i.id_service AND i.id_serviceitem = '$id';";
         return $this->db->query($query);
     }
+
 }
 ?>
