@@ -75,52 +75,6 @@
 			</button>
 		</form>
 	</div>
-	<div class="container">
-		<div class="text-24 text-default-medium">Daftar Pesanan</div>
-		<table
-			id="order-table"
-			class="table table-striped table-sm dt-responsive table-responsive-sm"
-			style="width: 100%"
-		>
-			<thead>
-				<tr class="text-center">
-					<th>Nama Layanan</th>
-					<th>Harga</th>
-					<th>Jenis Layanan</th>
-					<th>Jumlah</th>
-					<th>Total</th>
-				</tr>
-			</thead>
-			<tbody>
-			<?php 
-					if(isset($_SESSION['cart'])){
-						$max=sizeof($_SESSION['cart']);
-						$i = 0;
-						$count = 0;
-						while($count<$max){
-							if(isset($_SESSION['cart'][$i])){
-				?>
-				<tr>
-					<td class="text-center"><?php echo $_SESSION['cart'][$i]['serviceitem_name'];?></td>
-					<td class="text-center"><?php echo $_SESSION['cart'][$i]['price'];?></td>
-					<td class="text-center"><?php echo $_SESSION['cart'][$i]['service_name'];?></td>
-					<td class="text-center"><?php echo $_SESSION['cart'][$i]['qty'];?></td>
-					<td class="text-right"><?php echo $_SESSION['cart'][$i]['qty']*$_SESSION['cart'][$i]['price'];?></td>
-				</tr>
-				<?php
-								$count++;
-							}
-							$i++;
-						} ?>
-					<tr>
-						<td class="text-right" colspan="5">Total Pembayaran : <?php echo $total;?></td>
-					</tr>
-				<?php
-					}
-				?>
-			</tbody>
-		</table>
-	</div>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>

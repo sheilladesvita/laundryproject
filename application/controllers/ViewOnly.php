@@ -221,7 +221,14 @@ class ViewOnly extends CI_Controller
     $this->member->addNotMember($data);
 
     unset($_SESSION['cart']);
-    redirect('viewonly/order');
+    redirect('viewonly/confirmation');
+  }
+
+  public function confirmation(){
+    $data["active_link"] = "confirmation";
+    $this->load->view('partials/header', $data);
+    $this->load->view('pages/v_confirmation',$data);
+    $this->load->view('partials/footer', $data);
   }
 
   public function admin_login(){

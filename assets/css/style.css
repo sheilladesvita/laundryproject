@@ -124,6 +124,26 @@ a {
 	width: 25rem;
 }
 
+.width-form-100 {
+	width: 100%;
+}
+
+.width-form-75 {
+	width: 75%;
+}
+
+.width-form-70 {
+	width: 70%;
+}
+
+.width-form-30 {
+	width: 30%;
+}
+
+.width-form-25 {
+	width: 25%;
+}
+
 /* btn focus */
 
 .no-btn-focus:focus,
@@ -211,6 +231,10 @@ a {
 	font-size: 14pt !important;
 }
 
+.text-16 {
+	font-size: 16pt !important;
+}
+
 .text-18 {
 	font-size: 18pt !important;
 }
@@ -225,6 +249,16 @@ a {
 
 .text-32 {
 	font-size: 32pt !important;
+}
+
+/* Design system font weight */
+
+.text-weight-400 {
+	font-weight: 400;
+}
+
+.text-weight-800 {
+	font-weight: 800;
 }
 
 /* padding */
@@ -243,6 +277,18 @@ a {
 
 .padding-l-025-rem {
 	padding-left: 0.25rem !important;
+}
+
+.padding-t-25 {
+	padding-top: 25px !important;
+}
+
+.padding-l-10-px {
+	padding-left: 10px !important;
+}
+
+.padding-confirm-text {
+	padding: 5px 10px !important;
 }
 
 /* Design system font weight */
@@ -339,6 +385,11 @@ a {
 
 .test-green {
 	border: 1px solid green;
+}
+
+.test-black {
+	border-top: 3px solid #eeeeee !important; 
+	border-bottom: 3px solid #eeeeee !important;
 }
 
 /* Header style */
@@ -776,9 +827,28 @@ h1 {
 	padding: 1rem 2rem;
 }
 
+.row-confirmation {
+	padding: 35px 35px 20px 35px;
+}
+
 table.table-bordered {
 	/* border: 1px solid #000000; */
 	border: none;
+}
+
+table.table-confirmation > tr > td {
+	font-size: 16px; 
+	font-weight: 400; 
+	line-height: 24px; 
+	padding-top: 20px;
+}
+
+.confirmation-text {
+	text-align: justify;
+	font-size: 16px; 
+	font-weight: 400; 
+	line-height: 24px; 
+	color: #777777;
 }
 
 table.table-bordered > thead > tr > th {
