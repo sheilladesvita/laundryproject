@@ -53,6 +53,7 @@
 			</thead>
 			<tbody>
 				<?php 
+					$max = null;
 					if(isset($_SESSION['cart'])){
 						$max=sizeof($_SESSION['cart']);
 						$i = 0;
@@ -81,15 +82,34 @@
 		</table>
 		<div class="container text-center width-form-25">
 			<a 
-				href="<?php echo base_url();?>viewonly/checkout"
+				href="#"
 				class="btn btn-block bg-default-sky text-default-white btn-auth"
-				type="submit"
+				type="button"
+				id="checkout"
 			>
 				CHECKOUT <i class="fas fa-shopping-cart"></i>
 			</a>
 		</div>
-		<div id="result"></div>
 	</div>
+
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+		
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="container">
+					<p>Isi dulu keranjangnya, yuk.</p>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+		
+		</div>
+	</div>
+	
 	<script 
 		type="text/javascript" 
 		src="<?php echo base_url().'assets/js/jquery-3.3.1.js'?>"
@@ -142,10 +162,20 @@
 					async : true,
 					dataType : 'json',
 					success: function(data){
-						location.reload(); 
+						location.reload();
 					}
 				});
 				return false;
+			});
+
+			$("#checkout").click(function(){
+				var myvar='<?php echo $max;?>';;
+				if(myvar==null || myvar==0){
+					$("#myModal").modal();
+				}else{
+					var link = "<?php echo site_url('viewonly/checkout');?>";
+					document.location.href = link;
+				}
 			});
 		});
 	</script>
