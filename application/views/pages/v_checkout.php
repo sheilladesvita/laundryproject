@@ -56,12 +56,20 @@
 				</label>
 			</div>
 			<div class="input-group">
+				<div class="form-border-bottom">
+					<select name="pay" id="pay" class="pay" required>
+						<option>Pilih metode pembayaran:</option>
+						<option value="Transfer">Transfer</option>
+						<option value="COD">COD</option>
+					</select>
+				</div>
+			</div>
+			<div class="input-group">
 				<input
 					type="text"
 					name="catatan"
 					id="catatan"
 					autocomplete="off"
-					required
 				/>
 				<label for="catatan" class="input-label">
 					<span class="label-content">Catatan</span>
@@ -73,23 +81,26 @@
 			>
 				SEND ORDER <i class="fas fa-shopping-cart"></i>
 			</button>
+			<button
+				type="button"
+				id="date"
+				class="btn btn-block bg-default-sky text-default-white btn-auth"
+			>
+				date
+			</button>
 		</form>
 	</div>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<script 
+		type="text/javascript" 
+		src="<?php echo base_url().'assets/js/jquery-3.3.1.js'?>"
+	></script>
+	<script src="<?php echo base_url()?>assets/js/bootstrap/bootstrap-datepicker.js"></script>
 	<script type="text/javascript">
-		$(function() {
-            $('input[name="datepicker"]').daterangepicker({
-                singleDatePicker: true,
-                showDropdowns: true,
-                minYear: 1901,
-                maxYear: parseInt(moment().format('YYYY'),10)
-            }, function(start, end, label) {
-                var years = moment().diff(start, 'years');
-                alert("You are " + years + " years old!");
+		$(document).ready(function () {
+                $('#datepicker').datepicker({
+                    format: "yyyy-mm-dd",
+                    autoclose:true
+                });
             });
-        });
 	</script>
 </main>

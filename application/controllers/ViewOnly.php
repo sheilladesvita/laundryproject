@@ -27,6 +27,7 @@ class ViewOnly extends CI_Controller
     $this->load->model('service');
     $this->load->model('customer');
     $this->load->model('member');
+    $this->load->model('order');
     $this->load->helper('url');  
   }
   
@@ -196,18 +197,19 @@ class ViewOnly extends CI_Controller
     $phone_number = $this->input->post('phone-number');
     $alamat = $this->input->post('alamat');
     $date = $this->input->post('datepicker');
+    $pay = $this->input->post('pay');
     $catatan = $this->input->post('catatan');
 
     $customer = $this->customer->getCustomer()->result();
     $member = $this->member->getNotMember()->result();
     $count = (count($customer)) + 1;
-    $id_customer = "ID_" . strval($count);
+    $id_customer = "ID" . strval($count);
     $count = (count($member)) + 1;
-    $id_member = "IDN_" . strval($count);
+    $id_member = "IDN" . strval($count);
     $type = "not_member";
     $id_order = $id_customer . time() . mt_rand();
 
-    $data = array(
+    $data_customer = array(
       'id_customer' => $id_customer,
       'id' => $id_member,
       'id_customertype' => $type,
@@ -217,8 +219,23 @@ class ViewOnly extends CI_Controller
       'alamat' => $alamat
     );
 
+    $data_order = array(
+      'id_order' => $id_order,
+      'id_customer' => $id_customer,
+      'alamat' => $alamat,
+      'total_price' => $this->getTotalPrice(),
+      'waktu_pickup' => $date,
+      'catatan' => $catatan,
+      'pembayaran' => $pay,
+      'status' => 'belum bayar'
+    );
+
     $this->customer->addCustomer($id_customer,$type);
-    $this->member->addNotMember($data);
+    $this->member->addNotMember($data_customer);
+    $this->order->addOrder($data_order);
+    foreach ($_SESSION['cart'] as $key => $cart) { 
+      $this->order->addItem($id_order,$cart['serviceitem_id'],$cart['qty']);
+    }
 
     unset($_SESSION['cart']);
     redirect('viewonly/confirmation');
