@@ -9,6 +9,17 @@ class member extends CI_Model {
     function addNotMember($data) {
         $this->db->insert('not_member',$data);
     }
+
+    function addMember($data) {
+        $this->db->insert('member',$data);
+    }
+
+    function login($email,$password) {
+        $query = "SELECT ID_CUSTOMER, USERNAME, EMAIL, NOMOR_TELEPON, ALAMAT 
+        FROM member 
+        WHERE EMAIL = '$email' AND PASSWORD = '$password';";
+        return $this->db->query($query);
+    }
 }
 
 ?>

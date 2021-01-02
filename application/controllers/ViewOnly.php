@@ -248,6 +248,66 @@ class ViewOnly extends CI_Controller
     $this->load->view('partials/footer', $data);
   }
 
+  public function register(){
+    $customer = $this->customer->getCustomer()->result();
+    $count = (count($customer)) + 1;
+    $id_customer = "ID" . strval($count);
+    $type = "member";
+    
+    $data = array(
+      'id_customer' => $id_customer,
+      'username' => $this->input->post('nama'),
+      'id_customertype' => $type,
+      'email' => $this->input->post('email'),
+      'password' => md5($this->input->post('password')),
+      'nomor_telepon' => $this->input->post('phone'),
+      'alamat' => $this->input->post('address')
+    );
+
+    $this->customer->addCustomer($id_customer,$type);
+    $this->member->addMember($data);
+    $_SESSION['success']=true;
+
+    redirect('viewonly/welcome_register');
+  }
+
+  public function welcome_register(){
+    $data["active_link"] = "welcome";
+    $this->load->view('partials/header', $data);
+    $this->load->view('pages/v_welcome_register');
+    $this->load->view('partials/footer', $data);
+  }
+
+  public function login_member(){
+		$email = $this->input->post('email');
+    $password = md5($this->input->post('password'));
+    
+		$member = $this->member->login($email,$password)->result();
+		if(count($member) > 0){
+      foreach($member as $row) {
+        $data_member = array(
+          'id_customer' => $row->id_customer,
+          'username' => $row->username,
+          'email' => $row->email,
+          'nomor_telepon' => $row->nomor_telepon,
+          'alamat' => $row->alamat,
+        );
+      }
+ 
+			$this->session->set_userdata($data_member);
+      $_SESSION['success']=true;
+			redirect('viewonly/index');
+		}else{
+			redirect('viewonly/welcome_register');
+		}
+	}
+
+  public function logout(){
+    $this->session->sess_destroy();
+    $_SESSION['success'] = false;
+		redirect('viewonly/index');
+  }
+
   public function admin_login(){
     $this->load->view('pages/v_admin_login');
   }

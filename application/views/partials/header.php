@@ -142,6 +142,8 @@
             </li>
           </ul>
         </div>
+
+        <?php if(!isset($_SESSION['success']) || $_SESSION['success'] == false ) { ?>
         <div class="btn-group-auth">
           <div
             class="btn-group text-uppercase"
@@ -164,6 +166,34 @@
             >
           </div>
         </div>
+				<?php } else { ?>
+				<div class="dropdown">
+					<button
+						class="btn bg-transparent dropdown-toggle"
+						type="button"
+						id="dropdownMenuButton"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						<i class="fas fa-user-circle"></i>
+					</button>
+					<div
+						class="dropdown-menu dropdown-menu-right"
+						aria-labelledby="dropdownMenuButton"
+					>
+						<a class="dropdown-item text-default-light-important" href="#"
+							><i class="fas fa-user-cog"></i> Ganti Password</a
+						>
+						<a class="dropdown-item text-default-light-important" href="#"
+							><i class="fas fa-user-plus"></i> Buat Akun Admin</a
+						>
+						<a class="dropdown-item text-default-light-important" href="<?php echo base_url('viewonly/logout') ?>"
+							><i class="fas fa-sign-out-alt"></i> Keluar</a
+						>
+					</div>
+				</div>
+				<?php }?>
       </div>
 		</nav>
 
@@ -219,7 +249,7 @@
 								role="tabpanel"
 								aria-labelledby="login-tab"
 							>
-								<form class="form m-3" autocomplete="off">
+								<form class="form m-3" autocomplete="off" action="<?php echo base_url();?>viewonly/login_member" method="post">
 									<div class="input-group">
 										<input
 											type="text"
@@ -262,7 +292,7 @@
 								role="tabpanel"
 								aria-labelledby="register-tab"
 							>
-								<form class="form m-3">
+								<form class="form m-3" autocomplete="off" action="<?php echo base_url();?>viewonly/register" method="post">
 									<div class="input-group">
 										<input
 											type="text"
