@@ -22,12 +22,12 @@ class ViewOnly extends CI_Controller
   function __construct()
   {
     parent::__construct();
-    $this->load->model('service_item');
+    $this->load->model('m_service_item');
     // $this->load->model('m_admin_login');
-    $this->load->model('service');
-    $this->load->model('customer');
-    $this->load->model('member');
-    $this->load->model('order');
+    $this->load->model('m_service');
+    $this->load->model('m_customer');
+    $this->load->model('m_member');
+    $this->load->model('m_order');
     $this->load->helper('url');  
   }
   
@@ -58,7 +58,7 @@ class ViewOnly extends CI_Controller
   public function layanan_satuan()
   {
     $data["active_link"] = "layanan";
-    $data1['service_item'] = $this->service_item->getServiceItemByServiceId('S01')->result();
+    $data1['service_item'] = $this->m_service_item->getServiceItemByServiceId('S01')->result();
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_layanan_satuan', $data1);
     $this->load->view('partials/footer', $data);
@@ -67,7 +67,7 @@ class ViewOnly extends CI_Controller
   public function layanan_kiloan()
   {
     $data["active_link"] = "layanan";
-    $data1['service_item'] = $this->service_item->getServiceItemByServiceId('S02')->result();
+    $data1['service_item'] = $this->m_service_item->getServiceItemByServiceId('LK01')->result();
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_layanan_kiloan',$data1);
     $this->load->view('partials/footer', $data);
@@ -76,7 +76,7 @@ class ViewOnly extends CI_Controller
   public function layanan_member()
   {
     $data["active_link"] = "layanan";
-    $data1['service_item'] = $this->service_item->getServiceItemByServiceId('S04')->result();
+    $data1['service_item'] = $this->m_service_item->getServiceItemByServiceId('PMS01')->result();
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_layanan_member',$data1);
     $this->load->view('partials/footer', $data);
@@ -85,7 +85,7 @@ class ViewOnly extends CI_Controller
   public function layanan_masjid() 
   {
     $data["active_link"] = "layanan";
-    $data1['service_item'] = $this->service_item->getServiceItemByServiceId('S03')->result();
+    $data1['service_item'] = $this->m_service_item->getServiceItemByServiceId('PM01')->result();
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_layanan_masjid',$data1);
     $this->load->view('partials/footer', $data);
@@ -107,7 +107,7 @@ class ViewOnly extends CI_Controller
 
   public function order(){
     $data["active_link"] = "order";
-    $data1['service'] = $this->service->getService()->result();
+    $data1['service'] = $this->m_service->getService()->result();
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_order',$data1);
     $this->load->view('partials/footer', $data);
@@ -115,7 +115,7 @@ class ViewOnly extends CI_Controller
 
   function get_service_item(){
     $service_id = $this->input->post('id',TRUE);
-    $data = $this->service_item->getServiceItemList($service_id)->result();
+    $data = $this->m_service_item->getServiceItemList($service_id)->result();
     echo json_encode($data);
   }
 
@@ -135,7 +135,7 @@ class ViewOnly extends CI_Controller
     $serviceitem_name = $this->input->post('serviceitem_name');
     $qty = $this->input->post('qty');
     
-    $price = $this->service_item->getServiceCart($serviceitem_id)->result();
+    $price = $this->m_service_item->getServiceCart($serviceitem_id)->result();
     foreach($price as $row) {
       $pr = $row->harga;
     }
@@ -184,7 +184,7 @@ class ViewOnly extends CI_Controller
 
   public function checkout(){
     $data["active_link"] = "checkout";
-    $data1['service'] = $this->service->getService()->result();
+    $data1['service'] = $this->m_service->getService()->result();
     $data1['total'] = $this->getTotalPrice();
     $this->load->view('partials/header', $data);
     $this->load->view('pages/v_checkout',$data1);
@@ -200,8 +200,8 @@ class ViewOnly extends CI_Controller
     $pay = $this->input->post('pay');
     $catatan = $this->input->post('catatan');
 
-    $customer = $this->customer->getCustomer()->result();
-    $member = $this->member->getNotMember()->result();
+    $customer = $this->m_customer->getCustomer()->result();
+    $member = $this->m_member->getNotMember()->result();
     $count = (count($customer)) + 1;
     $id_customer = "ID" . strval($count);
     $count = (count($member)) + 1;
@@ -230,11 +230,11 @@ class ViewOnly extends CI_Controller
       'status' => 'belum bayar'
     );
 
-    $this->customer->addCustomer($id_customer,$type);
-    $this->member->addNotMember($data_customer);
-    $this->order->addOrder($data_order);
+    $this->m_customer->addCustomer($id_customer,$type);
+    $this->m_member->addNotMember($data_customer);
+    $this->m_order->addOrder($data_order);
     foreach ($_SESSION['cart'] as $key => $cart) { 
-      $this->order->addItem($id_order,$cart['serviceitem_id'],$cart['qty']);
+      $this->m_order->addItem($id_order,$cart['serviceitem_id'],$cart['qty']);
     }
 
     unset($_SESSION['cart']);
@@ -249,7 +249,7 @@ class ViewOnly extends CI_Controller
   }
 
   public function register(){
-    $customer = $this->customer->getCustomer()->result();
+    $customer = $this->m_customer->getCustomer()->result();
     $count = (count($customer)) + 1;
     $id_customer = "ID" . strval($count);
     $type = "member";
@@ -264,8 +264,8 @@ class ViewOnly extends CI_Controller
       'alamat' => $this->input->post('address')
     );
 
-    $this->customer->addCustomer($id_customer,$type);
-    $this->member->addMember($data);
+    $this->m_customer->addCustomer($id_customer,$type);
+    $this->m_member->addMember($data);
     $_SESSION['success']=true;
 
     redirect('viewonly/welcome_register');
@@ -282,7 +282,7 @@ class ViewOnly extends CI_Controller
 		$email = $this->input->post('email');
     $password = md5($this->input->post('password'));
     
-		$member = $this->member->login($email,$password)->result();
+		$member = $this->m_member->login($email,$password)->result();
 		if(count($member) > 0){
       foreach($member as $row) {
         $data_member = array(
@@ -315,7 +315,7 @@ class ViewOnly extends CI_Controller
   public function admin(){
     // $this->load->view('pages/v_admin');
     $data['content_div'] = $this->load->view('pages/v_admin', '', true);	
-        $this->load->view('pages/v_admin', $data);
+    $this->load->view('pages/v_admin', $data);
   }
 
 

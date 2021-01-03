@@ -1,6 +1,6 @@
 <?php
 
-class order extends CI_Model {
+class m_order extends CI_Model {
     function addOrder($data) {
         $this->db->insert('order_',$data);
     }

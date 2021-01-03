@@ -1,6 +1,6 @@
 <?php
 
-class member extends CI_Model {
+class m_member extends CI_Model {
     function getNotMember() {
         $query = "SELECT * FROM not_member;";
         return $this->db->query($query);

@@ -1,6 +1,6 @@
 <?php
 
-class customer extends CI_Model {
+class m_customer extends CI_Model {
     function getCustomer() {
         $query = "SELECT * FROM customer ;";
         return $this->db->query($query);
