@@ -61,7 +61,7 @@
 				<div class="pb-3">Let's make life easier. Let's make life cleaner.</div>
 				<a
 					class="btn btn-about-us bg-transparent text-default-white underlined"
-					href="<?php echo base_url(); ?>viewonly/order"
+					href="<?php echo base_url(); ?>order/index"
 					>Laundry now &raquo;</a
 				>
 			</div>

@@ -44,40 +44,14 @@
 			<thead>
 				<tr class="text-center">
 					<th>Nama Layanan</th>
-					<th>Harga</th>
 					<th>Jenis Layanan</th>
+					<th>Harga</th>
 					<th>Jumlah</th>
-					<th>Total</th>
+					<th>Subtotal</th>
 					<th></th>
 				</tr>
 			</thead>
-			<tbody>
-				<?php 
-					$max = null;
-					if(isset($_SESSION['cart'])){
-						$max=sizeof($_SESSION['cart']);
-						$i = 0;
-						$count = 0;
-						while($count<$max){
-							if(isset($_SESSION['cart'][$i])){
-				?>
-				<tr>
-					<td class="text-center"><?php echo $_SESSION['cart'][$i]['serviceitem_name'];?></td>
-					<td class="text-center"><?php echo $_SESSION['cart'][$i]['price'];?></td>
-					<td class="text-center"><?php echo $_SESSION['cart'][$i]['service_name'];?></td>
-					<td class="text-center"><?php echo $_SESSION['cart'][$i]['qty'];?></td>
-					<td class="text-center"><?php echo $_SESSION['cart'][$i]['qty']*$_SESSION['cart'][$i]['price'];?></td>
-					</td><td class='text-center'><div class='btn-group' role='group' aria-label='Basic example'>
-                    <a	class='btn btn-sm bg-default-blue text-default-white btn-blue-hover' href='<?php echo base_url();?>viewonly/delete_cart/<?php echo $_SESSION['cart'][$i]['serviceitem_id'];?>'><i class='fas fa-trash-alt mx-2'></i></a></div>
-                    </td>
-				</tr>
-				<?php
-								$count++;
-							}
-							$i++;
-						}
-					}
-				?>
+			<tbody id="detail_cart">
 			</tbody>
 		</table>
 		<div class="container text-center width-form-25">
@@ -125,7 +99,7 @@
 			$('#service').change(function(){ 
 				var id=$(this).val();
 				$.ajax({
-					url : "<?php echo site_url('viewonly/get_service_item');?>",
+					url : "<?php echo site_url('order/get_service_item');?>",
 					method : "POST",
 					data : {id: id},
 					async : true,
@@ -134,49 +108,68 @@
 						var html = '';
 						var i;
 						for(i=0; i<data.length; i++){
-							html += '<option value='+data[i].id_serviceitem+'>'+data[i].nama_serviceitem+'</option>';
+                            html += '<option value='+data[i].id_serviceitem+' data-price="'+data[i].harga+'">'+data[i].nama_serviceitem+'</option>';
 						}
-						$('#service_item').html(html);
+                        $('#service_item').html(html);
 					}
 				});
 				return false;
 			});
 			
 			$("#add_service").click(function(){
-				var service_id = $("select.service").children("option:selected").val();
-				var service_name = $("select.service").children("option:selected").text();
-				var serviceitem_id = $("select.service_item").children("option:selected").val();
-				var serviceitem_name = $("select.service_item").children("option:selected").text();
-				var qty = $("#quantity").val();
+				var id_service = $("select.service").children("option:selected").val();
+				var name_service = $("select.service").children("option:selected").text();
+				var id_serviceitem = $("select.service_item").children("option:selected").val();
+				var name_serviceitem = $("select.service_item").children("option:selected").text();
+				var price = $("select.service_item").children("option:selected").data("price");
+                var qty = $("#quantity").val();
 				
 				$.ajax({
-					url : "<?php echo site_url('viewonly/cart');?>",
+					url : "<?php echo base_url();?>order/add_to_cart",
 					method : "POST",
 					data : {
-							service_id: service_id,
-							service_name: service_name,
-							serviceitem_id: serviceitem_id,
-							serviceitem_name: serviceitem_name,
-							qty: qty
-							},
-					async : true,
-					dataType : 'json',
+                        id_service: id_service,
+                        name_service: name_service,
+                        id_serviceitem: id_serviceitem,
+                        name_serviceitem: name_serviceitem,
+                        price: price,
+						qty: qty
+					},
 					success: function(data){
-						location.reload();
+                        $('#detail_cart').html(data);
 					}
 				});
-				return false;
 			});
+            
+            $('#detail_cart').load("<?php echo base_url();?>order/load_cart");
 
-			$("#checkout").click(function(){
-				var myvar='<?php echo $max;?>';;
-				if(myvar==null || myvar==0){
-					$("#myModal").modal();
-				}else{
-					var link = "<?php echo site_url('viewonly/checkout');?>";
-					document.location.href = link;
-				}
-			});
+			$(document).on('click','.delete_cart',function(){
+                var row_id=$(this).attr("id");
+                $.ajax({
+                    url : "<?php echo base_url();?>order/delete_cart",
+                    method : "POST",
+                    data : {row_id : row_id},
+                    success :function(data){
+                        $('#detail_cart').html(data);
+                    }
+                });
+            });
+
+            $("#checkout").click(function(){
+                $.ajax({
+                    url: "<?php echo base_url();?>order/check_cart",
+                    type: "GET",
+                    dataType: 'json',
+                    success: function(response){
+                        if (response.success){
+                            var link = "<?php echo site_url('order/checkout');?>";
+                            document.location.href = link;
+                        }else{
+                            $("#myModal").modal();
+                        }
+                    }
+                });
+            });
 		});
 	</script>
 </main>

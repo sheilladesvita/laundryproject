@@ -1,6 +1,6 @@
 <main>
 	<div class="container text-center width-form-25">
-		<form class="form py-5" autocomplete="off" action="<?php echo base_url();?>viewonly/buy" method="post">
+		<form class="form py-5" autocomplete="off" action="<?php echo base_url();?>order/buy" method="post">
 			<div class="input-group">
 				<input type="text" name="name" id="name" autocomplete="off" required />
 				<label for="name" class="input-label">
