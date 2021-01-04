@@ -112,63 +112,6 @@ class ViewOnly extends CI_Controller
     $this->load->view('pages/v_order',$data1);
     $this->load->view('partials/footer', $data);
   }
-  
-  public function buy() {
-    $nama = $this->input->post('name');
-    $email = $this->input->post('email');
-    $phone_number = $this->input->post('phone-number');
-    $alamat = $this->input->post('alamat');
-    $date = $this->input->post('datepicker');
-    $pay = $this->input->post('pay');
-    $catatan = $this->input->post('catatan');
-
-    $customer = $this->m_customer->getCustomer()->result();
-    $member = $this->m_member->getNotMember()->result();
-    $count = (count($customer)) + 1;
-    $id_customer = "ID" . strval($count);
-    $count = (count($member)) + 1;
-    $id_member = "IDN" . strval($count);
-    $type = "not_member";
-    $id_order = $id_customer . time() . mt_rand();
-
-    $data_customer = array(
-      'id_customer' => $id_customer,
-      'id' => $id_member,
-      'id_customertype' => $type,
-      'nama' => $nama,
-      'email' => $email,
-      'nomor_telepon' => $phone_number,
-      'alamat' => $alamat
-    );
-
-    $data_order = array(
-      'id_order' => $id_order,
-      'id_customer' => $id_customer,
-      'alamat' => $alamat,
-      'total_price' => $this->getTotalPrice(),
-      'waktu_pickup' => $date,
-      'catatan' => $catatan,
-      'pembayaran' => $pay,
-      'status' => 'belum bayar'
-    );
-
-    $this->m_customer->addCustomer($id_customer,$type);
-    $this->m_member->addNotMember($data_customer);
-    $this->m_order->addOrder($data_order);
-    foreach ($_SESSION['cart'] as $key => $cart) { 
-      $this->m_order->addItem($id_order,$cart['serviceitem_id'],$cart['qty']);
-    }
-
-    unset($_SESSION['cart']);
-    redirect('viewonly/confirmation');
-  }
-
-  public function confirmation(){
-    $data["active_link"] = "confirmation";
-    $this->load->view('partials/header', $data);
-    $this->load->view('pages/v_confirmation',$data);
-    $this->load->view('partials/footer', $data);
-  }
 
   public function register(){
     $customer = $this->m_customer->getCustomer()->result();
@@ -209,6 +152,7 @@ class ViewOnly extends CI_Controller
       foreach($member as $row) {
         $data_member = array(
           'id_customer' => $row->id_customer,
+          'id_customertype' => $row->id_customertype,
           'username' => $row->username,
           'email' => $row->email,
           'nomor_telepon' => $row->nomor_telepon,

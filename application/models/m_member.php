@@ -15,7 +15,7 @@ class m_member extends CI_Model {
     }
 
     function login($email,$password) {
-        $query = "SELECT ID_CUSTOMER, USERNAME, EMAIL, NOMOR_TELEPON, ALAMAT 
+        $query = "SELECT id_customer, username, id_customertype, email, nomor_telepon, alamat
         FROM member 
         WHERE EMAIL = '$email' AND PASSWORD = '$password';";
         return $this->db->query($query);

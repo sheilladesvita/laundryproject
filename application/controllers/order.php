@@ -65,6 +65,7 @@ class order extends CI_Controller
             <tr>
                 <th class="text-right" colspan="4">Total</th>
                 <th class="text-center">'.'Rp '.number_format($this->cart->total()).'</th>
+                <th></th>
             </tr>
         ';
         return $output;
@@ -97,6 +98,64 @@ class order extends CI_Controller
         $this->load->view('pages/v_checkout');
         $this->load->view('partials/footer', $data);
     }
+
+    public function buy() {
+        if(isset($_SESSION['success']) && $_SESSION['success']==true){
+            $type = $this->session->userdata('id_customertype');
+            $id_customer = $this->session->userdata('id_customer');
+            $id_order = $id_customer . time() . mt_rand();
+        }else{
+            $customer = $this->m_customer->getCustomer()->result();
+            $member = $this->m_member->getNotMember()->result();
+
+            $count = (count($customer)) + 1;
+            $id_customer = "ID" . strval($count);
+            $count = (count($member)) + 1;
+            $id_member = "IDN" . strval($count);
+            $type = "not_member";
+            $id_order = $id_customer . time() . mt_rand();
+
+            $data_customer = array(
+                'id_customer' => $id_customer,
+                'id' => $id_member,
+                'id_customertype' => $type,
+                'nama' => $this->input->post('name'),
+                'email' => $this->input->post('email'),
+                'nomor_telepon' => $this->input->post('phone-number'),
+                'alamat' => $this->input->post('alamat')
+            );
+
+            $this->m_customer->addCustomer($id_customer,$type);
+            $this->m_member->addNotMember($data_customer);
+        }
+    
+        $data_order = array(
+          'id_order' => $id_order,
+          'id_customer' => $id_customer,
+          'alamat' => $this->input->post('alamat'),
+          'total_price' => $this->cart->total(),
+          'waktu_pickup' => $this->input->post('datepicker'),
+          'catatan' => $this->input->post('catatan'),
+          'pembayaran' => $this->input->post('pay'),
+          'status' => 'belum bayar'
+        );
+
+        $this->m_order->addOrder($data_order);
+
+        foreach ($this->cart->contents() as $items) {
+          $this->m_order->addItem($id_order,$items['id'],$items['qty']);
+        }
+    
+        $this->cart->destroy();
+        redirect('order/confirmation');
+      }
+
+      function confirmation(){
+        $data["active_link"] = "confirmation";
+        $this->load->view('partials/header', $data);
+        $this->load->view('pages/v_confirmation');
+        $this->load->view('partials/footer', $data);
+      }
 }
 
 ?>

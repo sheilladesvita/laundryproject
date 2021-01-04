@@ -48,7 +48,6 @@
 					type="text"
 					name="datepicker"
 					id="datepicker"
-					placeholder="MM/DD/YYYY"
 					required
 				/>
 				<label for="datepicker" class="input-label">
@@ -81,13 +80,6 @@
 			>
 				SEND ORDER <i class="fas fa-shopping-cart"></i>
 			</button>
-			<button
-				type="button"
-				id="date"
-				class="btn btn-block bg-default-sky text-default-white btn-auth"
-			>
-				date
-			</button>
 		</form>
 	</div>
 	<script 
@@ -97,10 +89,17 @@
 	<script src="<?php echo base_url()?>assets/js/bootstrap/bootstrap-datepicker.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
-                $('#datepicker').datepicker({
-                    format: "yyyy-mm-dd",
-                    autoclose:true
-                });
+            var startdate = new Date(); 
+            startdate.setDate(startdate.getDate() + 1); 
+
+            $('#datepicker').datepicker({
+                setDate: new Date(),
+                autoclose:true,
+                format: "yyyy-mm-dd"
             });
+
+            $("#datepicker").datepicker("setDate", startdate);
+            $("#datepicker").datepicker("setStartDate", startdate);
+        });
 	</script>
 </main>
