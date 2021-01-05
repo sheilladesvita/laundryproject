@@ -14,7 +14,7 @@ class order extends CI_Controller
         $this->load->model('m_order');
     }
 
-    public function index(){
+    public function index() {
         $data["active_link"] = "order";
         $data1['service'] = $this->m_service->getService()->result();
         $this->load->view('partials/header', $data);
@@ -22,13 +22,13 @@ class order extends CI_Controller
         $this->load->view('partials/footer', $data);
     }
 
-    function get_service_item(){
+    function get_service_item() {
         $service_id = $this->input->post('id',TRUE);
         $data = $this->m_service_item->getServiceItemList($service_id)->result();
         echo json_encode($data);
     }
 
-    function add_to_cart(){ //fungsi Add To Cart
+    function add_to_cart() {
         $data = array(
             'id'      => $this->input->post('id_serviceitem'),
             'qty'     => $this->input->post('qty'), 
@@ -39,11 +39,12 @@ class order extends CI_Controller
                 'name_service' => $this->input->post('name_service')
             )
         );
+        $this->cart->product_name_rules = '[:print:]';
         $this->cart->insert($data);
-        echo $this->show_cart(); //tampilkan cart setelah added
+        echo $this->show_cart();
     }
  
-    function show_cart(){ //Fungsi untuk menampilkan Cart
+    function show_cart() {
         $output = '';
         foreach ($this->cart->contents() as $items) {
             $output .='
@@ -103,7 +104,7 @@ class order extends CI_Controller
         if(isset($_SESSION['success']) && $_SESSION['success']==true){
             $type = $this->session->userdata('id_customertype');
             $id_customer = $this->session->userdata('id_customer');
-            $id_order = $id_customer . time() . mt_rand();
+            $id_order = $id_customer . date("mdy") . mt_rand(1000,9999);
         }else{
             $customer = $this->m_customer->getCustomer()->result();
             $member = $this->m_member->getNotMember()->result();
@@ -113,7 +114,7 @@ class order extends CI_Controller
             $count = (count($member)) + 1;
             $id_member = "IDN" . strval($count);
             $type = "not_member";
-            $id_order = $id_customer . time() . mt_rand();
+            $id_order = $id_customer . date("mdy") . mt_rand(1000,9999);
 
             $data_customer = array(
                 'id_customer' => $id_customer,
@@ -145,6 +146,8 @@ class order extends CI_Controller
         foreach ($this->cart->contents() as $items) {
           $this->m_order->addItem($id_order,$items['id'],$items['qty']);
         }
+
+        $_SESSION['id_order']=$id_order;
     
         $this->cart->destroy();
         redirect('order/confirmation');
@@ -152,8 +155,17 @@ class order extends CI_Controller
 
       function confirmation(){
         $data["active_link"] = "confirmation";
+        if(isset($_SESSION['success']) && $_SESSION['success']==true){
+            $name = 'username';
+            $table = 'member';
+        }else{
+            $name = 'nama';
+            $table = 'not_member';
+        }
+        $data1['customer'] = $this->m_order->getOrder($_SESSION['id_order'],$name,$table)->result();
+        $data1['items'] = $this->m_order->getOrderItem($_SESSION['id_order'])->result();
         $this->load->view('partials/header', $data);
-        $this->load->view('pages/v_confirmation');
+        $this->load->view('pages/v_confirmation',$data1);
         $this->load->view('partials/footer', $data);
       }
 }

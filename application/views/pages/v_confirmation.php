@@ -25,7 +25,7 @@
                                                      Order Confirmation # 
                                                 </td>
                                                 <td class="width-form-25 text-14 text-weight-800 padding-l-10-px" align="left">
-                                                     2345678 
+                                                    <?php echo $_SESSION['id_order'];?>
                                                 </td>
                                             </tr>
                                         </table>
@@ -34,39 +34,23 @@
                                 <tr>
                                     <td align="left">
                                         <table class="width-form-100">
+                                            <?php 
+                                                foreach($items as $item){
+                                            ?>
                                             <tr>
                                                 <td class="text-14 text-weight-400 padding-confirm-text" align="left">
-                                                 Gaun Panjang / Long Dress 
+                                                    <?php echo $item->nama_serviceitem ?>
                                                 </td>
                                                 <td class="width-form-25 text-14 text-weight-400 padding-confirm-text" align="left">
-                                                    x1
+                                                    <?php echo "x" . $item->qty ?>
                                                 </td>
                                                 <td class="width-form-25 text-14 text-weight-400 padding-confirm-text" align="left">
-                                                    $100.00 
+                                                    <?php echo "Rp " . number_format($item->harga) ?>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td class="text-14 text-weight-400 padding-confirm-text" align="left">
-                                                    Shipping + Handling 
-                                                </td>
-                                                <td class="width-form-25 text-14 text-weight-400 padding-confirm-text" align="left">
-                                                    x1
-                                                </td>
-                                                <td class="width-form-25 text-14 text-weight-400 padding-confirm-text" align="left">
-                                                    $10.00 
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-14 text-weight-400 padding-confirm-text" align="left">
-                                                    Sales Tax 
-                                                </td>
-                                                <td class="width-form-25 text-14 text-weight-400 padding-confirm-text" align="left">
-                                                    x1
-                                                </td>
-                                                <td class="width-form-25 text-14 text-weight-400 padding-confirm-text" align="left">
-                                                    $5.00 
-                                                </td>
-                                            </tr>
+                                            <?php 
+                                                }
+                                            ?>
                                         </table>
                                     </td>
                                 </tr>
@@ -78,7 +62,9 @@
                                                      TOTAL 
                                                 </td>
                                                 <td class="width-form-25 text-14 text-weight-800 padding-l-10-px test-black" align="left">
-                                                     $115.00 
+                                                    <?php foreach($customer as $row){ 
+                                                        echo "Rp " . number_format($row->total_price);
+                                                    }?>
                                                 </td>
                                             </tr>
                                         </table>
@@ -93,12 +79,20 @@
                                 <tr>
                                     <td style="font-size:0;">
                                         <table class="width-form-100">
+                                            <?php 
+                                                foreach($customer as $row){
+                                            ?>
                                             <tr>
                                                 <td class="width-form-30 text-10 text-weight-800 padding-l-10-px" align="left">
                                                      Nama
                                                 </td>
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
-                                                     Lisa 
+                                                    <?php 
+                                                    if(isset($_SESSION['success']) && $_SESSION['success']==true)
+                                                        echo $row->username;
+                                                    else
+                                                        echo $row->nama; 
+                                                    ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -106,7 +100,7 @@
                                                      Email 
                                                 </td>
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
-                                                     lisa@gmail.com 
+                                                     <?php echo $row->email ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -114,7 +108,7 @@
                                                      Nomor Telepon 
                                                 </td>
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
-                                                     082722293490
+                                                    <?php echo $row->nomor_telepon ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -122,7 +116,7 @@
                                                      Alamat
                                                 </td>
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
-                                                     Cililin, Kab. Bandung Barat
+                                                    <?php echo $row->alamat ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -130,7 +124,15 @@
                                                      Tanggal Pickup
                                                 </td>
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
-                                                     23/12/2020
+                                                    <?php echo $row->waktu_pickup ?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="width-form-30 text-10 text-weight-800 padding-l-10-px" align="left">
+                                                     Pembayaran
+                                                </td>
+                                                <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
+                                                    <?php echo $row->pembayaran ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -138,9 +140,12 @@
                                                      Catatan
                                                 </td>
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
-                                                     -
+                                                    <?php echo $row->catatan ?>
                                                 </td>
                                             </tr>
+                                            <?php 
+                                                }
+                                            ?>
                                         </table>
                                     </td>
                                 </tr>
@@ -153,7 +158,7 @@
     </table>
     <div class="container text-center width-form-25 padding-t-25">
         <a 
-            href="<?php echo base_url();?>viewonly/order"
+            href="<?php echo base_url();?>order/index"
             class="btn btn-block bg-default-sky text-default-white btn-auth"
             type="submit"
         >
