@@ -16,7 +16,11 @@ class order extends CI_Controller
 
     public function index() {
         $data["active_link"] = "order";
-        $data1['service'] = $this->m_service->getService()->result();
+        if(isset($_SESSION['success']) && $_SESSION['success']==true)
+            $data1['service'] = $this->m_service->getServiceMember()->result();
+        else
+            $data1['service'] = $this->m_service->getService()->result();
+        
         $this->load->view('partials/header', $data);
         $this->load->view('pages/v_order',$data1);
         $this->load->view('partials/footer', $data);
@@ -96,7 +100,10 @@ class order extends CI_Controller
     public function checkout() {
         $data["active_link"] = "checkout";
         $this->load->view('partials/header', $data);
-        $this->load->view('pages/v_checkout');
+        if(isset($_SESSION['success']) && $_SESSION['success']==true)
+            $this->load->view('pages/v_checkout_member');
+        else
+            $this->load->view('pages/v_checkout');
         $this->load->view('partials/footer', $data);
     }
 

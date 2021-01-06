@@ -533,7 +533,8 @@ a {
 }
 
 .form input:focus + .input-label .label-content,
-.form input:valid + .input-label .label-content {
+.form input:valid + .input-label .label-content,
+.form input[readonly] + .input-label .label-content  {
 	transform: translateY(-16pt);
 	font-size: 9pt;
 	color: #0078a3;
