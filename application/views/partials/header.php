@@ -167,9 +167,9 @@
           </div>
         </div>
 				<?php } else { ?>
-				<div class="dropdown">
+					<div class="dropdown">
 					<button
-						class="btn bg-transparent dropdown-toggle"
+						class="btn dropdown-toggle bg-default-white d-inline-block"
 						type="button"
 						id="dropdownMenuButton"
 						data-toggle="dropdown"
@@ -180,13 +180,16 @@
 					</button>
 					<div
 						class="dropdown-menu dropdown-menu-right"
-						aria-labelledby="dropdownMenuButton"
+						aria-labelledby="navbarDropdown"
 					>
 						<a class="dropdown-item text-default-light-important" href="#"
-							><i class="fas fa-user-cog"></i> Ganti Password</a
+							>Halo, <?php echo $_SESSION['username'];?></a
 						>
-						<a class="dropdown-item text-default-light-important" href="#"
-							><i class="fas fa-user-plus"></i> Buat Akun Admin</a
+						<a class="dropdown-item text-default-light-important" href="<?php echo base_url('viewonly/settings') ?>"
+							><i class="fas fa-user-cog"></i> Kelola Akun</a
+						>
+						<a class="dropdown-item text-default-light-important" href="<?php echo base_url('viewonly/change_password') ?>"
+							><i class="fas fa-key"></i> Ganti Password</a
 						>
 						<a class="dropdown-item text-default-light-important" href="<?php echo base_url('viewonly/logout') ?>"
 							><i class="fas fa-sign-out-alt"></i> Keluar</a

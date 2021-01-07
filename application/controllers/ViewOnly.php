@@ -131,6 +131,7 @@ class ViewOnly extends CI_Controller
 
     $this->m_customer->addCustomer($id_customer,$type);
     $this->m_member->addMember($data);
+    $this->session->set_userdata($data);
     $_SESSION['success']=true;
 
     redirect('viewonly/welcome_register');
@@ -164,9 +165,100 @@ class ViewOnly extends CI_Controller
       $_SESSION['success']=true;
 			redirect('viewonly/index');
 		}else{
-			redirect('viewonly/welcome_register');
+      echo '<script>alert("Email atau password yang Anda masukan salah.");
+      window.location.href="'.base_url('viewonly/index').'";</script>';
 		}
-	}
+  }
+
+  public function settings(){
+    if(isset($_SESSION['success']) && $_SESSION['success']==true){
+      $data["active_link"] = "settings";
+      $this->load->view('partials/header', $data);
+      $this->load->view('pages/v_settings_account');
+    }else{
+      redirect('viewonly/index');
+    }
+  }
+
+  public function edit_account(){
+    $id = $_SESSION['id_customer'];
+    $type = $_SESSION['id_customertype'];
+    $nama = $this->input->post('nama');
+    $email = $this->input->post('email');
+    $alamat = $this->input->post('alamat');
+    $phone = $this->input->post('phone');
+  
+    $data = array(
+      'id_customertype' => $type,
+      'username' => $nama,
+      'email' => $email,
+      'nomor_telepon' => $phone,
+      'alamat' => $alamat,
+    );
+
+    $where = array(
+      'id_customer' => $id
+    );
+
+    $member = $this->m_member->update($where,$data,$id)->result();
+    foreach($member as $row) {
+      $data_member = array(
+        'id_customer' => $row->id_customer,
+        'id_customertype' => $row->id_customertype,
+        'username' => $row->username,
+        'email' => $row->email,
+        'nomor_telepon' => $row->nomor_telepon,
+        'alamat' => $row->alamat,
+      );
+    }
+
+    $this->session->set_userdata($data_member);
+
+    echo "<script>
+    window.location.href='settings';
+    alert('Data telah diupdate.');
+    </script>";
+  }
+
+  public function change_password(){
+    if(isset($_SESSION['success']) && $_SESSION['success']==true){
+      $data["active_link"] = "settings";
+      $this->load->view('partials/header', $data);
+      $this->load->view('pages/v_change_password');
+    }else{
+      redirect('viewonly/index');
+    }
+  }
+
+  public function update_password(){
+    $oldPassword			= $_POST['oldPassword'];
+		$newPassword			= $_POST['newPassword'];
+		$confirmPassword	= $_POST['confirmPassword'];
+
+		$oldPassword	= md5($oldPassword);
+		$cek 			= $this->m_member->getPassword($_SESSION['id_customer'],$oldPassword)->result();
+		
+		if(count($cek) > 0){
+      if($newPassword == $confirmPassword){
+        $newPassword 	= md5($newPassword);
+        if($this->m_member->updatePassword($newPassword,$_SESSION['id_customer'])){
+          echo "<script>
+          window.location.href='change_password';
+          alert('Password berhasil diubah.');
+          </script>";
+        }else{
+          echo '<script>alert("Gagal mengubah password.");
+          window.location.href="'.base_url('viewonly/change_password').'";</script>';
+        }					
+      }else{
+        echo '<script>alert("Konfirmasi password tidak cocok.");
+        window.location.href="'.base_url('viewonly/change_password').'";</script>';
+      }
+		}else{
+      echo '<script>alert("Password lama tidak cocok.");
+      window.location.href="'.base_url('viewonly/change_password').'";</script>';
+		}
+  }
 
   public function logout(){
     $this->session->sess_destroy();
