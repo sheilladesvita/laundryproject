@@ -123,21 +123,11 @@
 					</div>
 				</div>
 
-				<div class="collapse pt-3 mb-3" id="service-form" action="<?php echo base_url(). 'ViewOnly/tambah_aksilayanan'; ?>" method="post">
+				<div class="collapse pt-3 mb-3" id="service-form" action="<?php echo base_url(). 'index.php/ViewOnly/tambah_aksilayanan'; ?>" method="post">
 					<div class="card card-body bg-default-white">
 						<div class="text-18 text-default-semi-bold">Buat Layanan Baru</div>
 						<hr />
 						<form>
-						<div class="form-row">
-								<div class="col-sm-12 col-lg-3 py-1">
-									<input
-										type="hidden"
-										name="nama_seviceitem"
-										class="form-control mr-sm-2"
-										id="id_serviceitem"
-										value="<?php echo $new_id ;?>"
-									/>
-
 							<div class="form-row">
 								<div class="col-sm-12 col-lg-3 py-1">
 									<input
@@ -275,39 +265,7 @@
 			</div>
 		</main>
 
-		
-		<!-- Modal -->
-		<div
-			class="modal fade"
-			id="serviceDeleteModal"
-			tabindex="-1"
-			aria-labelledby="serviceDeleteModalLabel"
-			aria-hidden="true"
-		>
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-body">
-						Anda akan <b>menghapus</b> layanan (bla bla bla). Anda yakin untuk
-						menhapusnya?
-					</div>
-					<div class="d-inline-block text-right mr-4 my-4">
-						<button
-							type="button"
-							class="btn bg-transparent border-default-yellow text-default-yellow btn-outline-yellow-hover"
-							data-dismiss="modal"
-						>
-							Cancel
-						</button>
-						<a
-							 
-							type="button"
-							class="btn bg-default-yellow text-default-white btn-yellow-hover" 
-							>Delete</a
-						>
-					</div>
-				</div>
-			</div>
-		</div>
+	
 
 		<script
 			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

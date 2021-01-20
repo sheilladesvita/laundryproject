@@ -267,7 +267,7 @@
 									</div>
 									<div class="input-group">
 										<input
-											type="password"
+											type="pas sword"
 											name="password"
 											id="password-login"
 											autocomplete="off"

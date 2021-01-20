@@ -25,6 +25,7 @@ class ViewOnly extends CI_Controller
     $this->load->model('m_service_item');
     // $this->load->model('m_admin_login');
     $this->load->model('m_service');
+    $this->load->model('service');
     $this->load->model('m_customer');
     $this->load->model('m_member');
     $this->load->model('m_order');
@@ -265,17 +266,57 @@ class ViewOnly extends CI_Controller
     $_SESSION['success'] = false;
 		redirect('viewonly/index');
   }
-
+//admin
   public function admin_login(){
     $this->load->view('pages/v_admin_login');
   }
 
   public function admin(){
     // $this->load->view('pages/v_admin');
-    $data['content_div'] = $this->load->view('pages/v_admin', '', true);	
-    $this->load->view('pages/v_admin', $data);
+    $data1['service']=$this->service->joinservice()->result();
+    $data['content_div'] = $this->load->view('pages/v_admin', $data1, true);	
+        $this->load->view('pages/v_admin', $data);
   }
+  public function hapuslayanan($id){
+		$where = array('id_serviceitem' => $id);
+		$this->service->hapus_layanan($where,'service_item');
+		redirect('ViewOnly/admin');
+    }
+  // public function join_service() {
+  //   // $data1['pujasera']=$this->m_data->joinlaporan();
+  //   $data['service']=$this->service->joinservice()->result();
+  //   // $data['content_div'] = $this->load->view('v_admin',$data1,true);
+  //   $this->load->view('pages/v_admin',$data);
+// }
 
+function tambahlayanan(){
+  $data1['service'] = $this->service->getService()->result();
+  $this->load->view('pages/v_admin', $data);
+}
 
+function tambah_aksilayanan(){
+  $id = $this->input->post('id');
+  $nama = $this->input->post('nama_serviceitem');
+  $harga = $this->input->post('harga');
+  $kategori = $this->input->post('nama_service');
+
+  $data = array(
+    'id' => $id,
+    'nama' => $nama_serviceitem,
+    'harga' => $harga,
+    'kategori' => $nama_service
+    );
+  $this->service->input_data($data,'service_item');
+  redirect('ViewOnly/admin');
+  }
   
+  public function get_idlayanan(){
+    $new_id =  $this->service->getservice()->result();
+    if ($new_id > 0) {
+          foreach ($new_id as $key) {
+            $auto_id = $key->id_serviceitem;              
+          }
+    }      
+    return $id_serviceitem = $this->service->get_newidlayanan($auto_id,'KC','KS','PMK','PMM','PMP','PMS','SB','SC','SG','SH','SJ','SK','SS');      
+ }
 }

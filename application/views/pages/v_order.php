@@ -7,8 +7,7 @@
 						<option value="" selected>Pilih layanan:</option>
 						<?php foreach($service as $row):?>
 						<option value="<?php echo $row->id_service;?>"><?php echo $row->nama_service;?></option>
-						<?php endforeach;?>
-					</select>
+						<?php endforeach;?> 
 				</div>
 			</div>
 			<div class="input-group">
