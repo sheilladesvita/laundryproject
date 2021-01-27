@@ -7,7 +7,8 @@
 						<option value="" selected>Pilih layanan:</option>
 						<?php foreach($service as $row):?>
 						<option value="<?php echo $row->id_service;?>"><?php echo $row->nama_service;?></option>
-						<?php endforeach;?> 
+						<?php endforeach;?>
+					</select>
 				</div>
 			</div>
 			<div class="input-group">
@@ -143,7 +144,7 @@
             $('#detail_cart').load("<?php echo base_url();?>order/load_cart");
 
 			$(document).on('click','.delete_cart',function(){
-                var row_id=$(this).attr("id");
+                var row_id=$(this).attr("id"); //mengambil row_id dari artibut id
                 $.ajax({
                     url : "<?php echo base_url();?>order/delete_cart",
                     method : "POST",

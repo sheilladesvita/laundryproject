@@ -9,9 +9,25 @@ class m_service extends CI_Model {
         return $this->db->query($query);
     }
 
+    function getAllService() {
+        $query = "SELECT id_service, nama_service FROM service;";
+        return $this->db->query($query);
+    }
+
     function getServiceMember() {
         $query = "SELECT id_service, nama_service FROM service;";
         return $this->db->query($query);
+    }
+
+    public function joinservice(){
+        $query = "SELECT s.id_service, s.nama_service, s.unit, t.id_serviceitem, t.id_service, t.nama_serviceitem, t.harga 
+        FROM service AS s, service_item AS t 
+        WHERE s.id_service = t.id_service;";
+        return $this->db->query($query);
+    }
+
+    function input_data($data,$table){
+        return $this->db->insert($table,$data);
     }
 }
 

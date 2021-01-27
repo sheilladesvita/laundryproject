@@ -11,6 +11,12 @@ class m_service_item extends CI_Model {
         return $this->db->query($query);
     }
 
+    function searchServiceItem($key) {
+        $query = "SELECT * FROM service_item
+        WHERE id_serviceitem LIKE '%$key%'";
+        return $this->db->query($query);
+    }
+
     function getServiceCart($id) {
         $query = "SELECT s.id_service, s.nama_service, i.id_serviceitem, i.nama_serviceitem, i.harga 
         FROM service AS s, service_item AS i 

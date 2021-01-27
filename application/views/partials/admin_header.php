@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link
+			rel="icon"
+			href="<?php echo base_url();?>assets/images/als-icon.ico"
+		/>
+
+		<title>ALS Admin</title>
+
+		<!-- Bootstrap core CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+			integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Google font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Fontawesome -->
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+			integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Datatable -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.css"
+		/>
+
+		<!-- Custom styles for this template -->
+		<link
+			href="<?php echo base_url();?>assets/css/admin.css"
+			rel="stylesheet"
+		/>
+		<!-- <link
+			href="<?php echo base_url();?>assets/css/style.css"
+			rel="stylesheet"
+		/> -->
+	</head>
+
+    <body>
+		<nav
+			class="navbar sticky-top navbar-expand-lg navbar-light bg-default-white shadow"
+		>
+			<a
+				class="navbar-brand mr-auto"
+				href="<?php echo base_url(); ?>viewonly/admin"
+			>
+				<img
+					class="logo-image"
+					src="<?php echo base_url();?>assets/images/als logo.png"
+					class="img-fluid"
+			/></a>
+
+			<div class="dropdown">
+				<button
+					class="btn bg-transparent dropdown-toggle"
+					type="button"
+					id="dropdownMenuButton"
+					data-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false"
+				>
+					<i class="fas fa-user-circle"></i>
+				</button>
+				<div
+					class="dropdown-menu dropdown-menu-right"
+					aria-labelledby="dropdownMenuButton"
+				>
+					<a class="dropdown-item text-default-light-important" href="#"
+						><i class="fas fa-user-cog"></i> Ganti Password</a
+					>
+					<a class="dropdown-item text-default-light-important" href="#"
+						><i class="fas fa-user-plus"></i> Buat Akun Admin</a
+					>
+					<a class="dropdown-item text-default-light-important" href="#"
+						><i class="fas fa-sign-out-alt" href="<?php echo base_url('c_login_admin/logout') ?>"></i> Keluar</a
+					>
+				</div>
+			</div>
+		</nav>
+    </body>
+</html>
