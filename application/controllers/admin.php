@@ -98,9 +98,24 @@ class admin extends CI_Controller
 
   function hapus_layanan($id){
     if (!isset($id)) show_404();
-        
-    if ($this->m_service_item->delete($id)) {
+    $data = array(
+      'status' => FALSE
+    );
+    if ($this->m_service_item->delete($data,$id)) {
         redirect(site_url('admin/layanan'));
+    }
+  }
+
+  function edit_layanan(){
+    $id = $this->input->post('id_serviceitem');
+    $data = array(
+        'id_service' => $this->input->post('service'),
+        'nama_serviceitem'  => $this->input->post('nama_serviceitem'),
+        'harga' => $this->input->post('harga')
+    );
+
+    if ($this->m_service_item->update($data,$id)) {
+      redirect('admin/layanan');
     }
   }
 }

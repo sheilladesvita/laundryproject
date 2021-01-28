@@ -22,7 +22,8 @@ class m_service extends CI_Model {
     public function joinservice(){
         $query = "SELECT s.id_service, s.nama_service, s.unit, t.id_serviceitem, t.id_service, t.nama_serviceitem, t.harga 
         FROM service AS s, service_item AS t 
-        WHERE s.id_service = t.id_service;";
+        WHERE s.id_service = t.id_service
+        AND t.status = TRUE;";
         return $this->db->query($query);
     }
 

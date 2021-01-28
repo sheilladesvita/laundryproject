@@ -96,15 +96,21 @@
                     foreach($serviceitem as $item){
                 ?>
                 <tr id=<?php echo $item->id_serviceitem;?>;>
-                    <td><?php echo $item->nama_serviceitem;?></td>
+                    <td><?php echo $item->nama_serviceitem; ?></span></td>
                     <td class="text-right"><?php echo $item->harga;?></td>
                     <td class="text-center"><?php echo $item->nama_service;?></td>
                     <td class="text-center">
                         <div class="btn-group" role="group">
                             <a
-                                class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
-                                href=""
-                            >
+                                data-id=<?php echo $item->id_serviceitem;?>
+                                data-nama=<?php echo $item->nama_serviceitem;?>
+                                data-harga=<?php echo $item->harga;?>
+                                data-kategori=<?php echo $item->id_service;?>
+                                class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow" 
+                                href="#serviceUpdateModal"
+                                id="serviceId" 
+                                data-toggle="modal"
+                                >
                                 <i class="fas fa-pencil-alt mx-2"></i>
                             </a>
                             <a
@@ -124,7 +130,7 @@
     </div>
     <!-- </main> -->
 
-    <!-- Modal -->
+    <!-- Modal Hapus-->
     <div
         class="modal fade"
         id="serviceDeleteModal"
@@ -153,6 +159,65 @@
                         >Delete</a
                     >
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Edit-->
+    <div
+        class="modal fade"
+        id="serviceUpdateModal"
+        tabindex="-1"
+        aria-labelledby="serviceUpdateModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Data</h4>
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                </div>
+                <form class="form-horizontal" action="<?php echo base_url('admin/edit_layanan')?>" method="post" enctype="multipart/form-data" role="form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="col-lg-4 col-sm-4 control-label">Nama Layanan</label>
+                            <div class="col-lg-10">
+                            <input type="hidden" name="id_serviceitem" id="id_serviceitem">
+                                <input type="text" class="form-control" name="nama_serviceitem" id="nama_serviceitem">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-sm-2 control-label">Harga</label>
+                            <div class="col-lg-10">
+                            <input class="form-control" name="harga" id="harga"></input>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-5 py-2">
+                            <select name="service" id="service" class="form-control" required>
+                                <?php foreach($service as $row):?>
+                                <option value="<?php echo $row->id_service;?>"><?php echo $row->nama_service;?></option>
+                                <?php endforeach;?> 
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-inline-block text-right mr-4 my-4">
+                            <button
+                                type="button"
+                                class="btn bg-transparent border-default-yellow text-default-yellow btn-outline-yellow-hover"
+                                data-dismiss="modal"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                type="submit"
+                                class="btn bg-default-yellow text-default-white btn-yellow-hover"
+
+                                >Save</button
+                            >
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

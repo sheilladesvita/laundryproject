@@ -35,6 +35,17 @@ $(document).ready(function () {
 		// bLengthChange: false,
 		bInfo: false,
 	});
+	$('#serviceUpdateModal').on('show.bs.modal', function (e) {
+		var id = $(e.relatedTarget).data('id');
+		var nama = $(e.relatedTarget).data('nama');
+		var harga = $(e.relatedTarget).data('harga');
+		var kategori = $(e.relatedTarget).data('kategori');
+
+		$(e.currentTarget).find('input[name="id_serviceitem"]').val(id);
+		$(e.currentTarget).find('input[name="nama_serviceitem"]').val(nama);
+		$(e.currentTarget).find('input[name="harga"]').val(harga);
+		$(e.currentTarget).find('select[name="service"]').val(kategori);
+    });
 });
 
 function onlyNumberKey(evt) {
