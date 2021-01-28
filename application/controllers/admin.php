@@ -32,9 +32,25 @@ class admin extends CI_Controller
   }
 
   public function index(){
+    $data["active_link"] = "pesanan";
+    $data['serviceitem'] = $this->m_service->joinservice()->result();
+    $this->load->view('partials/admin_header',$data);
+    $this->load->view('pages/v_admin_pesanan',$data);
+  }
+
+  public function layanan(){
+    $data["active_link"] = "layanan";
     $data['service'] = $this->m_service->getAllService()->result();
-    $this->load->view('partials/admin_header');
-    $this->load->view('pages/v_admin',$data);
+    $data['serviceitem'] = $this->m_service->joinservice()->result();
+    $this->load->view('partials/admin_header',$data);
+    $this->load->view('pages/v_admin_layanan',$data);
+  }
+
+  public function promo(){
+    $data["active_link"] = "promo";
+    $data['serviceitem'] = $this->m_service->joinservice()->result();
+    $this->load->view('partials/admin_header',$data);
+    $this->load->view('pages/v_admin_promo',$data);
   }
 
   public function get_idLayanan($kategori,$nama_serviceitem){
@@ -78,5 +94,13 @@ class admin extends CI_Controller
 
     $this->m_service->input_data($data,'service_item');
     redirect('admin/index');
+  }
+
+  function hapus_layanan($id){
+    if (!isset($id)) show_404();
+        
+    if ($this->m_service_item->delete($id)) {
+        redirect(site_url('admin/layanan'));
+    }
   }
 }

@@ -44,26 +44,62 @@
 			href="<?php echo base_url();?>assets/css/admin.css"
 			rel="stylesheet"
 		/>
-		<!-- <link
-			href="<?php echo base_url();?>assets/css/style.css"
-			rel="stylesheet"
-		/> -->
 	</head>
 
-    <body>
-		<nav
-			class="navbar sticky-top navbar-expand-lg navbar-light bg-default-white shadow"
+	<body>
+		<nav class="navbar navbar-expand-lg
+			<?php if($active_link == "home" || $active_link == "tentang_kami") { echo 'fixed-top bg-transparent text-default-white'; } else { echo 'sticky-top bg-default-white text-default-black shadow-sm'; }?> justify-content-start" >
+		<button
+			class="navbar-toggler inherit-color"
+			type="button"
+			data-toggle="collapse"
+			data-target="#navbar-link"
+			aria-controls="navbar-link"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
 		>
-			<a
-				class="navbar-brand mr-auto"
-				href="<?php echo base_url(); ?>viewonly/admin"
-			>
-				<img
-					class="logo-image"
-					src="<?php echo base_url();?>assets/images/als logo.png"
-					class="img-fluid"
-			/></a>
+			<i id="collapse-bar-btn" class="fas fa-bars"></i>
+		</button>
+		<a
+			class="navbar-brand hideable-brand p-0 m-0"
+			href="<?php echo base_url();?>"
+		>
+			<img
+			class="logo-image"
+			src="<?php echo base_url();?>assets/images/als logo.png"
+			class="img-fluid"
+		/></a>
 
+		<div class="collapse navbar-collapse inherit-bg" id="navbar-link">
+			<div class="flex-c justify-content-center">
+			<ul class="navbar-nav text-center text-uppercase">
+				<li
+				class="nav-item nav-item-bg <?php if($active_link == 'pesanan') echo 'active' ?>"
+				>
+				<a
+					class="nav-link nav-btn color-inherit"
+					href="<?php echo base_url();?>admin/index"
+					>Pesanan</a
+				>
+				</li>
+				<li class="nav-item nav-item-bg
+				<?php if($active_link == "layanan") echo "active" ?>">
+				<a
+				class="nav-link nav-btn color-inherit"
+				href="<?php echo base_url();?>admin/layanan"
+				>Layanan</a
+				>
+				</li>
+				<li class="nav-item nav-item-bg
+				<?php if($active_link == "promo") echo "active" ?>">
+				<a
+				class="nav-link nav-btn color-inherit"
+				href="<?php echo base_url();?>admin/promo"
+				>Promo</a
+				>
+				</li>
+			</ul>
+			</div>
 			<div class="dropdown">
 				<button
 					class="btn bg-transparent dropdown-toggle"
@@ -91,5 +127,5 @@
 				</div>
 			</div>
 		</nav>
-    </body>
+	</body>
 </html>

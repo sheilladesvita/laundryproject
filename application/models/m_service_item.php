@@ -24,5 +24,10 @@ class m_service_item extends CI_Model {
         return $this->db->query($query);
     }
 
+    public function delete($id)
+    {
+        return $this->db->delete("service_item", array("id_serviceitem" => $id));
+    }
+
 }
 ?>

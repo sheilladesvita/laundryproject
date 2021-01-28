@@ -1,19 +1,6 @@
 <main class="my-4">
     <div class="container">
         <div class="row m-0">
-            <div class="col-6 pl-0 pr-2">
-                <a
-                    id="add-service"
-                    class="btn btn-block bg-transparent border-dashed-yellow text-default-yellow btn-outline-yellow-hover"
-                    data-toggle="collapse"
-                    href="#service-form"
-                    role="button"
-                    aria-expanded="false"
-                    aria-controls="service-form"
-                >
-                    <i class="fas fa-plus"></i> Tambah Item Layanan
-                </a>
-            </div>
             <div class="col-6 pl-2 pr-0">
                 <a
                     id="add-promo"
@@ -29,63 +16,6 @@
             </div>
         </div>
 
-        <div class="collapse pt-3 mb-3" id="service-form">
-            <div class="card card-body bg-default-white">
-                <div class="text-18 text-default-semi-bold">Buat Layanan Baru</div>
-                <hr />
-                <form autocomplete="off" action="<?php echo base_url();?>admin/tambah_aksilayanan" method="post">
-                    <div class="form-row">
-                        <div class="col-sm-12 col-lg-3 py-1">
-                            <input
-                                type="text"
-                                name="nama_serviceitem"
-                                class="form-control mr-sm-2"
-                                id="inlineFormInputName2"
-                                placeholder="Nama Layanan"
-                            />
-                        </div>
-
-                        <div class="col-sm-12 col-lg-3 py-1">
-                            <div class="input-group mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">Harga</div>
-                                </div>
-                                <input
-                                    type="number"
-                                    name="harga"
-                                    class="form-control"
-                                    id="inlineFormInputGroupUsername2"
-                                    step="500"
-                                    placeholder="0"
-                                    min="0"
-                                    onkeypress="return onlyNumberKey(event)"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12 col-lg-2 py-2">
-                            <select name="service" id="service" class="form-control" required>
-                                <option value="" selected>Kategori Layanan</option>
-                                <?php foreach($service as $row):?>
-                                <option value="<?php echo $row->id_service;?>"><?php echo $row->nama_service;?></option>
-                                <?php endforeach;?> 
-                            </select>
-                        </div>
-
-                        <div class="col-sm-12 col-lg-3 py-1">
-                            <button
-                                type="submit"
-                                class="btn btn-block text-default-white bg-default-yellow btn-yellow-hover"
-                            >
-                                Tambah Layanan
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <!-- <hr class="m-0 mt-3" /> -->
-            </div>
-        </div>
-
         <div class="collapse no-border pt-3 mb-3" id="promo-form">
             <div class="card card-body bg-default-white">
                 <div class="text-18 text-default-semi-bold">Buat Promo Baru</div>
@@ -96,48 +26,6 @@
             </div>
         </div>
 
-        <div class="text-24 text-default-medium">Daftar Layanan</div>
-
-        <table
-            id="service-table"
-            class="table table-striped table-sm dt-responsive table-responsive-sm"
-            style="width: 100%"
-        >
-            <thead>
-                <tr class="text-center">
-                    <th class="text-default-medium-important">Nama Layanan</th>
-                    <th class="text-default-medium-important">Harga</th>
-                    <th class="text-default-medium-important">Jenis Layanan</th>
-                    <th class="text-default-medium-important">Ubah/Hapus</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr id="1">
-                    <td>Blazer/Sweater</td>
-                    <td class="text-right">12000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
-                                href=""
-                                data-toggle="modal"
-                                data-target="#serviceDeleteModal"
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
         <div class="text-24 text-default-medium mt-5">Daftar Promo</div>
 
