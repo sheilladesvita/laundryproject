@@ -49,7 +49,7 @@ class admin extends CI_Controller
 
   public function promo(){
     $data["active_link"] = "promo";
-    $data['serviceitem'] = $this->m_service->joinservice()->result();
+    $data['promo'] = $this->m_promo->getPromo()->result();
     $this->load->view('partials/admin_header',$data);
     $this->load->view('pages/v_admin_promo',$data);
   }
@@ -135,6 +135,16 @@ class admin extends CI_Controller
     );
     if ($this->m_service_item->delete($data,$id)) {
         redirect(site_url('admin/layanan'));
+    }
+  }
+
+  function hapus_promo($id){
+    if (!isset($id)) show_404();
+    $data = array(
+      'status' => FALSE
+    );
+    if ($this->m_promo->delete($data,$id)) {
+        redirect(site_url('admin/promo'));
     }
   }
 

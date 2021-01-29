@@ -107,6 +107,7 @@
             <thead>
                 <tr class="text-center">
                     <th>Kode Promo</th>
+                    <th>Diskon</th>
                     <th>Tanggal Berakhir</th>
                     <th>Qty</th>
                     <th>Detail/Hapus</th>
@@ -114,31 +115,46 @@
             </thead>
 
             <tbody>
+                <?php 
+                    foreach($promo as $item){
+                ?>
                 <tr>
-                    <td>PAWALTAHUN</td>
-                    <td class="text-center">31/01/2021</td>
-                    <td class="text-center">-</td>
+                    <td><?php echo $item->kode_promo;?></td>
+                    <td class="text-center"><?php echo $item->diskon*100 . "%";?></td>
+                    <td class="text-center"><?php echo date("d-m-Y", strtotime($item->tanggal_berakhir));;?></td>
+                    <td class="text-center">
+                        <?php if(isset($item->qty)){
+                            echo $item->qty;
+                        }else{
+                            echo "-";
+                        }
+                        ?>
+                    </td>
                     <td class="text-center">
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a
+                                data-kode=<?php echo $item->kode_promo;?> 
+                                data-gambar="<?php echo base_url('assets/images/promo/'.$item->gambar);?>"
+                                data-desc="<?php echo $item->deskripsi;?>" 
                                 class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
-                                href=""
+                                href="#promoDetailModal"
+                                id="promoId"
                                 data-toggle="modal"
-                                data-target="#promoDetail"
                             >
                                 <i class="fas fa-eye mx-2"></i>
                             </a>
                             <a
                                 class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
-                                onclick="deleteConfirm('<?php echo site_url('admin/hapus_promo/') ?>')"
+                                onclick="deleteConfirm('<?php echo site_url('admin/hapus_promo/'.$item->id_promo) ?>')"
                             >
                                 <i class="fas fa-trash-alt mx-2"></i>
                             </a>
                         </div>
                     </td>
                 </tr>
-
-                
+                <?php 
+                    }
+                ?>                
             </tbody>
         </table>
     </div>
@@ -146,17 +162,16 @@
 
     <!-- Modal -->
     <div
-        class="modal fade bd-example-modal-lg"
-        id="promoDetail"
+        class="modal fade"
+        id="deleteModal"
         tabindex="-1"
-        aria-labelledby="promoDetailLabel"
+        aria-labelledby="deleteModalLabel"
         aria-hidden="true"
     >
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    Anda akan <b>menghapus</b> layanan (bla bla bla). Anda yakin untuk
-                    menhapusnya?
+                    Anda yakin <b>menghapus</b> layanan ini?
                 </div>
                 <div class="d-inline-block text-right mr-4 my-4">
                     <button
@@ -164,8 +179,69 @@
                         class="btn bg-transparent border-default-yellow text-default-yellow btn-outline-yellow-hover"
                         data-dismiss="modal"
                     >
-                       Back
+                        Cancel
                     </button>
+                    <a
+                        type="button"
+                        id="btn-delete"
+                        class="btn bg-default-yellow text-default-white btn-yellow-hover"
+
+                        >Delete</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+        class="modal fade bd-example-modal-lg"
+        id="promoDetailModal"
+        tabindex="-1"
+        aria-labelledby="promoDetailLabelModal"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Preview Promo</h4>
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <table width="100%" style="font-size:14px">
+                            <tr>
+                                <td class="text-center">
+                                    <img id="gambar" class="promo-image rounded">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-top">
+                                    <div class="container text-16 text-center width-form-50 text-default-semi-bold py-3"
+                                        id="kode_promo"
+                                    >
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-top">
+                                    <div class="container text-14 text-justify width-form-50"
+                                        id="desc"
+                                    >
+                                    
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="container text-center width-form-25 py-3">
+                            <a 
+                                href="#"
+                                class="btn btn-block bg-default-sky text-default-white btn-auth"
+                                type="button"
+                            >
+                                MAU
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

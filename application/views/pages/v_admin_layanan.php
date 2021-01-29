@@ -133,9 +133,9 @@
     <!-- Modal Hapus-->
     <div
         class="modal fade"
-        id="serviceDeleteModal"
+        id="deleteModal"
         tabindex="-1"
-        aria-labelledby="serviceDeleteModalLabel"
+        aria-labelledby="deleteModalLabel"
         aria-hidden="true"
     >
         <div class="modal-dialog modal-dialog-centered">

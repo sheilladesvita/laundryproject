@@ -45,7 +45,16 @@ $(document).ready(function () {
 		$(e.currentTarget).find('input[name="nama_serviceitem"]').val(nama);
 		$(e.currentTarget).find('input[name="harga"]').val(harga);
 		$(e.currentTarget).find('select[name="service"]').val(kategori);
-    });
+	});
+	$('#promoDetailModal').on('show.bs.modal', function (e) {
+		var kode = $(e.relatedTarget).data('kode');
+		var gambar = $(e.relatedTarget).data('gambar');
+		var desc = $(e.relatedTarget).data('desc');
+
+		$(this).find("#kode_promo").text("#"+kode);
+		$(this).find("#gambar").attr('src',gambar);
+		$(this).find("#desc").text(desc);
+	});
 });
 
 function onlyNumberKey(evt) {
@@ -56,5 +65,5 @@ function onlyNumberKey(evt) {
 
 function deleteConfirm(url){
 	$('#btn-delete').attr('href', url);
-	$('#serviceDeleteModal').modal();
+	$('#deleteModal').modal();
 }
