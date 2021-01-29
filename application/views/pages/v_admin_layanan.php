@@ -103,7 +103,7 @@
                         <div class="btn-group" role="group">
                             <a
                                 data-id=<?php echo $item->id_serviceitem;?>
-                                data-nama=<?php echo $item->nama_serviceitem;?>
+                                data-nama="<?php echo $item->nama_serviceitem;?>"
                                 data-harga=<?php echo $item->harga;?>
                                 data-kategori=<?php echo $item->id_service;?>
                                 class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow" 

@@ -4,7 +4,7 @@
             <div class="col-6 pl-2 pr-0">
                 <a
                     id="add-promo"
-                    class="btn btn-block bg-transparent border-dashed-blue text-default-blue btn-outline-blue-hover"
+                    class="btn btn-block bg-transparent border-dashed-yellow text-default-yellow btn-outline-yellow-hover"
                     data-toggle="collapse"
                     href="#promo-form"
                     role="button"
@@ -16,13 +16,83 @@
             </div>
         </div>
 
-        <div class="collapse no-border pt-3 mb-3" id="promo-form">
+        <div class="collapse no-border pt-6 mb-6" id="promo-form">
             <div class="card card-body bg-default-white">
-                <div class="text-18 text-default-semi-bold">Buat Promo Baru</div>
+            <div class="text-18 text-default-semi-bold">Buat Promo Baru</div>
                 <hr />
-                pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-                labore wes anderson cred nesciunt sapiente ea proident.
+                <form autocomplete="off" enctype="multipart/form-data" action="<?php echo base_url();?>admin/tambah_aksipromo" method="post">
+                    <div class="form-column">
+                        <div class="col-sm-12 col-lg-4 py-1">
+                            <input
+                                type="text"
+                                name="kode_promo"
+                                class="form-control mr-sm-2"
+                                id="kode_promo"
+                                placeholder="Kode Promo"
+                                required
+                            />
+                        </div>
+                        <div class="col-sm-12 col-lg-4 py-1">
+                            <input
+                                type="number"
+                                name="diskon"
+                                class="form-control mr-sm-2"
+                                id="diskon"
+                                min=0
+                                max=100
+                                placeholder="Diskon (%)"
+                                required
+                            />
+                        </div>
+                        <div class="col-sm-12 col-lg-6 py-2">
+                            <textarea
+                                type="text"
+                                name="desc"
+                                class="form-control mr-sm-2"
+                                id="desc"
+                                placeholder="Deskripsi Promo"
+                                required
+                            ></textarea>
+                        </div>
+                        <div class="col-sm-12 col-lg-4 py-1">
+                            <input
+                                type="date"
+                                name="tgl_berakhir"
+                                class="form-control mr-sm-2"
+                                id="tgl_berakhir"
+                                placeholder="29/01/2021"
+                                required
+                            />
+                        </div>
+                        <div class="col-sm-12 col-lg-4 py-1">
+                            <input
+                                type="number"
+                                name="qty"
+                                class="form-control mr-sm-2"
+                                id="qty"
+                                min=0
+                                placeholder="Batas jumlah pemakaian"
+                            />
+                        </div>
+                        <div class="col-sm-12 col-lg-4 py-1">
+                            <input
+                                type="file"
+                                name="userfile"
+                                class="form-control-file mr-sm-2"
+                                placeholder="Gambar"
+                                required
+                            />
+                        </div>
+                        <div class="col-sm-12 col-lg-3 py-1">
+                            <button
+                                type="submit"
+                                class="btn btn-block text-default-white bg-default-yellow btn-yellow-hover"
+                            >
+                                Tambah Promo
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -36,29 +106,31 @@
         >
             <thead>
                 <tr class="text-center">
-                    <th>Nama Layanan</th>
-                    <th>Harga</th>
-                    <th>Jenis Layanan</th>
-                    <th>Ubah/Hapus</th>
+                    <th>Kode Promo</th>
+                    <th>Tanggal Berakhir</th>
+                    <th>Qty</th>
+                    <th>Detail/Hapus</th>
                 </tr>
             </thead>
 
             <tbody>
                 <tr>
-                    <td>Blazer/Sweater</td>
-                    <td class="text-right">12000</td>
-                    <td class="text-center">Laundry Satuan</td>
+                    <td>PAWALTAHUN</td>
+                    <td class="text-center">31/01/2021</td>
+                    <td class="text-center">-</td>
                     <td class="text-center">
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
+                                class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
                                 href=""
+                                data-toggle="modal"
+                                data-target="#promoDetail"
                             >
-                                <i class="fas fa-pencil-alt mx-2"></i>
+                                <i class="fas fa-eye mx-2"></i>
                             </a>
                             <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
+                                class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
+                                onclick="deleteConfirm('<?php echo site_url('admin/hapus_promo/') ?>')"
                             >
                                 <i class="fas fa-trash-alt mx-2"></i>
                             </a>
@@ -66,137 +138,7 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td>Long Dress Pendek</td>
-                    <td class="text-right">20000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Helm</td>
-                    <td class="text-right">15000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Kemeja Tangan Pendek</td>
-                    <td class="text-right">9000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Bed Cover King</td>
-                    <td class="text-right">40000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Sprei Double</td>
-                    <td class="text-right">15000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Kemeja Tangan Panjang</td>
-                    <td class="text-right">10000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
+                
             </tbody>
         </table>
     </div>
@@ -204,13 +146,13 @@
 
     <!-- Modal -->
     <div
-        class="modal fade"
-        id="serviceDeleteModal"
+        class="modal fade bd-example-modal-lg"
+        id="promoDetail"
         tabindex="-1"
-        aria-labelledby="serviceDeleteModalLabel"
+        aria-labelledby="promoDetailLabel"
         aria-hidden="true"
     >
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-body">
                     Anda akan <b>menghapus</b> layanan (bla bla bla). Anda yakin untuk
@@ -222,13 +164,8 @@
                         class="btn bg-transparent border-default-yellow text-default-yellow btn-outline-yellow-hover"
                         data-dismiss="modal"
                     >
-                        Cancel
+                       Back
                     </button>
-                    <a
-                        type="button"
-                        class="btn bg-default-yellow text-default-white btn-yellow-hover"
-                        >Delete</a
-                    >
                 </div>
             </div>
         </div>

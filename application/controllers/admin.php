@@ -24,6 +24,7 @@ class admin extends CI_Controller
     parent::__construct();
     $this->load->model('m_service_item');
     $this->load->model('m_service');
+    $this->load->model('m_promo');
     $this->load->helper('url');  
   }
   
@@ -94,6 +95,37 @@ class admin extends CI_Controller
 
     $this->m_service->input_data($data,'service_item');
     redirect('admin/index');
+  }
+
+  function tambah_aksipromo(){
+    $config['upload_path']          = './assets/images/promo/';
+		$config['allowed_types']        = 'jpeg|jpg|png';
+		$config['max_size']             = 1024;
+    
+		$this->load->library('upload', $config);
+    
+    if (!$this->upload->do_upload())
+		{
+				$error = array('error' => $this->upload->display_errors());
+				redirect('admin/promo');
+		}
+		else
+		{
+      if($this->input->post('qty')==0){
+        $qty = null;
+      }
+      $data = array(
+        'kode_promo' => $this->input->post('kode_promo'),
+        'diskon'  => $this->input->post('diskon')/100,
+        'gambar' => $this->upload->data("file_name"),
+        'deskripsi' => $this->input->post('desc'),
+        'tanggal_berakhir' => $this->input->post('tgl_berakhir'),
+        'qty' => $qty
+      );
+      
+      $this->m_promo->input_data($data,'promo');
+			redirect('admin/promo');
+    }
   }
 
   function hapus_layanan($id){

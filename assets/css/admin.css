@@ -155,6 +155,10 @@ a {
 	background-color: #dadada;
 }
 
+.bg-default-red {
+	background-color: #e92b2b;
+}
+
 /* Border */
 
 .border-default-black {
@@ -216,6 +220,11 @@ a {
 .btn-blue-hover:hover {
 	color: #fffffa;
 	background-color: #00658a !important;
+}
+
+.btn-red-hover:hover {
+	color: #fffffa;
+	background-color: #e70606 !important;
 }
 
 .btn-outline-yellow-hover:hover {
@@ -336,6 +345,10 @@ a {
 }
 
 /* Design system font size */
+
+.text-8 {
+	font-size: 8pt !important;
+}
 
 .text-10 {
 	font-size: 10pt !important;

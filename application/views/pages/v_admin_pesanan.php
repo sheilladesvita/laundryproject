@@ -1,5 +1,6 @@
 <main class="my-4">
     <div class="container">
+        
         <div class="text-24 text-default-medium">Daftar Pesanan</div>
 
         <table
@@ -9,234 +10,178 @@
         >
             <thead>
                 <tr class="text-center">
-                    <th class="text-default-medium-important">Nama Layanan</th>
-                    <th class="text-default-medium-important">Harga</th>
-                    <th class="text-default-medium-important">Jenis Layanan</th>
-                    <th class="text-default-medium-important">Ubah/Hapus</th>
+                    <th class="text-default-medium-important align-middle">No Pesanan</th>
+                    <th class="text-default-medium-important align-middle">Nama</th>
+                    <th class="text-default-medium-important align-middle">No.Telepon</th>
+                    <th class="text-default-medium-important align-middle">Pembayaran</th>
+                    <th class="text-default-medium-important align-middle">Total Bayar</th>
+                    <th class="text-default-medium-important align-middle">Tanggal Pesan</th>
+                    <th class="text-default-medium-important align-middle">Status</th>
+                    <th class="text-default-medium-important align-middle">Detail</th>
                 </tr>
             </thead>
 
             <tbody>
-                <?php 
+                <!-- <?php 
                     foreach($serviceitem as $item){
-                ?>
-                <tr id=<?php echo $item->id_serviceitem;?>;>
-                    <td><?php echo $item->nama_serviceitem;?></td>
-                    <td class="text-right"><?php echo $item->harga;?></td>
-                    <td class="text-center"><?php echo $item->nama_service;?></td>
+                ?> -->
+                <tr>
+                    <td>12345678910</td>
+                    <td class="text-center">Lisa</td>
+                    <td class="text-center">087321443211</td>
+                    <td class="text-center">Transfer</td>
+                    <td class="text-center">Rp 27000</td>
+                    <td class="text-center">29/01/2021</td>
                     <td class="text-center">
                         <div class="btn-group" role="group">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
+                        <a
+                                class="btn bg-default-red text-default-white btn-red-hover text-8"
                                 href=""
                             >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
+                                Belum bayar
+                        </a>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <div class="btn-group" role="group">
                             <a
                                 class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
                                 href=""
                                 data-toggle="modal"
-                                data-target="#serviceDeleteModal"
+                                data-target="#orderDetail"
                             >
-                                <i class="fas fa-trash-alt mx-2"></i>
+                                <i class="fas fa-eye mx-2"></i>
                             </a>
                         </div>
                     </td>
                 </tr>
-                <?php 
+                <!-- <?php 
                     }
-                ?>
+                ?> -->
             </tbody>
         </table>
-
-        <div class="text-24 text-default-medium mt-5">Daftar Promo</div>
-
-        <table
-            id="promo-table"
-            class="table table-striped table-sm dt-responsive table-responsive-sm"
-            style="width: 100%"
-        >
-            <thead>
-                <tr class="text-center">
-                    <th>Nama Layanan</th>
-                    <th>Harga</th>
-                    <th>Jenis Layanan</th>
-                    <th>Ubah/Hapus</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Blazer/Sweater</td>
-                    <td class="text-right">12000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Long Dress Pendek</td>
-                    <td class="text-right">20000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Helm</td>
-                    <td class="text-right">15000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Kemeja Tangan Pendek</td>
-                    <td class="text-right">9000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Bed Cover King</td>
-                    <td class="text-right">40000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Sprei Double</td>
-                    <td class="text-right">15000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Kemeja Tangan Panjang</td>
-                    <td class="text-right">10000</td>
-                    <td class="text-center">Laundry Satuan</td>
-                    <td class="text-center">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a
-                                class="btn btn-sm bg-transparent text-default-blue btn-outline-blue-hover border-default-blue"
-                                href=""
-                            >
-                                <i class="fas fa-pencil-alt mx-2"></i>
-                            </a>
-                            <a
-                                class="btn btn-sm bg-default-blue text-default-white btn-blue-hover"
-                                href=""
-                            >
-                                <i class="fas fa-trash-alt mx-2"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
     <!-- </main> -->
 
     <!-- Modal -->
     <div
-        class="modal fade"
-        id="serviceDeleteModal"
+        class="modal fade bd-example-modal-lg"
+        id="orderDetail"
         tabindex="-1"
-        aria-labelledby="serviceDeleteModalLabel"
+        aria-labelledby="orderDetailLabel"
         aria-hidden="true"
     >
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Detail Pesanan</h4>
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                </div>
                 <div class="modal-body">
-                    Anda akan <b>menghapus</b> layanan (bla bla bla). Anda yakin untuk
-                    menhapusnya?
+                    <table class="table-form" border="0" width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="20%">No Pesanan</td>
+                            <td width="1%">:</td>
+                            <td>12345678910</td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal Pesan</td>
+                            <td width="1%">:</td>
+                            <td>29 Januari 2021</td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Nama</td>
+                            <td width="1%">:</td>
+                            <td>Lisa</td>
+                        </tr>
+                        <tr> 
+                            <td>Alamat</td>
+                            <td width="1%">:</td>
+                            <td>Jl. Raya Indonesia Indah, Tangerang, Indonesia 15213</td>
+                        </tr>
+                        <tr>
+                            <td>No. HP</td>
+                            <td width="1%">:</td>
+                            <td>087321443211</td>
+                        </tr>
+                        <tr>
+                            <td>Catatan</td>
+                            <td width="1%">:</td>
+                            <td>Ambil depan rumah kuning cuciannya</td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal Bayar</td>
+                            <td width="1%">:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pembayaran</td>
+                            <td width="1%">:</td>
+                            <td>Transfer</td>
+                        </tr>
+                        <tr> 
+                            <td>Total Item</td>
+                            <td width="1%">:</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Total Bayar</td>
+                            <td width="1%">:</td>
+                            <td>Rp 27000</td>
+                        </tr>
+                    </table>
+
+                    <div class='alert alert-info' role='alert'>
+                        <center>Daftar item yang dipesan</center>
+                    </div>
+
+                    <table
+                        class="table table-striped table-sm dt-responsive table-responsive-sm"
+                        style="width: 100%"
+                    >
+                        <thead>
+                            <tr class="text-center">
+                                <th>Nama Layanan</th>
+                                <th>Jenis Layanan</th>
+                                <th>Harga</th>
+                                <th>Jumlah</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Baju</td>
+                                <td>Layanan Satuan</td>
+                                <td>Rp 3000</td>
+                                <td>10</td>
+                                <td>Rp 30000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class='alert alert-info' role='alert'>
+                        <table class="table-form" border="0" width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="20%">Kode Promo</td>
+                                <td width="1%">:</td>
+                                <td>G1B1</td>
+                            </tr>
+                            <tr>
+                                <td>Potongan</td>
+                                <td width="1%">:</td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td width="1%">:</td>
+                                <td>Rp 30000 - Rp 3000</td>
+                            </tr>
+                            <tr> 
+                                <td></td>
+                                <td width="1%"></td>
+                                <td>Rp 27000</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
                 <div class="d-inline-block text-right mr-4 my-4">
                     <button
@@ -244,13 +189,8 @@
                         class="btn bg-transparent border-default-yellow text-default-yellow btn-outline-yellow-hover"
                         data-dismiss="modal"
                     >
-                        Cancel
+                        Back
                     </button>
-                    <a
-                        type="button"
-                        class="btn bg-default-yellow text-default-white btn-yellow-hover"
-                        >Delete</a
-                    >
                 </div>
             </div>
         </div>
