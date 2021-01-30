@@ -34,6 +34,28 @@
 				value="ADD">
 		</form>
 	</div>
+
+	<!-- Promo-->
+	<div class="container text-center width-form-25">
+		<form class="form py-3" autocomplete="off" action="<?php echo base_url();?>order/add_promo" method="post">
+			<div class="input-group">
+				<div class="form-border-bottom">
+					<div class="def-text-input text-input safari_only mb-0 w-100">
+						<input class="promo" id="promo" name="promo" type="text" placeholder="Masukan Kode Promo" required>
+					</div>
+				</div>
+			</div>
+			<button
+				type="submit"
+				name="add_promo" 
+				id="add_promo"
+				class="btn btn-block bg-default-sky text-default-white btn-auth"
+			>
+				APPLY
+			</button>
+		</form>
+	</div>
+
 	<div class="container">
 		<div class="text-24 text-default-medium">Daftar Pesanan</div>
 		<table
@@ -169,7 +191,20 @@
                         }
                     }
                 });
-            });
+			});
+			
+			$("#delete_promo").click(function(){				
+				$.ajax({
+					url : "<?php echo base_url();?>order/delete_promo",
+					method : "POST",
+					data : {
+                        kode: kode
+					},
+					success: function(data){
+                        $('#detail_cart').html(data);
+					}
+				});
+			});
 		});
 	</script>
 </main>

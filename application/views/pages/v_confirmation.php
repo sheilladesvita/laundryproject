@@ -55,6 +55,26 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <?php 
+                                        if(isset($_SESSION['promo'])){
+                                    ?>
+                                    <td align="left">
+                                        <table class="width-form-100">
+                                            <tr>
+                                                <td class="width-form-75 text-14 text-weight-800 padding-l-10-px test-black" align="left">
+                                                     PROMO 
+                                                </td>
+                                                <td class="width-form-25 text-14 text-weight-800 padding-l-10-px test-black" align="left"> 
+                                                    <?php echo "-Rp " . number_format($_SESSION['promo']); ?>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <?php
+                                        }
+                                    ?>
+                                </tr>
+                                <tr>
                                     <td align="left">
                                         <table class="width-form-100">
                                             <tr>
@@ -158,7 +178,7 @@
     </table>
     <div class="container text-center width-form-25 padding-t-25">
         <a 
-            href="<?php echo base_url();?>order/index"
+            href="<?php echo base_url();?>order/delete_promo/index"
             class="btn btn-block bg-default-sky text-default-white btn-auth"
             type="submit"
         >
