@@ -76,6 +76,16 @@
                         </div>
                         <div class="col-sm-12 col-lg-4 py-1">
                             <input
+                                type="number"
+                                name="batas_harga"
+                                class="form-control mr-sm-2"
+                                id="batas_harga"
+                                min=0
+                                placeholder="Batas minimal harga"
+                            />
+                        </div>
+                        <div class="col-sm-12 col-lg-4 py-1">
+                            <input
                                 type="file"
                                 name="userfile"
                                 class="form-control-file mr-sm-2"
@@ -110,6 +120,7 @@
                     <th>Diskon</th>
                     <th>Tanggal Berakhir</th>
                     <th>Qty</th>
+                    <th>Batas Harga</th>
                     <th>Detail/Hapus</th>
                 </tr>
             </thead>
@@ -125,6 +136,14 @@
                     <td class="text-center">
                         <?php if(isset($item->qty)){
                             echo $item->qty;
+                        }else{
+                            echo "-";
+                        }
+                        ?>
+                    </td>
+                    <td class="text-center">
+                        <?php if(isset($item->batas_harga)){
+                            echo $item->batas_harga;
                         }else{
                             echo "-";
                         }

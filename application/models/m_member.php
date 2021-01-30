@@ -6,6 +6,11 @@ class m_member extends CI_Model {
         return $this->db->query($query);
     }
 
+    function getMember() {
+        $query = "SELECT id_customer, username, email, nomor_telepon, alamat FROM member;";
+        return $this->db->query($query);
+    }
+
     function addNotMember($data) {
         $this->db->insert('not_member',$data);
     }
@@ -15,7 +20,7 @@ class m_member extends CI_Model {
     }
 
     function login($email,$password) {
-        $query = "SELECT id_customer, username, id_customertype, email, nomor_telepon, alamat
+        $query = "SELECT id_customer, username, id_customertype, email, nomor_telepon, alamat 
         FROM member 
         WHERE EMAIL = '$email' AND PASSWORD = '$password';";
         return $this->db->query($query);

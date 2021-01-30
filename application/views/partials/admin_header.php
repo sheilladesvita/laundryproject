@@ -82,21 +82,30 @@
 					>Pesanan</a
 				>
 				</li>
-				<li class="nav-item nav-item-bg
-				<?php if($active_link == "layanan") echo "active" ?>">
+				<li
+				class="nav-item nav-item-bg <?php if($active_link == 'member') echo 'active' ?>"
+				>
 				<a
-				class="nav-link nav-btn color-inherit"
-				href="<?php echo base_url();?>admin/layanan"
-				>Layanan</a
+					class="nav-link nav-btn color-inherit"
+					href="<?php echo base_url();?>admin/member"
+					>Member</a
 				>
 				</li>
 				<li class="nav-item nav-item-bg
+				<?php if($active_link == "layanan") echo "active" ?>">
+					<a
+					class="nav-link nav-btn color-inherit"
+					href="<?php echo base_url();?>admin/layanan"
+					>Layanan</a
+					>
+				</li>
+				<li class="nav-item nav-item-bg
 				<?php if($active_link == "promo") echo "active" ?>">
-				<a
-				class="nav-link nav-btn color-inherit"
-				href="<?php echo base_url();?>admin/promo"
-				>Promo</a
-				>
+					<a
+					class="nav-link nav-btn color-inherit"
+					href="<?php echo base_url();?>admin/promo"
+					>Promo</a
+					>
 				</li>
 			</ul>
 			</div>
@@ -121,8 +130,8 @@
 					<a class="dropdown-item text-default-light-important" href="#"
 						><i class="fas fa-user-plus"></i> Buat Akun Admin</a
 					>
-					<a class="dropdown-item text-default-light-important" href="#"
-						><i class="fas fa-sign-out-alt" href="<?php echo base_url('c_login_admin/logout') ?>"></i> Keluar</a
+					<a class="dropdown-item text-default-light-important" href="<?php echo base_url('admin/logout')?>"
+						><i class="fas fa-sign-out-alt"></i> Keluar</a
 					>
 				</div>
 			</div>
