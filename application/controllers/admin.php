@@ -27,7 +27,9 @@ class admin extends CI_Controller
     $this->load->model('m_promo');
     $this->load->model('m_service');
     $this->load->model('m_member');
-    $this->load->helper('url');  
+    $this->load->model('m_order');
+    $this->load->model('m_customer');
+    $this->load->helper('url');   
   }
   
   public function login(){
@@ -64,7 +66,7 @@ class admin extends CI_Controller
   public function index(){
     if(isset($_SESSION['login_admin']) && $_SESSION['login_admin']==true){
       $data["active_link"] = "pesanan";
-      $data['serviceitem'] = $this->m_service->joinservice()->result();
+      $data['order'] = $this->m_order->getOrder()->result();
       $this->load->view('partials/admin_header',$data);
       $this->load->view('pages/v_admin_pesanan',$data);
     }else{
@@ -219,5 +221,129 @@ class admin extends CI_Controller
     if ($this->m_service_item->update($data,$id)) {
       redirect('admin/layanan');
     }
+  }
+
+  function detail_order(){
+    $idOrder = $this->input->post('order');
+    $idCustomer = $this->input->post('customer');
+    $total = 0;
+    $output = '';
+
+    $type = $this->m_customer->getCustomerType($idCustomer)->row();
+
+    if($type->id_customertype=='member'){
+      $name = 'username';
+      $table = 'member';
+    }else{
+      $name = 'nama';
+      $table = 'not_member';
+    }
+
+    $order = $this->m_order->getOrderById($idOrder,$name,$table)->row();
+    $items = $this->m_order->getOrderItem($idOrder)->result();
+    $promo = $this->m_promo->getPromoByIdOrder($idOrder)->row();
+
+    $output .='
+      <table class="table-form" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <th width="30%">No Pesanan</th>
+          <td width="1%">:</td>
+          <td>'.$idOrder.'</td>
+        </tr>
+        <tr>
+            <th>Nama</th>
+            <td width="1%">:</td>
+            <td>'.$order->$name.'</td>
+        </tr>
+        <tr> 
+            <th>Alamat</th>
+            <td width="1%">:</td>
+            <td>'.$order->alamat.'</td>
+        </tr>
+        <tr>
+            <th>No. HP</th>
+            <td width="1%">:</td>
+            <td>'.$order->nomor_telepon.'</td>
+        </tr>
+        <tr>
+            <th>Catatan</th>
+            <td width="1%">:</td>
+            <td>'.$order->catatan.'</td>
+        </tr>
+        <tr>
+            <th>Tanggal Pesan</th>
+            <td width="1%">:</td>
+            <td>'.$order->tanggal_pesan.'</td>
+        </tr>
+        <tr>
+            <th>Tanggal Bayar</th>
+            <td width="1%">:</td>
+            <td>'.$order->tanggal_bayar.'</td>
+        </tr>
+        <tr>
+            <th>Tanggal Pickup</th>
+            <td width="1%">:</td>
+            <td>'.$order->waktu_pickup.'</td>
+        </tr>
+      </table>
+      <div class="alert alert-info" role="alert">
+            <center>Daftar item yang dipesan</center>
+      </div>
+      <table
+          class="table table-striped table-sm dt-responsive table-responsive-sm"
+          style="width: 100%"
+      >
+          <thead>
+              <tr class="text-center">
+                  <th>Nama Layanan</th>
+                  <th>Harga</th>
+                  <th>Jumlah</th>
+                  <th>Subtotal</th>
+              </tr>
+          </thead>
+          <tbody>';
+
+    foreach($items as $item){
+      $output .='
+        <tr>
+          <td>'.$item->nama_serviceitem.'</td>
+          <td>'.'Rp '.number_format($item->harga).'</td>
+          <td class="text-center">'.$item->qty.'</td>
+          <td>'.'Rp '.number_format($item->harga * $item->qty).'</td>
+        </tr>';
+      $total += ($item->harga * $item->qty);
+    }   
+    
+    if(!empty($promo)){
+      $output .= '</tbody>
+        </table>
+        
+        <div class="alert alert-info" role="alert">
+          <table class="table-form" border="0" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                  <td width="20%">Kode Promo</td>
+                  <td width="1%">:</td>
+                  <td>'.$promo->kode_promo.'</td>
+              </tr>
+              <tr>
+                  <td>Potongan</td>
+                  <td width="1%">:</td>
+                  <td>'.($promo->diskon * 100).'%</td>
+              </tr>
+              <tr>
+                  <td>Total</td>
+                  <td width="1%">:</td>
+                  <td>Rp '.$total.' - Rp '.($total * $promo->diskon).'</td>
+              </tr>
+              <tr> 
+                  <td></td>
+                  <td width="1%"></td>
+                  <td>Rp '.$order->total_price.'</td>
+              </tr>
+          </table>
+      </div>';
+    }
+
+    echo $output;
   }
 }

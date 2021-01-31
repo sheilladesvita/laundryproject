@@ -55,6 +55,23 @@ $(document).ready(function () {
 		$(this).find("#gambar").attr('src',gambar);
 		$(this).find("#desc").text(desc);
 	});
+	$('.orderDetail').click(function(){
+		var order = $(this).attr('data-id');
+		var customer = $(this).attr('data-customer');
+
+		$.ajax({
+			url: "admin/detail_order",
+			method: "POST",
+			data: {
+				order:order,
+				customer:customer
+			},
+			success: function(data){
+				$('#detail_result').html(data);
+				$('#orderDetailModal').modal('show');
+			}
+		});
+	});
 });
 
 function onlyNumberKey(evt) {

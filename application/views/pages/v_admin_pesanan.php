@@ -11,8 +11,6 @@
             <thead>
                 <tr class="text-center">
                     <th class="text-default-medium-important align-middle">No Pesanan</th>
-                    <th class="text-default-medium-important align-middle">Nama</th>
-                    <th class="text-default-medium-important align-middle">No.Telepon</th>
                     <th class="text-default-medium-important align-middle">Pembayaran</th>
                     <th class="text-default-medium-important align-middle">Total Bayar</th>
                     <th class="text-default-medium-important align-middle">Tanggal Pesan</th>
@@ -22,42 +20,40 @@
             </thead>
 
             <tbody>
-                <!-- <?php 
-                    foreach($serviceitem as $item){
-                ?> -->
+                <?php 
+                    foreach($order as $item){
+                ?>
                 <tr>
-                    <td>12345678910</td>
-                    <td class="text-center">Lisa</td>
-                    <td class="text-center">087321443211</td>
-                    <td class="text-center">Transfer</td>
-                    <td class="text-center">Rp 27000</td>
-                    <td class="text-center">29/01/2021</td>
+                    <td><?php echo $item->id_order;?></td>
+                    <td class="text-center"><?php echo $item->pembayaran;?></td>
+                    <td class="text-right"><?php echo "Rp ".number_format($item->total_price);?></td>
+                    <td class="text-center"><?php echo $item->tanggal_pesan;?></td>
                     <td class="text-center">
                         <div class="btn-group" role="group">
                         <a
                                 class="btn bg-default-red text-default-white btn-red-hover text-8"
                                 href=""
                             >
-                                Belum bayar
+                            <?php echo $item->status;?>
                         </a>
                         </div>
                     </td>
                     <td class="text-center">
                         <div class="btn-group" role="group">
                             <a
-                                class="btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
-                                href=""
-                                data-toggle="modal"
-                                data-target="#orderDetail"
+                                data-id=<?php echo $item->id_order;?>
+                                data-customer=<?php echo $item->id_customer;?>
+                                class="orderDetail btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
+                                
                             >
                                 <i class="fas fa-eye mx-2"></i>
                             </a>
                         </div>
                     </td>
                 </tr>
-                <!-- <?php 
+                <?php 
                     }
-                ?> -->
+                ?>
             </tbody>
         </table>
     <!-- </main> -->
@@ -65,9 +61,9 @@
     <!-- Modal -->
     <div
         class="modal fade bd-example-modal-lg"
-        id="orderDetail"
+        id="orderDetailModal"
         tabindex="-1"
-        aria-labelledby="orderDetailLabel"
+        aria-labelledby="orderDetailLabelModal"
         aria-hidden="true"
     >
         <div class="modal-dialog modal-lg">
@@ -77,111 +73,7 @@
                     <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                 </div>
                 <div class="modal-body">
-                    <table class="table-form" border="0" width="100%" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td width="20%">No Pesanan</td>
-                            <td width="1%">:</td>
-                            <td>12345678910</td>
-                        </tr>
-                        <tr>
-                            <td>Tanggal Pesan</td>
-                            <td width="1%">:</td>
-                            <td>29 Januari 2021</td>
-                        </tr>
-                        <tr>
-                            <td width="20%">Nama</td>
-                            <td width="1%">:</td>
-                            <td>Lisa</td>
-                        </tr>
-                        <tr> 
-                            <td>Alamat</td>
-                            <td width="1%">:</td>
-                            <td>Jl. Raya Indonesia Indah, Tangerang, Indonesia 15213</td>
-                        </tr>
-                        <tr>
-                            <td>No. HP</td>
-                            <td width="1%">:</td>
-                            <td>087321443211</td>
-                        </tr>
-                        <tr>
-                            <td>Catatan</td>
-                            <td width="1%">:</td>
-                            <td>Ambil depan rumah kuning cuciannya</td>
-                        </tr>
-                        <tr>
-                            <td>Tanggal Bayar</td>
-                            <td width="1%">:</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Pembayaran</td>
-                            <td width="1%">:</td>
-                            <td>Transfer</td>
-                        </tr>
-                        <tr> 
-                            <td>Total Item</td>
-                            <td width="1%">:</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>Total Bayar</td>
-                            <td width="1%">:</td>
-                            <td>Rp 27000</td>
-                        </tr>
-                    </table>
-
-                    <div class='alert alert-info' role='alert'>
-                        <center>Daftar item yang dipesan</center>
-                    </div>
-
-                    <table
-                        class="table table-striped table-sm dt-responsive table-responsive-sm"
-                        style="width: 100%"
-                    >
-                        <thead>
-                            <tr class="text-center">
-                                <th>Nama Layanan</th>
-                                <th>Jenis Layanan</th>
-                                <th>Harga</th>
-                                <th>Jumlah</th>
-                                <th>Subtotal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Baju</td>
-                                <td>Layanan Satuan</td>
-                                <td>Rp 3000</td>
-                                <td>10</td>
-                                <td>Rp 30000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class='alert alert-info' role='alert'>
-                        <table class="table-form" border="0" width="100%" cellpadding="0" cellspacing="0">
-                            <tr>
-                                <td width="20%">Kode Promo</td>
-                                <td width="1%">:</td>
-                                <td>G1B1</td>
-                            </tr>
-                            <tr>
-                                <td>Potongan</td>
-                                <td width="1%">:</td>
-                                <td>10%</td>
-                            </tr>
-                            <tr>
-                                <td>Total</td>
-                                <td width="1%">:</td>
-                                <td>Rp 30000 - Rp 3000</td>
-                            </tr>
-                            <tr> 
-                                <td></td>
-                                <td width="1%"></td>
-                                <td>Rp 27000</td>
-                            </tr>
-                        </table>
-                    </div>
+                    <div id="detail_result"></div>
                 </div>
                 <div class="d-inline-block text-right mr-4 my-4">
                     <button
@@ -196,11 +88,10 @@
         </div>
     </div>
 
-    <script
-        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"
-    ></script>
+    <script 
+		type="text/javascript" 
+		src="<?php echo base_url().'assets/js/jquery-3.3.1.js'?>"
+	></script>
     <script
         src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
