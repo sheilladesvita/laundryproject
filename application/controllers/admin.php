@@ -346,4 +346,30 @@ class admin extends CI_Controller
 
     echo $output;
   }
+
+  function change_statusPesanan(){
+    $idOrder = $this->input->post('order');
+    $status = $this->input->post('status');
+
+    $output = '';
+
+    switch ($status) {
+      case "belum bayar":
+        $data = array(
+          'status' => 'sudah bayar'
+        );
+        $this->m_order->updateStatus($idOrder,$data);
+        break;
+      case "sudah bayar":
+        $data = array(
+          'status' => 'selesai'
+        );
+        $this->m_order->updateStatus($idOrder,$data);
+        break;
+      default:
+        $output = 'Status tidak bisa diubah';
+    }
+
+    echo $output;
+  }
 }

@@ -31,8 +31,23 @@
                     <td class="text-center">
                         <div class="btn-group" role="group">
                         <a
-                                class="btn bg-default-red text-default-white btn-red-hover text-8"
-                                href=""
+                                data-id=<?php echo $item->id_order;?>
+                                data-status="<?php echo $item->status;?>"
+                                class="btn text-default-white text-8 
+                                <?php if($item->status == "belum bayar"){
+                                    echo "bg-default-red btn-red-hover";
+                                }else if($item->status == "sudah bayar"){ 
+                                    echo "bg-default-yellow btn-yellow-hover";
+                                }else{ 
+                                    echo "bg-default-green btn-green-hover";
+                                }?>"
+                                href=<?php if($item->status == "selesai"){
+                                    echo "#";
+                                }else{ 
+                                    echo "#changeStatusModal";
+                                }?>
+                                id="orderId"
+                                data-toggle="modal"
                             >
                             <?php echo $item->status;?>
                         </a>
@@ -58,7 +73,7 @@
         </table>
     <!-- </main> -->
 
-    <!-- Modal -->
+    <!-- Modal Detail -->
     <div
         class="modal fade bd-example-modal-lg"
         id="orderDetailModal"
@@ -83,6 +98,38 @@
                     >
                         Back
                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Ubah Status-->
+    <div
+        class="modal fade"
+        id="changeStatusModal"
+        tabindex="-1"
+        aria-labelledby="changeStatusModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    Status pesanan tidak bisa diubah kembali. Anda yakin <b>mengubah</b> status pesanan ini?
+                </div>
+                <div class="d-inline-block text-right mr-4 my-4">
+                    <button
+                        type="button"
+                        data-dismiss="modal"
+                        id="btn-cancelstatus"
+                    >
+                        Cancel
+                    </button>
+                    <a
+                        type="button"
+                        id="btn-changestatus"
+
+                        >Change</a
+                    >
                 </div>
             </div>
         </div>

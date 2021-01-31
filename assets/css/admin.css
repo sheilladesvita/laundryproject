@@ -164,6 +164,10 @@ a {
 	background-color: #e92b2b;
 }
 
+.bg-default-green {
+	background-color: #1cf326ea;
+}
+
 /* Border */
 
 .border-default-black {
@@ -184,6 +188,10 @@ a {
 
 .border-default-sky {
 	border: 1px solid #5bc2d4;
+}
+
+.border-default-red {
+	border: 1px solid #e92b2b;
 }
 
 .border-dashed-black {
@@ -230,6 +238,11 @@ a {
 .btn-red-hover:hover {
 	color: #fffffa;
 	background-color: #e70606 !important;
+}
+
+.btn-green-hover:hover {
+	color: #fffffa;
+	background-color: #42f84bea !important;
 }
 
 .btn-outline-yellow-hover:hover {
@@ -327,6 +340,10 @@ a {
 
 .text-default-sky {
 	color: #5bc2d4;
+}
+
+.text-default-red {
+	color: #e92b2b;
 }
 
 .inherit-color {

@@ -34,6 +34,11 @@ class m_order extends CI_Model {
             WHERE a.id_serviceitem = b.id_serviceitem AND b.id_order = '$id_order';";
         return $this->db->query($query);
     }
+
+    function updateStatus($id,$data){
+        $this->db->where('id_order',$id);
+        return $this->db->update('order_', $data);
+    }
 }
 
 ?>
