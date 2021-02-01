@@ -153,7 +153,7 @@
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a
                                 data-kode=<?php echo $item->kode_promo;?> 
-                                data-gambar="<?php echo base_url('assets/images/promo/'.$item->gambar);?>"
+                                data-gambar=" <?php echo base_url('assets/images/promo/'.$item->gambar);?>"
                                 data-desc="<?php echo $item->deskripsi;?>" 
                                 class="btn btn-sm bg-transparent text-default-yellow btn-outline-yellow-hover border-default-yellow"
                                 href="#promoDetailModal"
