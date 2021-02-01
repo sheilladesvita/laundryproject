@@ -10,6 +10,11 @@ class m_customer extends CI_Model {
         $query = "INSERT INTO `customer`(`ID_CUSTOMER`, `ID_CUSTOMERTYPE`) VALUES ('$id','$type')";
         $this->db->query($query);
     }
+
+    function getCustomerType($id){
+        $query = "SELECT id_customertype FROM customer WHERE id_customer='$id' LIMIT 1";
+        return $this->db->query($query);
+    }
 }
 
 ?>

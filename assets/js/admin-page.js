@@ -46,6 +46,37 @@ $(document).ready(function () {
 		$(e.currentTarget).find('input[name="harga"]').val(harga);
 		$(e.currentTarget).find('select[name="service"]').val(kategori);
 	});
+	$('#changeStatusModal').on('show.bs.modal', function (e) {
+		var order = $(e.relatedTarget).data('id');
+		var status = $(e.relatedTarget).data('status');
+
+		if(status == "belum bayar"){
+			var style_cancel = "btn bg-transparent border-default-red text-default-red btn-outline-red-hover";
+			var style_change = "btn bg-default-red text-default-white btn-red-hover";
+			$(this).find("#btn-cancelstatus").attr('class',style_cancel);
+			$(this).find("#btn-changestatus").attr('class',style_change);
+		}else{
+			var style_cancel = "btn bg-transparent border-default-yellow text-default-yellow btn-outline-yellow-hover";
+			var style_change = "btn bg-default-yellow text-default-white btn-yellow-hover";
+			$(this).find("#btn-cancelstatus").attr('class',style_cancel);
+			$(this).find("#btn-changestatus").attr('class',style_change);
+		}
+
+		$('#btn-changestatus').click(function(){
+			$.ajax({
+				url: "change_statusPesanan",
+				method: "POST",
+				data: {
+					order:order,
+					status:status
+				},
+				success: function(data){
+					var link = "index";
+                    document.location.href = link;
+				}
+			});
+		});
+	});
 	$('#promoDetailModal').on('show.bs.modal', function (e) {
 		var kode = $(e.relatedTarget).data('kode');
 		var gambar = $(e.relatedTarget).data('gambar');
@@ -54,6 +85,23 @@ $(document).ready(function () {
 		$(this).find("#kode_promo").text("#"+kode);
 		$(this).find("#gambar").attr('src',gambar);
 		$(this).find("#desc").text(desc);
+	});
+	$('.orderDetail').click(function(){
+		var order = $(this).attr('data-id');
+		var customer = $(this).attr('data-customer');
+
+		$.ajax({
+			url: "detail_order",
+			method: "POST",
+			data: {
+				order:order,
+				customer:customer
+			},
+			success: function(data){
+				$('#detail_result').html(data);
+				$('#orderDetailModal').modal('show');
+			}
+		});
 	});
 });
 

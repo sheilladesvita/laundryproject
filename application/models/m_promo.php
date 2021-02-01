@@ -15,6 +15,14 @@ class m_promo extends CI_Model {
             AND status=TRUE;";
         return $this->db->query($query);
     }
+
+    function getPromoByIdOrder($id){
+        $query = "SELECT a.id_promo, a.id_order, b.kode_promo, b.diskon 
+        FROM have AS a, promo AS b 
+        WHERE a.id_promo = b.id_promo AND
+        a.id_order = '$id'";
+        return $this->db->query($query);
+    }
     
     function input_data($data,$table){
         return $this->db->insert($table,$data);
