@@ -23,7 +23,6 @@ class ViewOnly extends CI_Controller
   {
     parent::__construct();
     $this->load->model('m_service_item');
-    // $this->load->model('m_admin_login');
     $this->load->model('m_service');
     $this->load->model('service');
     $this->load->model('m_customer');
@@ -281,13 +280,7 @@ class ViewOnly extends CI_Controller
 		$where = array('id_serviceitem' => $id);
 		$this->service->hapus_layanan($where,'service_item');
 		redirect('ViewOnly/admin');
-    }
-  // public function join_service() {
-  //   // $data1['pujasera']=$this->m_data->joinlaporan();
-  //   $data['service']=$this->service->joinservice()->result();
-  //   // $data['content_div'] = $this->load->view('v_admin',$data1,true);
-  //   $this->load->view('pages/v_admin',$data);
-// }
+  }
 
 function tambahlayanan(){
   $data1['service'] = $this->service->getService()->result();
@@ -319,4 +312,47 @@ function tambah_aksilayanan(){
     }      
     return $id_serviceitem = $this->service->get_newidlayanan($auto_id,'KC','KS','PMK','PMM','PMP','PMS','SB','SC','SG','SH','SJ','SK','SS');      
  }
+
+ public function forgot_password(){
+    $this->load->view('pages/v_forgot_password');
+  }
+
+  public function reset_password(){
+    $this->load->view('pages/v_reset_password');
+  }
+
+  public function check_email(){
+    $email = $this->input->post('email');
+
+    $member = $this->m_member->getMemberByEmail($email)->row();
+    if($member){
+      $_SESSION['id_customer'] = $member->id_customer;
+      redirect('viewonly/reset_password');
+    }else{
+      echo '<script>alert("Email ini tidak terdaftar.");
+      window.location.href="'.base_url('viewonly/forgot_password').'";</script>';
+    }
+  }
+
+  public function reset_newPassword(){
+    $newPassword			= $_POST['newPassword'];
+    $confirmPassword	= $_POST['confirmPassword'];
+    
+    if($newPassword == $confirmPassword){
+      $newPassword 	= md5($newPassword);
+      if($this->m_member->updatePassword($newPassword,$_SESSION['id_customer'])){
+        unset($_SESSION['id_customer']);
+        echo "<script>
+        window.location.href='change_password';
+        alert('Password berhasil diubah.');
+        </script>";
+      }else{
+        echo '<script>alert("Gagal mengubah password.");
+        window.location.href="'.base_url('viewonly/change_password').'";</script>';
+      }					
+    }else{
+      echo '<script>alert("Konfirmasi password tidak cocok.");
+      window.location.href="'.base_url('viewonly/change_password').'";</script>';
+    }
+  }
 }

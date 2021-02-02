@@ -4,7 +4,7 @@
         <div class="text-24 text-default-medium">Daftar Pesanan</div>
 
         <table
-            id="service-table"
+            id="admin-table"
             class="table table-striped table-sm dt-responsive table-responsive-sm"
             style="width: 100%"
         >

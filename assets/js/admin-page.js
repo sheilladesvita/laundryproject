@@ -23,17 +23,11 @@ $(document).ready(function () {
 	});
 
 	// Initialize datatable
-	$("#service-table").DataTable({
-		paging: false,
-		columnDefs: [{ orderable: false, targets: 3 }],
+	$("#admin-table").DataTable({
+		pagingType: "simple_numbers",
+		// columnDefs: [{ orderable: false, targets: 3 }],
 		// bLengthChange: false,
-		bInfo: false,
-	});
-	$("#promo-table").DataTable({
-		paging: false,
-		columnDefs: [{ orderable: false, targets: 3 }],
-		// bLengthChange: false,
-		bInfo: false,
+		// bInfo: false,
 	});
 	$('#serviceUpdateModal').on('show.bs.modal', function (e) {
 		var id = $(e.relatedTarget).data('id');

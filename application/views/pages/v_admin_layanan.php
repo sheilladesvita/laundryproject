@@ -78,7 +78,7 @@
         <div class="text-24 text-default-medium pl-0 pt-4">Daftar Layanan</div>
 
         <table
-            id="service-table"
+            id="admin-table"
             class="table table-striped table-sm dt-responsive table-responsive-sm"
             style="width: 100%"
         >

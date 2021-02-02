@@ -267,7 +267,7 @@
 									</div>
 									<div class="input-group">
 										<input
-											type="pas sword"
+											type="password"
 											name="password"
 											id="password-login"
 											autocomplete="off"
@@ -285,7 +285,7 @@
 									</button>
 								</form>
 								<div class="text-center text-10 text-default-blue">
-									<a href="#" class="color-inherit">Forgot password?</a>
+									<a href="<?php echo base_url();?>viewonly/forgot_password" class="color-inherit">Forgot password?</a>
 								</div>
 							</div>
 

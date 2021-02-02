@@ -11,6 +11,11 @@ class m_member extends CI_Model {
         return $this->db->query($query);
     }
 
+    function getMemberByEmail($email) {
+        $query = "SELECT id_customer FROM member WHERE email = '$email';";
+        return $this->db->query($query);
+    }
+
     function addNotMember($data) {
         $this->db->insert('not_member',$data);
     }
