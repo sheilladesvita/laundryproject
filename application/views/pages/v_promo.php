@@ -1,48 +1,25 @@
-<main role="main h-100">
-<div class="flex-container">
+<main role="main">
+	<div class="flex-container">
 		<div class="flex-row">
+			<?php 
+				foreach($promo as $item){
+			?>
 			<div class="flex-column">
-				<div class="box-content">
-
-				<!-- <div class="card"> -->
-					<img src="<?php echo base_url();?>assets/images/als logo.png" alt="Avatar" style="width:100%">
-					<div class="container">
-						<h4><b>PROMO 30%</b></h4>
-						<p>syarat kententuan berlaku</p>
+				<div class="box-content-promo">
+					<img src="<?php echo base_url();?>assets/images/promo/<?php echo $item->gambar;?>"
+						class="img-promo width-form-100 rounded"
+					>
+					<div class="container text-16 text-center width-form-75 text-default-semi-bold padding-t-25">
+						<?php echo "#".$item->kode_promo;?>
 					</div>
-					<!-- </div> -->
-					</div>
+					<div class="container text-12 text-center width-form-100">
+						<?php echo $item->deskripsi;?>
+                    </div>
+				</div>
 			</div>
-			<div class="flex-column">
-				<div class="box-content">
-				<img src="<?php echo base_url();?>assets/images/als logo.png" alt="Avatar" style="width:100%">
-					<div class="container">
-						<h4><b>PROMO 30%</b></h4>
-						<p>syarat kententuan berlaku</p>
-					</div>
-					<!-- </div> -->
-					</div>
-			</div>
-			<div class="flex-column">
-				<div class="box-content">
-				<img src="<?php echo base_url();?>assets/images/als logo.png" alt="Avatar" style="width:100%">
-					<div class="container">
-						<h4><b>PROMO 30%</b></h4>
-						<p>syarat kententuan berlaku</p>
-					</div>
-					<!-- </div> -->
-					</div>
-			</div>
-			<div class="flex-column">
-				<div class="box-content">
-				<img src="<?php echo base_url();?>assets/images/als logo.png" alt="Avatar" style="width:100%">
-					<div class="container">
-						<h4><b>PROMO 30%</b></h4>
-						<p>syarat kententuan berlaku</p>
-					</div>
-					<!-- </div> -->
-					</div>
-			</div>
+			<?php 
+				}
+			?>
 		</div>
 	</div>
 </main>

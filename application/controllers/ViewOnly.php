@@ -28,6 +28,7 @@ class ViewOnly extends CI_Controller
     $this->load->model('m_customer');
     $this->load->model('m_member');
     $this->load->model('m_order');
+    $this->load->model('m_promo');
     $this->load->helper('url');  
   }
   
@@ -93,8 +94,9 @@ class ViewOnly extends CI_Controller
 
   public function promo(){
     $data["active_link"] = "promo";
+    $data["promo"] = $this->m_promo->getPromo()->result();
     $this->load->view('partials/header', $data);
-    $this->load->view('pages/v_promo');
+    $this->load->view('pages/v_promo',$data);
     $this->load->view('partials/footer', $data);
   }
 
