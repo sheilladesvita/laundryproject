@@ -108,6 +108,46 @@ class admin extends CI_Controller
     }
   }
 
+  public function change_password(){
+    if(isset($_SESSION['login_admin']) && $_SESSION['login_admin']==true){
+      $data["active_link"] = "";
+      $this->load->view('partials/admin_header',$data);
+      $this->load->view('pages/v_admin_ganti_password');
+    }else{
+      redirect('admin/login');
+    }
+  }
+
+  public function update_password(){
+    $oldPassword			= $_POST['oldPassword'];
+		$newPassword			= $_POST['newPassword'];
+		$confirmPassword	= $_POST['confirmPassword'];
+
+		$oldPassword	= md5($oldPassword);
+		$cek 			= $this->m_admin_login->getPassword($_SESSION['username'],$oldPassword)->result();
+		
+		if(count($cek) > 0){
+      if($newPassword == $confirmPassword){
+        $newPassword 	= md5($newPassword);
+        if($this->m_admin_login->updatePassword($newPassword,$_SESSION['username'])){
+          echo "<script>
+          window.location.href='change_password';
+          alert('Password berhasil diubah.');
+          </script>";
+        }else{
+          echo '<script>alert("Gagal mengubah password.");
+          window.location.href="'.base_url('admin/change_password').'";</script>';
+        }					
+      }else{
+        echo '<script>alert("Konfirmasi password tidak cocok.");
+        window.location.href="'.base_url('admin/change_password').'";</script>';
+      }
+		}else{
+      echo '<script>alert("Password lama tidak cocok.");
+      window.location.href="'.base_url('admin/change_password').'";</script>';
+		}
+  }
+
   public function get_idLayanan($kategori,$nama_serviceitem){
     switch ($kategori) {
       case "LK01":

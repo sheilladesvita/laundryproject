@@ -124,7 +124,7 @@
 					class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="dropdownMenuButton"
 				>
-					<a class="dropdown-item text-default-light-important" href="#"
+					<a class="dropdown-item text-default-light-important" href="<?php echo base_url('admin/change_password')?>"
 						><i class="fas fa-user-cog"></i> Ganti Password</a
 					>
 					<!-- <a class="dropdown-item text-default-light-important" href="#"
