@@ -33,7 +33,7 @@
 							location
 						</div>
 						<div class="footer-segment-body">
-							<!-- <iframe
+							<iframe
 								width="100%"
 								height="100%"
 								frameborder="0"
@@ -41,7 +41,7 @@
 								src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCaX28G01ffhZrkfjj4mq4NgQofSncL-9w&q=ALS+Laundry,Gudangkahuripan,Lembang"
 								allowfullscreen
 							>
-							</iframe> -->
+							</iframe>
 						</div>
 					</div>
 					<div class="col-sm-3 text-left">
