@@ -6,7 +6,7 @@
                     type="text" 
                     name="name" 
                     id="name"
-                    value=<?php echo $_SESSION['username'];?> 
+                    value="<?php echo $_SESSION['username'];?>" 
                     readonly                    
                     />
 				<label for="name" class="input-label">
@@ -18,7 +18,7 @@
 					type="email"
 					name="email"
 					id="email"
-					value=<?php echo $_SESSION['email'];?> 
+					value="<?php echo $_SESSION['email'];?>"
                     readonly 
 				/>
 				<label for="email" class="input-label">
@@ -30,7 +30,7 @@
 					type="text"
 					name="phone-number"
 					id="phone-number"
-					value=<?php echo $_SESSION['nomor_telepon'];?> 
+					value="<?php echo $_SESSION['nomor_telepon'];?>"
                     readonly 
 				/>
 				<label for="phone-number" class="input-label">
@@ -42,7 +42,7 @@
 					type="text"
 					name="alamat"
 					id="alamat"
-                    value=<?php echo $_SESSION['alamat'];?>
+                    value="<?php echo $_SESSION['alamat'];?>"
                     required 
 				/>
 				<label for="alamat" class="input-label">

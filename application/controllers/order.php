@@ -64,7 +64,7 @@ class order extends CI_Controller
                         $batas_harga = $item->batas_harga;
                     }
                     $now = date("Y-m-d");
-                    if($now < date("Y-m-d",strtotime($date)) && ($batas_harga == null || $batas_harga <= $this->cart->total())){
+                    if($now <= date("Y-m-d",strtotime($date)) && ($batas_harga == null || $batas_harga <= $this->cart->total())){
                         if($qty == null){
                             $_SESSION['promo'] = $this->cart->total() * $diskon;
                             $_SESSION['id_promo'] = $id;
@@ -243,7 +243,7 @@ class order extends CI_Controller
           $this->m_order->addItem($id_order,$items['id'],$items['qty']);
         }
 
-        if(isset($_SESSION['id_order'])){
+        if(isset($_SESSION['id_promo'])){
             $data_promo = array(
                 'id_promo' => $_SESSION['id_promo'],
                 'id_order' => $id_order
@@ -267,17 +267,12 @@ class order extends CI_Controller
             $name = 'nama';
             $table = 'not_member';
         }
-        $data1['customer'] = $this->m_order->getOrder($_SESSION['id_order'],$name,$table)->result();
+        $data1['customer'] = $this->m_order->getOrderById($_SESSION['id_order'],$name,$table)->result();
         $data1['items'] = $this->m_order->getOrderItem($_SESSION['id_order'])->result();
         $this->load->view('partials/header', $data);
         $this->load->view('pages/v_confirmation',$data1);
         $this->load->view('partials/footer', $data);
       }
-
-    //   function order_again() {
-    //     $this->delete_promo();
-    //     redirect('order/index');
-    //   }
 }
 
 ?>
