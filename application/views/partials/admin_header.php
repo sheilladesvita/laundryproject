@@ -127,9 +127,9 @@
 					<a class="dropdown-item text-default-light-important" href="#"
 						><i class="fas fa-user-cog"></i> Ganti Password</a
 					>
-					<a class="dropdown-item text-default-light-important" href="#"
+					<!-- <a class="dropdown-item text-default-light-important" href="#"
 						><i class="fas fa-user-plus"></i> Buat Akun Admin</a
-					>
+					> -->
 					<a class="dropdown-item text-default-light-important" href="<?php echo base_url('admin/logout')?>"
 						><i class="fas fa-sign-out-alt"></i> Keluar</a
 					>

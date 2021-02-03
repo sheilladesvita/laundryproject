@@ -176,6 +176,61 @@
             </td>
         </tr>
     </table>
+    <table class="container-table" style="margin-top:25px">
+        <tr>
+            <td align="center">
+                <table class="width-form-100">
+                    <tr>
+                        <td class="row-confirmation">
+                            <table class="table-confirmation">
+                                <tr>
+                                    <td align="center">
+                                        <h5> INFORMATION</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="width-form-70 text-10 text-weight-800 padding-l-15-px" align="center">
+                                    Pembayaran Transfer
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
+                                    Anda dapat melakukan pembayaran melalui transfer bank.
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
+                                    1. Transfer Ke Bank ABC No Rek ...... A/N ALS Laundry
+                                    <br>
+                                    2. Kirim bukti pembayaran via Whatsapp/Email/Instagram ALS Laundry
+                                    <br>
+                                    3. Pihak ALS Laundry konfirmasi via Whatsapp/Email/Instagram jika transfer sudah masuk 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="width-form-70 text-10 text-weight-800 padding-l-15-px" align="center">
+                                    Pembayaran Cash On Delivery(COD)
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
+                                    Anda dapat melakukan pembayaran dengan COD.
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
+                                    1. Kurir mengantar laundry yang sudah selesai dicuci
+                                    <br>
+                                    2. Bayar langsung kepada kurir laundry yang datang kerumah anda
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
     <div class="container text-center width-form-25 padding-t-25">
         <a 
             href="<?php echo base_url();?>order/delete_promo/index"
