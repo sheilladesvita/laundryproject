@@ -7,7 +7,7 @@ class m_service_item extends CI_Model {
     }
     
     function getServiceItemList($id) {
-        $query = "SELECT id_serviceitem, nama_serviceitem, harga FROM service_item WHERE id_service = '$id';";
+        $query = "SELECT id_serviceitem, nama_serviceitem, harga FROM service_item WHERE id_service = '$id' AND status=TRUE;";
         return $this->db->query($query);
     }
 

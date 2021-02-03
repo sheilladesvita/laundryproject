@@ -70,7 +70,6 @@
                                 name="qty"
                                 class="form-control mr-sm-2"
                                 id="qty"
-                                min=0
                                 placeholder="Batas jumlah pemakaian"
                             />
                         </div>
@@ -80,7 +79,6 @@
                                 name="batas_harga"
                                 class="form-control mr-sm-2"
                                 id="batas_harga"
-                                min=0
                                 placeholder="Batas minimal harga"
                             />
                         </div>

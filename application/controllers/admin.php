@@ -205,16 +205,18 @@ class admin extends CI_Controller
 		}
 		else
 		{
-      if($this->input->post('qty')==0)
+      if($this->input->post('qty')==""){
         $qty = null;
-      else
+      }else{
         $qty = $this->input->post('qty');
+      }
 
-      if($this->input->post('batas_harga')==0)
+      if($this->input->post('batas_harga')==""){
         $batas_harga = null;
-      else
+      }else{
         $batas_harga = $this->input->post('batas_harga');
-
+      }
+      
       $data = array(
         'kode_promo' => $this->input->post('kode_promo'),
         'diskon'  => $this->input->post('diskon')/100,
