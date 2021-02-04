@@ -241,7 +241,7 @@
                             </tr>
                             <tr>
                                 <td class="align-top">
-                                    <div class="container text-14 text-justify width-form-50"
+                                    <div class="container text-14 text-left width-form-50"
                                         id="desc"
                                     >
                                     
@@ -249,7 +249,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <div class="container text-center width-form-25 py-3">
+                        <!-- <div class="container text-center width-form-25 py-3">
                             <a 
                                 href="#"
                                 class="btn btn-block bg-default-sky text-default-white btn-auth"
@@ -257,7 +257,7 @@
                             >
                                 MAU
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

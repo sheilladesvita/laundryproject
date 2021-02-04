@@ -172,7 +172,19 @@
                     method : "POST",
                     data : {row_id : row_id},
                     success :function(data){
-                        $('#detail_cart').html(data);
+						$('#detail_cart').html(data);
+                    }
+                });
+			});
+			
+			$(document).on('click','.delete_promo',function(){
+                var row_id=$(this).attr("id"); //mengambil row_id dari artibut id
+                $.ajax({
+                    url : "<?php echo base_url();?>order/delete_promo",
+                    method : "POST",
+                    data : {row_id : row_id},
+                    success :function(data){
+						$('#detail_cart').html(data);
                     }
                 });
             });

@@ -13,7 +13,7 @@
                     <th class="text-default-medium-important align-middle">Nama</th>
                     <th class="text-default-medium-important align-middle">Email</th>
                     <th class="text-default-medium-important align-middle">No.Telepon</th>
-                    <th class="text-default-medium-important align-middle">Alamat</th>
+                    <th class="text-default-medium-important align-middle width-form-30">Alamat</th>
                 </tr>
             </thead>
 
@@ -25,7 +25,7 @@
                     <td class="text-center"><?php echo $item->username;?></td>
                     <td class="text-center"><?php echo $item->email;?></td>
                     <td class="text-center"><?php echo $item->nomor_telepon;?></td>
-                    <td class="text-center"><?php echo $item->alamat;?></td>
+                    <td class="text-left"><?php echo $item->alamat;?></td>
                 </tr>
                 <?php 
                     }

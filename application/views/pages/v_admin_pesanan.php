@@ -27,7 +27,7 @@
                     <td><?php echo $item->id_order;?></td>
                     <td class="text-center"><?php echo $item->pembayaran;?></td>
                     <td class="text-right"><?php echo "Rp ".number_format($item->total_price);?></td>
-                    <td class="text-center"><?php echo $item->tanggal_pesan;?></td>
+                    <td class="text-center"><?php echo $item->tgl_pesan;?></td>
                     <td class="text-center">
                         <div class="btn-group" role="group">
                         <a

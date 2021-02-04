@@ -25,6 +25,7 @@ $(document).ready(function () {
 	// Initialize datatable
 	$("#admin-table").DataTable({
 		pagingType: "simple_numbers",
+		ordering: false
 		// columnDefs: [{ orderable: false, targets: 3 }],
 		// bLengthChange: false,
 		// bInfo: false,

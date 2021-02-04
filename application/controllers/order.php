@@ -99,10 +99,11 @@ class order extends CI_Controller
         }
     }
 
-    function delete_promo($link) {
+    function delete_promo() {
         unset($_SESSION['promo']);
         unset($_SESSION['id_promo']);
-        redirect('order/'.$link);
+
+        echo $this->show_cart();
     }
  
     function show_cart(){
@@ -139,8 +140,8 @@ class order extends CI_Controller
                     <th class="text-center">
                         <div class="btn-group" role="group">
                         <a
-                                class="btn bg-default-red text-default-white btn-red-hover text-7"
-                                href="delete_promo/index"
+                                class="delete_promo btn bg-default-red text-default-white btn-red-hover text-7"
+                                id='.$items['rowid'].'
                             >
                                 Hapus promo
                         </a>
@@ -167,10 +168,8 @@ class order extends CI_Controller
             'qty' => 0, 
         );
         $this->cart->update($data);
-        if(count($this->cart->contents()) == 0)
-            $this->delete_promo();
 
-        echo $this->show_cart();
+        $this->delete_promo();
     }
 
     function check_cart(){

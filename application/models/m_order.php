@@ -12,8 +12,8 @@ class m_order extends CI_Model {
     }
 
     function getOrder(){
-        $query = "SELECT id_order, id_customer, DATE_FORMAT(tanggal_pesan,'%d/%m/%Y') AS tanggal_pesan, total_price, DATE_FORMAT(WAKTU_PICKUP,'%d/%m/%Y') AS waktu_pickup, pembayaran, status 
-            FROM order_;";
+        $query = "SELECT id_order, id_customer, DATE_FORMAT(tanggal_pesan,'%d/%m/%Y') AS tgl_pesan, total_price, DATE_FORMAT(WAKTU_PICKUP,'%d/%m/%Y') AS waktu_pickup, pembayaran, status 
+            FROM order_ ORDER BY tanggal_pesan DESC;";
         return $this->db->query($query);
     }
 
