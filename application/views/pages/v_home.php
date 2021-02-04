@@ -4,7 +4,7 @@
 			<div class="text-default-white text-32 text-default-bold font-italic">
 				Super Fast. Super Clean. Super Fresh.
 			</div>
-			<div class="text-default-yellow text-14">Some short slogan</div>
+			<div class="text-default-yellow text-14">With ALS Laundry</div>
 		</div>
 		<a
 			class="btn-banner text-decoration-none text-default-yellow font-italic text-18 text-default-semi-bold"

@@ -5,23 +5,44 @@
     <footer class="text-12 text-default-white">
 			<div class="container-fluid">
 				<div class="row text-default-black m-0">
-					<div class="col-sm-3 text-left">
+					
+					<!-- <div class="col-sm-3 text-left">
 						<div
 							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
 						>
-							contact us
+							instagram's image
+						</div>
+						<div class="footer-segment-body text-default-black">
+							<div class="row m-0 p-0">
+								<div class="col-2 ig-photos">1</div>
+								<div class="col-2 ig-photos">2</div>
+								<div class="col-2 ig-photos">3</div>
+								<div class="col-2 ig-photos">4</div>
+								<div class="col-2 ig-photos">5</div>
+								<div class="col-2 ig-photos">6</div>
+								<div class="col-2 ig-photos">7</div>
+								<div class="col-2 ig-photos">8</div>
+								<div class="col-2 ig-photos">9</div>
+								<div class="col-2 ig-photos">10</div>
+							</div>
+						</div>
+					</div> -->
+					<div class="col-sm-3 text-left">
+						<div 
+							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
+						>
+							menu
 						</div>
 						<div class="footer-segment-body text-default-black">
 							<ul class="p-0">
+								<li class="unstyled-list my-3"><a class="" href="">News</a></li>
+								<li class="unstyled-list my-3"><a class="" href="">Blog</a></li>
+								<li class="unstyled-list my-3"><a class="" href="">FAQs</a></li>
 								<li class="unstyled-list my-3">
-									<i class="far fa-map"></i>
-									<span
-										>Ruko Jl. Babakan Laksana No. 121 (Depan Resto d'DSL)</span
-									>
+									<a class="" href="">About Us</a>
 								</li>
 								<li class="unstyled-list my-3">
-									<i class="fas fa-phone-alt"></i>
-									<span>+62 815 8413 6637</span>
+									<a class="" href="">Terms of Service</a>
 								</li>
 							</ul>
 						</div>
@@ -48,39 +69,19 @@
 						<div
 							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
 						>
-							instagram's image
-						</div>
-						<div class="footer-segment-body text-default-black">
-							<div class="row m-0 p-0">
-								<div class="col-2 ig-photos">1</div>
-								<div class="col-2 ig-photos">2</div>
-								<div class="col-2 ig-photos">3</div>
-								<div class="col-2 ig-photos">4</div>
-								<div class="col-2 ig-photos">5</div>
-								<div class="col-2 ig-photos">6</div>
-								<div class="col-2 ig-photos">7</div>
-								<div class="col-2 ig-photos">8</div>
-								<div class="col-2 ig-photos">9</div>
-								<div class="col-2 ig-photos">10</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3 text-left">
-						<div
-							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
-						>
-							menu
+							contact us
 						</div>
 						<div class="footer-segment-body text-default-black">
 							<ul class="p-0">
-								<li class="unstyled-list my-3"><a class="" href="">News</a></li>
-								<li class="unstyled-list my-3"><a class="" href="">Blog</a></li>
-								<li class="unstyled-list my-3"><a class="" href="">FAQs</a></li>
 								<li class="unstyled-list my-3">
-									<a class="" href="">About Us</a>
+									<i class="far fa-map"></i>
+									<span
+										>Jl. Raya Lembang No.121, Gudangkahuripan, Lembang, Kabupaten Bandung Barat, Jawa Barat 40391, Indonesia</span
+									>
 								</li>
 								<li class="unstyled-list my-3">
-									<a class="" href="">Terms of Service</a>
+									<i class="fas fa-phone-alt"></i>
+									<span>+62 815 8413 6637</span>
 								</li>
 							</ul>
 						</div>
@@ -97,14 +98,14 @@
             <a class="round-btn instagram-icn text-decoration-none mr-3" href="https://www.instagram.com/alslaundry/" target="_blank">
               <i class="fab fa-instagram fa-2x"></i>
             </a>
-            <a class="round-btn whatsapp-icn text-decoration-none" href="https://api.whatsapp.com/send?phone=089526210215" target="_blank">
+            <a class="round-btn whatsapp-icn text-decoration-none" href="https://api.whatsapp.com/send?phone=081584136637" target="_blank">
               <i class="fab fa-whatsapp fa-2x"></i>
             </a>
           </div>
         </div>
 			</div>
 			<div class="copyright bg-default-blue text-center">
-				&copy; Company 2017-2018
+				&copy; Company 2020-2021
 			</div>
 		</footer>
 
