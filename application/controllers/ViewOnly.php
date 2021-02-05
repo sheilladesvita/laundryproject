@@ -107,6 +107,20 @@ class ViewOnly extends CI_Controller
     $this->load->view('partials/footer', $data);
   }
 
+  public function FAQ(){
+    $data["active_link"] = "FAQ";
+    $this->load->view('partials/header', $data);
+    $this->load->view('pages/v_FAQ');
+    $this->load->view('partials/footer', $data);
+  }
+
+  public function term(){
+    $data["active_link"] = "syarat_ketentuan";
+    $this->load->view('partials/header', $data);
+    $this->load->view('pages/v_term');
+    $this->load->view('partials/footer', $data);
+  }
+
   public function order(){
     $data["active_link"] = "order";
     $data1['service'] = $this->m_service->getService()->result();

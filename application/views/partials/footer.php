@@ -35,15 +35,31 @@
 						</div>
 						<div class="footer-segment-body text-default-black">
 							<ul class="p-0">
-								<li class="unstyled-list my-3"><a class="" href="">News</a></li>
-								<li class="unstyled-list my-3"><a class="" href="">Blog</a></li>
-								<li class="unstyled-list my-3"><a class="" href="">FAQs</a></li>
-								<li class="unstyled-list my-3">
-									<a class="" href="">About Us</a>
-								</li>
-								<li class="unstyled-list my-3">
-									<a class="" href="">Terms of Service</a>
-								</li>
+
+							<li class="unstyled-list my-3
+							<?php if($active_link == "FAQ") echo "active" ?>">
+							<a
+							class=""
+							href="<?php echo base_url();?>viewonly/FAQ"
+							>FAQ</a
+							>
+							</li>
+							<li class="unstyled-list my-3
+							<?php if($active_link == "tentang_kami") echo "active" ?>">
+							<a
+							class=""
+							href="<?php echo base_url();?>viewonly/about_us"
+							>Tentang Kami</a
+							>
+							</li>
+							<li class="unstyled-list my-3
+							<?php if($active_link == "syarat_ketentuan") echo "active" ?>">
+							<a
+							class=""
+							href="<?php echo base_url();?>viewonly/term"
+							>Term of Service</a
+							>
+							</li>
 							</ul>
 						</div>
 					</div>
@@ -86,6 +102,10 @@
 							</ul>
 						</div>
 					</div>
+					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+						<a href="https://api.whatsapp.com/send?phone=081584136637&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+						<i class="fa fa-whatsapp my-float"></i>
+						</a>
         </div>
         
         <hr class="m-0"/>
@@ -105,7 +125,7 @@
         </div>
 			</div>
 			<div class="copyright bg-default-blue text-center">
-				&copy; Company 2020-2021
+				&copy; 2021 - ALS Laundry
 			</div>
 		</footer>
 

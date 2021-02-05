@@ -18,7 +18,7 @@
 	<div
 		class="text-32 text-default-black text-default-bold font-italic text-uppercase text-center my-3"
 	>
-		kenapa harus als?
+		kenapa harus ALS?
 	</div>
 
 	<div class="container-fluid">
@@ -32,10 +32,12 @@
 				<div
 					class="text-24 text-uppercase font-italic text-default-black text-default-semi-bold text-right my-3 mx-5"
 				>
-					super fast
+				LAUNDRY KILOAN DAN SATUAN
 				</div>
 				<div class="text-right text-14 mx-5">
-					Cucian beres 1 hari? kenapa engga
+				ALS Laundry melayani jasa pencucian dalam bentuk laundry kiloan dan satuan, 
+				mulai dari pakaian, jaket, sepatu, tas, dan lainnya. Tinggal hubungi kami, 
+				untuk pickup dan delivery laundry langsung di tempat kamu!
 				</div>
 			</div>
 		</div>
@@ -47,10 +49,11 @@
 				<div
 					class="text-24 text-uppercase font-italic text-default-black text-default-semi-bold my-3 mx-5"
 				>
-					super clean
+				OUR SERVICES
 				</div>
 				<div class="text-14 mx-5">
-					Bersih, bersih, bersih. Ga mungkin ga bersih deh
+				ALS Laundry melayani berbagai kebutuhan laundry kamu, mulai dari Laundry Kiloan, satuan, 
+				layanan antar jemput.
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -68,10 +71,12 @@
 				<div
 					class="text-24 text-uppercase font-italic text-default-black text-default-semi-bold text-right my-3 mx-5"
 				>
-					super fresh
+				BEST VALUE
 				</div>
 				<div class="text-right text-14 mx-5">
-					Dateng masih kotor, pulang ke rumah kamu udah kaya baru lohh
+				Ditunjang oleh mesin berstandar internasional, tenaga professional, 
+				dan manajemen laundry yang baik, setiap cucian kamu, 
+				kami perlakukan layaknya cucian kami sendiri
 				</div>
 			</div>
 		</div>
@@ -86,7 +91,9 @@
 					antar-jemput fleksibel
 				</div>
 				<div class="text-14 mx-5">
-					Bisa diskusi jadwal dan tempat pengambilan laundry se-Bandung
+				ALS buka 7 hari seminggu (7.00 – 21.00) sehingga kapanpun kamu perlu laundry, 
+				kami siap membantu. Malas ke laundry? Hubungi kami, 
+				dan cucian kamu akan langsung diambil di tempat.
 				</div>
 			</div>
 			<div class="col-md-4">
