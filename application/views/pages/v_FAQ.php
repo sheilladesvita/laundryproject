@@ -93,8 +93,19 @@
         </div>
         <div id="menu3" class="collapse">
           <div class="card-body">
-			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-          </div>
+          <ul class="x-ul-icons">
+              <strong>Bagaimana Cara melakukan ORDER melalui Web?</strong>
+              <br>
+              Pertama, Untuk Customer yang ingin menjadi MEMBER ALS laundy harus melakukan registrasi 
+              dahulu pada halaman "DAFTAR MEMBER", jika sudah pernah registrasi MEMBER, customer dapat login kapanpun. 
+              Selanjutnya tinggal pilih layanan laundry yang diinginkan (Kiloan, satuan, atau Paket Laundry), selesaikan
+              pesanan dan pembayaran, lalu customer dihubungi pihak ALS laundry sesuai kontak yang sudah tersedia.
+              <br>
+              Kedua, Untuk Customer yang BUKAN member atau tidak ingin menjadi member langsung saja klik "LAUNDRY NOW" pada halaman beranda, lalu akan masuk ke halaman ORDER.
+              Selanjutnya tinggal mengisi form dan pilih layanan laundry yang diinginkan (Kiloan, satuan, atau Paket Laundry), selesaikan
+               pesanan dan pembayaran, lalu customer dihubungi pihak ALS laundry sesuai kontak yang sudah tersedia.
+            </ul>
+        </div>
         </div>
     </div>
 </div>
