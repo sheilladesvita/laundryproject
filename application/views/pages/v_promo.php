@@ -9,10 +9,10 @@
 					<img src="<?php echo base_url();?>assets/images/promo/<?php echo $item->gambar;?>"
 						class="img-promo width-form-100 rounded"
 					>
-					<div class="container text-16 text-center width-form-75 text-default-semi-bold padding-t-25">
+					<div class="container text-14 text-center width-form-75 text-default-semi-bold mt-3">
 						<?php echo "#".$item->kode_promo;?>
 					</div>
-					<div class="container text-12 text-center width-form-100">
+					<div class="container text-12 text-center width-form-100 mt-2">
 						<?php echo $item->deskripsi;?>
                     </div>
 				</div>

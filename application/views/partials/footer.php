@@ -35,31 +35,21 @@
 						</div>
 						<div class="footer-segment-body text-default-black">
 							<ul class="p-0">
-
-							<li class="unstyled-list my-3
-							<?php if($active_link == "FAQ") echo "active" ?>">
-							<a
-							class=""
-							href="<?php echo base_url();?>viewonly/FAQ"
-							>FAQ</a
-							>
-							</li>
-							<li class="unstyled-list my-3
-							<?php if($active_link == "tentang_kami") echo "active" ?>">
-							<a
-							class=""
-							href="<?php echo base_url();?>viewonly/about_us"
-							>Tentang Kami</a
-							>
-							</li>
-							<li class="unstyled-list my-3
-							<?php if($active_link == "syarat_ketentuan") echo "active" ?>">
-							<a
-							class=""
-							href="<?php echo base_url();?>viewonly/term"
-							>Term of Service</a
-							>
-							</li>
+								<li class="unstyled-list my-3
+									<?php if($active_link == "FAQ") echo "active" ?>">
+									<a class=""	href="<?php echo base_url();?>viewonly/FAQ">
+										FAQ</a>
+								</li>
+								<li class="unstyled-list my-3
+									<?php if($active_link == "tentang_kami") echo "active" ?>">
+									<a class="" href="<?php echo base_url();?>viewonly/about_us">
+										Tentang Kami</a>
+								</li>
+								<li class="unstyled-list my-3
+									<?php if($active_link == "syarat_ketentuan") echo "active" ?>">
+								<a class="" href="<?php echo base_url();?>viewonly/term">
+									Term of Service</a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -81,7 +71,7 @@
 							</iframe>
 						</div>
 					</div>
-					<div class="col-sm-3 text-left">
+					<div class="col-sm-4 ml-5 text-left">
 						<div
 							class="footer-segment-header text-default-black text-14 text-capitalize text-default-semi-bold"
 						>
@@ -103,26 +93,26 @@
 						</div>
 					</div>
 					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-						<a href="https://api.whatsapp.com/send?phone=081584136637&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+					<a href="https://api.whatsapp.com/send?phone=081584136637&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
 						<i class="fa fa-whatsapp my-float"></i>
-						</a>
+					</a>
         </div>
         
         <hr class="m-0"/>
    
-        <div class="x-column x-md x-1-3">
-          <div class="media my-2">
-            <div class="text-default-black text-12 text-capitalize text-semi-bold mr-5">
-                  Stay Connected
-            </div>
-            <a class="round-btn instagram-icn text-decoration-none mr-3" href="https://www.instagram.com/alslaundry/" target="_blank">
-              <i class="fab fa-instagram fa-2x"></i>
-            </a>
-            <a class="round-btn whatsapp-icn text-decoration-none" href="https://api.whatsapp.com/send?phone=081584136637" target="_blank">
-              <i class="fab fa-whatsapp fa-2x"></i>
-            </a>
-          </div>
-        </div>
+			<div class="x-column x-md x-1-3">
+				<div class="media my-2">
+					<div class="text-default-black text-12 text-capitalize text-semi-bold mr-5">
+						Stay Connected
+					</div>
+					<a class="round-btn instagram-icn text-decoration-none mr-3" href="https://www.instagram.com/alslaundry/" target="_blank">
+					<i class="fab fa-instagram fa-2x"></i>
+					</a>
+					<a class="round-btn whatsapp-icn text-decoration-none" href="https://api.whatsapp.com/send?phone=081584136637" target="_blank">
+					<i class="fab fa-whatsapp fa-2x"></i>
+					</a>
+				</div>
+			</div>
 			</div>
 			<div class="copyright bg-default-blue text-center">
 				&copy; 2021 - ALS Laundry

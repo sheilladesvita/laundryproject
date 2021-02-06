@@ -260,6 +260,10 @@ a {
 	font-size: 18pt !important;
 }
 
+.text-20 {
+	font-size: 20pt !important;
+}
+
 .text-24 {
 	font-size: 24pt !important;
 }
@@ -702,10 +706,29 @@ a {
 	width: 275px;
 	height: 375px;
 	position: relative;
-	left: 28px;
+	margin-left: 28px;
 	border-radius: 5px;
 	/* margin: auto auto; */
 	background-color: rgb(252, 252, 252);
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+	transition: 0.5s ease;
+	backface-visibility: hidden;
+}
+
+.img-promo{
+	max-width: 275px;
+	max-height: 275px;
+}
+
+.box-content-promo {
+	opacity: 1;
+	display: block;
+	width: 275px;
+	max-height: 500px;
+	position: relative;
+	left: 28px;
+	padding-bottom: 25px;
+	border-radius: 5px;
 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 	transition: 0.5s ease;
 	backface-visibility: hidden;
@@ -1036,15 +1059,15 @@ select_service {
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:40px;
+	bottom:20px;
 	right:40px;
 	background-color:#25d366;
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
-  font-size:30px;
+  	font-size:30px;
 	box-shadow: 2px 2px 3px #999;
-  z-index:100;
+  	z-index:50;
 }
 
 .my-float{

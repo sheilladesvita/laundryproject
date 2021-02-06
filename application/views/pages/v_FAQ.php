@@ -3,53 +3,56 @@
 		display: none;
 	}
 </style>
-<main role="main">
-<div id="accordion">
-	<div class="card">
-		<div class="card-header">
-			<a class="card-link" data-toggle="collapse" href="#menuone" aria-expanded="false" aria-controls="menuone">
-				<span class="collapsed"><i class="fa fa-plus"></i></span> 
-				<span class="expanded"><i class="fa fa-minus"></i></span> 
-				Jasa ALS Laundry
-			</a>
-		</div>
-		<div id="menuone" class="collapse">
-		  <div class="card-body">
-            <ul class="x-ul-icons">
-              <strong>Apa itu Laundry Kiloan? </strong>
-              <br>
-              Laundry Kiloan adalah transaksi laundry yang diukur berdasarkan berat laundry kotor, dimana proses pencuciannya tanpa melalui pemeriksaan satu per satu pakaian dan langsung dimasukkan per customer per mesin atau beberapa mesin (tergantung banyak/sedikitnya laundry).
-            </ul>
-            <ul class="x-ul-icons">
-              <strong> Apa itu Laundry Satuan? </strong>
-              <br>
-              Laundry Satuan adalah transaksi laundry yang diukur berdasarkan jumlah helai pakaian, dimana proses pencuciannya melalui pemeriksaan satu per satu pakaian dan disesuaikan dengan karakteristik pakaian. Hampir semua laundry satuan diproses secara manual (menggunakan tangan, tidak melalui mesin cuci).
-            </ul>
-            <ul class="x-ul-icons">
-              <strong> Apakah laundry saya akan disatukan dengan customer lain? </strong>
-              <br>
-              ALS Laundry memberlakukan secara ketat proses pencucian satu mesin hanya untuk satu customer, bahkan dalam beberapa kasus dimana jumlah laundry cukup banyak, kami menggunakan beberapa mesin hanya untuk satu customer.
-            </ul>
-            <ul class="x-ul-icons">
-              <strong> Bagaimana Jika terjadi masalah atau kerusakan pakaian? </strong>
-              <br>
-              Kami menyarankan customer membaca dengan seksama Syarat & Ketentuan ALS Laundry untuk mengetahui jenis kerusakan yang dapat di-claim dan yang tidak, untuk laundry kiloan jika customer tidak menginformasikan pakaian tertentu bersifat luntur atau sensitif maka tidak akan dicuci terpisah, setiap permasalahan yang terjadi akibat proses laundry akan ditangani kasus per kasus secara professional oleh tim kami.
-            </ul>
-		  </div>
-		</div>
-	</div>
- 
+<main role="main" class="my-3 mb-4">
+  <div class="text-20 text-default-bold text-center text-uppercase mb-3">
+    FREQUENTLY ASKED QUESTION <br>(FAQ)
+  </div>
+  <div id="accordion">
     <div class="card">
-        <div class="card-header">
-		  	<a class="card-link" data-toggle="collapse" href="#menutwo" aria-expanded="false" aria-controls="menutwo">
-				<span class="collapsed"><i class="fa fa-plus"></i></span> 
-				<span class="expanded"><i class="fa fa-minus"></i></span> 
-				Pick Up Delivery
-			</a>
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#menuone" aria-expanded="false" aria-controls="menuone">
+          <span class="collapsed"><i class="fa fa-plus"></i></span> 
+          <span class="expanded"><i class="fa fa-minus"></i></span> 
+          Jasa ALS Laundry
+        </a>
+      </div>
+      <div id="menuone" class="collapse">
+        <div class="card-body">
+          <ul class="x-ul-icons">
+            <strong>Apa itu Laundry Kiloan? </strong>
+            <br>
+            Laundry Kiloan adalah transaksi laundry yang diukur berdasarkan berat laundry kotor, dimana proses pencuciannya tanpa melalui pemeriksaan satu per satu pakaian dan langsung dimasukkan per customer per mesin atau beberapa mesin (tergantung banyak/sedikitnya laundry).
+          </ul>
+          <ul class="x-ul-icons">
+            <strong> Apa itu Laundry Satuan? </strong>
+            <br>
+            Laundry Satuan adalah transaksi laundry yang diukur berdasarkan jumlah helai pakaian, dimana proses pencuciannya melalui pemeriksaan satu per satu pakaian dan disesuaikan dengan karakteristik pakaian. Hampir semua laundry satuan diproses secara manual (menggunakan tangan, tidak melalui mesin cuci).
+          </ul>
+          <ul class="x-ul-icons">
+            <strong> Apakah laundry saya akan disatukan dengan customer lain? </strong>
+            <br>
+            ALS Laundry memberlakukan secara ketat proses pencucian satu mesin hanya untuk satu customer, bahkan dalam beberapa kasus dimana jumlah laundry cukup banyak, kami menggunakan beberapa mesin hanya untuk satu customer.
+          </ul>
+          <ul class="x-ul-icons">
+            <strong> Bagaimana Jika terjadi masalah atau kerusakan pakaian? </strong>
+            <br>
+            Kami menyarankan customer membaca dengan seksama Syarat & Ketentuan ALS Laundry untuk mengetahui jenis kerusakan yang dapat di-claim dan yang tidak, untuk laundry kiloan jika customer tidak menginformasikan pakaian tertentu bersifat luntur atau sensitif maka tidak akan dicuci terpisah, setiap permasalahan yang terjadi akibat proses laundry akan ditangani kasus per kasus secara professional oleh tim kami.
+          </ul>
         </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#menutwo" aria-expanded="false" aria-controls="menutwo">
+          <span class="collapsed"><i class="fa fa-plus"></i></span> 
+          <span class="expanded"><i class="fa fa-minus"></i></span> 
+          Pick Up Delivery
+        </a>
+      </div>
         <div id="menutwo" class="collapse">
           <div class="card-body">
-          <ul class="x-ul-icons">
+            <ul class="x-ul-icons">
               <strong> Bagaimana saya yakin berat laundry saya benar? </strong>
               <br>
               Setiap laundry kiloan akan ditimbang di tempat customer oleh kurir ALS Laundry, Customer dapat menyaksikan secara langsung berat laundry kotor yang ditimbang. Kami menyarankan Customer dapat hadir untuk menyaksikan timbang di tempat, meskipun customer telah mempercayai ALS Laundry. Karena hasil timbangan di tempat yang akan kami akui dalam nota ALS Laundry.
@@ -81,32 +84,41 @@
             </ul>
           </div>
         </div>
-    </div>
- 
-    <div class="card">
+      </div>
+  
+      <div class="card">
         <div class="card-header">
-			<a class="card-link" data-toggle="collapse"  href="#menu3" aria-expanded="false" aria-controls="menu3">
-				<span class="collapsed"><i class="fa fa-plus"></i></span> 
-				<span class="expanded"><i class="fa fa-minus"></i></span> 
-				WEB ORDER
-			</a>
+          <a class="card-link" data-toggle="collapse"  href="#menu3" aria-expanded="false" aria-controls="menu3">
+            <span class="collapsed"><i class="fa fa-plus"></i></span> 
+            <span class="expanded"><i class="fa fa-minus"></i></span> 
+            WEB ORDER
+          </a>
         </div>
         <div id="menu3" class="collapse">
           <div class="card-body">
-          <ul class="x-ul-icons">
+            <ul class="x-ul-icons">
               <strong>Bagaimana Cara melakukan ORDER melalui Web?</strong>
               <br>
+              Pertama silahkan masuk ke halaman Beranda dab klik "LAUNDRY NOW" atau 
+              <a href="<?php echo base_url();?>order/index">klik disini</a>. 
+              Selanjutnya tinggal mengisi form dan pilih layanan laundry yang diinginkan (Kiloan, satuan, atau Paket Laundry), selesaikan
+              pesanan dan pembayaran, lalu customer dihubungi pihak ALS laundry sesuai kontak yang sudah tersedia.
+              Jika customer sudah terdaftar sebagai member, maka customer perlu login terlebih dahulu.
+            </ul>
+            <!-- <ul class="x-ul-icons">
+              <strong>Bagaimana cara mendaftar untuk menjadi member ASL laundry?</strong>
+              <br>
               Pertama, Untuk Customer yang ingin menjadi MEMBER ALS laundy harus melakukan registrasi 
-              dahulu pada halaman "DAFTAR MEMBER", jika sudah pernah registrasi MEMBER, customer dapat login kapanpun. 
+              dahulu pada halaman "DAFTAR MEMBER". Selanjutnya tinggal mengisi data yang diperlukan. Jika berhasil melakukan registrasi,sudah pernah registrasi MEMBER, customer dapat login kapanpun. 
               Selanjutnya tinggal pilih layanan laundry yang diinginkan (Kiloan, satuan, atau Paket Laundry), selesaikan
               pesanan dan pembayaran, lalu customer dihubungi pihak ALS laundry sesuai kontak yang sudah tersedia.
               <br>
               Kedua, Untuk Customer yang BUKAN member atau tidak ingin menjadi member langsung saja klik "LAUNDRY NOW" pada halaman beranda, lalu akan masuk ke halaman ORDER.
               Selanjutnya tinggal mengisi form dan pilih layanan laundry yang diinginkan (Kiloan, satuan, atau Paket Laundry), selesaikan
-               pesanan dan pembayaran, lalu customer dihubungi pihak ALS laundry sesuai kontak yang sudah tersedia.
-            </ul>
+              pesanan dan pembayaran, lalu customer dihubungi pihak ALS laundry sesuai kontak yang sudah tersedia.
+            </ul> -->
         </div>
-        </div>
+      </div>
     </div>
-</div>
+  </div>
 </main>
