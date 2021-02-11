@@ -140,6 +140,14 @@
               >Tentang Kami</a
             >
             </li>
+			<li class="nav-item nav-item-bg
+            <?php if($active_link == "mail") echo "active" ?>">
+            <a
+              class="nav-link nav-btn color-inherit"
+              href="<?php echo base_url();?>email/index"
+              >EMAIL</a
+            >
+            </li>
           </ul>
         </div>
 

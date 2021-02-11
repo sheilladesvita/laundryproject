@@ -250,7 +250,27 @@ class order extends CI_Controller
 
             $this->m_promo->addPromoOrder($data_promo);
         }
-        
+        $this->load->library('mailer');
+        $nama = $this->input->post('name'),
+        $email = $this->input->post('email'),
+        $nomor_telepon = $this->input->post('phone-number'),
+        $alamat = $this->input->post('alamat')
+        $content = $this->load->view('pages/content', array('pesan'=>$pesan), true); // Ambil isi file content.php dan masukan ke variabel $content
+        $sendmail = array(
+        'nama'=>$name,
+        'email'=>$email,
+        'phone-number'=>$nomor_telepon,
+        'alamat'=>$alamat
+        );
+        // if(empty($attachment['name'])){ // Jika tanpa attachment
+        // $send = $this->mailer->send($sendmail); // Panggil fungsi send yang ada di librari Mailer
+        // }else{ // Jika dengan attachment
+        // $send = $this->mailer->send_with_attachment($sendmail); // Panggil fungsi send_with_attachment yang ada di librari Mailer
+        // }
+        echo "<b>".$send['status']."</b><br />";
+        echo $send['message'];
+        echo "<br /><a href='".base_url("index.php/email")."'>Kembali ke Form</a>";
+    }     
         $_SESSION['id_order']=$id_order;
 
         $this->cart->destroy();
