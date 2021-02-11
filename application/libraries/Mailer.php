@@ -3,9 +3,12 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 class Mailer {
     protected $_ci;
-    protected $email_pengirim = 'ishelaa18@gmail.com'; // Isikan dengan email pengirim
-    protected $nama_pengirim = 'Ishela'; // Isikan dengan nama pengirim
-    protected $password = 'brfeepcfabbughsz'; // Isikan dengan password email pengirim
+    protected $email_pengirim = 'istama.siddiq@gmail.com'; // Isikan dengan email pengirim
+    protected $nama_pengirim = 'istamar siddiq'; // Isikan dengan nama pengirim
+    protected $password = 'gixbfyjdforhnwks'; // Isikan dengan password email pengirim
+    // protected $email_pengirim = 'ishelaa18@gmail.com'; // Isikan dengan email pengirim
+    // protected $nama_pengirim = 'Ishela'; // Isikan dengan nama pengirim
+    // protected $password = 'brfeepcfabbughsz'; // Isikan dengan password email pengirim
     public function __construct(){
         $this->_ci = &get_instance(); // Set variabel _ci dengan Fungsi2-fungsi dari Codeigniter
         require_once(APPPATH.'third_party/phpmailer/Exception.php');
