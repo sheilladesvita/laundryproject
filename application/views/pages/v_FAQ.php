@@ -88,17 +88,26 @@
   
       <div class="card">
         <div class="card-header">
+<<<<<<< Updated upstream
           <a class="card-link" data-toggle="collapse"  href="#menu3" aria-expanded="false" aria-controls="menu3">
             <span class="collapsed"><i class="fa fa-plus"></i></span> 
             <span class="expanded"><i class="fa fa-minus"></i></span> 
             WEB ORDER
           </a>
+=======
+			<a class="card-link" data-toggle="collapse"  href="#menu3" aria-expanded="false" aria-controls="menu3">
+				<span class="collapsed"><i class="fa fa-plus"></i></span> 
+				<span class="expanded"><i class="fa fa-minus"></i></span> 
+				Web Order
+			</a>
+>>>>>>> Stashed changes
         </div>
         <div id="menu3" class="collapse">
           <div class="card-body">
             <ul class="x-ul-icons">
               <strong>Bagaimana Cara melakukan ORDER melalui Web?</strong>
               <br>
+<<<<<<< Updated upstream
               Pertama silahkan masuk ke halaman Beranda dab klik "LAUNDRY NOW" atau 
               <a href="<?php echo base_url();?>order/index">klik disini</a>. 
               Selanjutnya tinggal mengisi form dan pilih layanan laundry yang diinginkan (Kiloan, satuan, atau Paket Laundry), selesaikan
@@ -110,13 +119,23 @@
               <br>
               Pertama, Untuk Customer yang ingin menjadi MEMBER ALS laundy harus melakukan registrasi 
               dahulu pada halaman "DAFTAR MEMBER". Selanjutnya tinggal mengisi data yang diperlukan. Jika berhasil melakukan registrasi,sudah pernah registrasi MEMBER, customer dapat login kapanpun. 
+=======
+              1. Untuk Customer yang ingin menjadi MEMBER ALS laundy harus melakukan registrasi 
+              dahulu pada halaman "DAFTAR MEMBER", jika sudah pernah registrasi MEMBER, customer dapat login kapanpun. 
+>>>>>>> Stashed changes
               Selanjutnya tinggal pilih layanan laundry yang diinginkan (Kiloan, satuan, atau Paket Laundry), selesaikan
-              pesanan dan pembayaran, lalu customer dihubungi pihak ALS laundry sesuai kontak yang sudah tersedia.
+              pesanan dan pembayaran, lalu customer menghubungi pihak ALS laundry untuk konfirmasi kontak yang sudah tersedia.
               <br>
-              Kedua, Untuk Customer yang BUKAN member atau tidak ingin menjadi member langsung saja klik "LAUNDRY NOW" pada halaman beranda, lalu akan masuk ke halaman ORDER.
+              2. Untuk Customer yang BUKAN member atau tidak ingin menjadi member langsung saja klik "LAUNDRY NOW" pada halaman beranda, lalu akan masuk ke halaman ORDER.
               Selanjutnya tinggal mengisi form dan pilih layanan laundry yang diinginkan (Kiloan, satuan, atau Paket Laundry), selesaikan
+<<<<<<< Updated upstream
               pesanan dan pembayaran, lalu customer dihubungi pihak ALS laundry sesuai kontak yang sudah tersedia.
             </ul> -->
+=======
+               pesanan dan pembayaran, lalu customer menghubungi pihak ALS laundry untuk konfirmasi kontak yang sudah tersedia.
+            </ul>
+        </div>
+>>>>>>> Stashed changes
         </div>
       </div>
     </div>
