@@ -1,7 +1,7 @@
 <main role="main">
 	<h1 class="my-5">LAUNDRY PER KILO</h1>
 	<div class="container text-default-black mb-5">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat nisl
+		<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat nisl
 		eget eros varius varius id ut nisl. Sed auctor leo eu dui molestie
 		convallis. Suspendisse rhoncus mattis velit id blandit. Vivamus neque
 		tellus, volutpat at elit et, rutrum convallis lectus. Maecenas erat ipsum,
@@ -13,7 +13,7 @@
 		vel laoreet. Sed vestibulum, urna vel ultrices varius, lorem dui semper
 		sapien, vitae congue ipsum nisl et leo. Sed porttitor tortor massa, rhoncus
 		sodales nisi luctus a. Pellentesque at diam vitae orci vehicula
-		pellentesque.
+		pellentesque. -->
 	</div>
 	<div class="container-table mb-5">
 		<table class="table table-bordered modules-table m-0">
@@ -24,26 +24,17 @@
 				</tr>
 			</thead>
 			<tbody>
+			<?php
+				$no = 1; 
+				foreach($service_item as $s) {
+			?>
 				<tr>
-					<td>Cuci Normal</td>
-					<td>7.000</td>
+				<td><?php echo $s->nama_serviceitem ?></td>
+					<td><?php echo $s->harga ?></td>
 				</tr>
-				<tr>
-					<td>Cuci 2 Hari</td>
-					<td>8.000</td>
-				</tr>
-				<tr>
-					<td>Setrika Normal</td>
-					<td>5.000</td>
-				</tr>
-				<tr>
-					<td>Cuci Kering</td>
-					<td>5.000</td>
-				</tr>
-				<tr>
-					<td>Special Express 1 Hari</td>
-					<td>10.000</td>
-				</tr>
+			<?php 
+				}
+			?>
 			</tbody>
 		</table>
 	</div>

@@ -41,6 +41,10 @@
 			href="<?php echo base_url();?>assets/css/style.css"
 			rel="stylesheet"
 		/>
+		<link
+			href="<?php echo base_url();?>assets/css/datepicker/bootstrap-datepicker3.css"
+			rel="stylesheet"
+		/>
 	</head>
 
 	<body>
@@ -136,8 +140,18 @@
               >Tentang Kami</a
             >
             </li>
+			<li class="nav-item nav-item-bg
+            <?php if($active_link == "mail") echo "active" ?>">
+            <a
+              class="nav-link nav-btn color-inherit"
+              href="<?php echo base_url();?>email/index"
+              >EMAIL</a
+            >
+            </li>
           </ul>
         </div>
+
+        <?php if(!isset($_SESSION['success']) || $_SESSION['success'] == false ) { ?>
         <div class="btn-group-auth">
           <div
             class="btn-group text-uppercase"
@@ -160,6 +174,37 @@
             >
           </div>
         </div>
+				<?php } else { ?>
+					<div class="dropdown">
+					<button
+						class="btn dropdown-toggle bg-default-white d-inline-block"
+						type="button"
+						id="dropdownMenuButton"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						<i class="fas fa-user-circle"></i>
+					</button>
+					<div
+						class="dropdown-menu dropdown-menu-right"
+						aria-labelledby="navbarDropdown"
+					>
+						<a class="dropdown-item text-default-light-important" href="#"
+							>Halo, <?php echo $_SESSION['username'];?></a
+						>
+						<a class="dropdown-item text-default-light-important" href="<?php echo base_url('viewonly/settings') ?>"
+							><i class="fas fa-user-cog"></i> Kelola Akun</a
+						>
+						<a class="dropdown-item text-default-light-important" href="<?php echo base_url('viewonly/change_password') ?>"
+							><i class="fas fa-key"></i> Ganti Password</a
+						>
+						<a class="dropdown-item text-default-light-important" href="<?php echo base_url('viewonly/logout') ?>"
+							><i class="fas fa-sign-out-alt"></i> Keluar</a
+						>
+					</div>
+				</div>
+				<?php }?>
       </div>
 		</nav>
 
@@ -215,7 +260,7 @@
 								role="tabpanel"
 								aria-labelledby="login-tab"
 							>
-								<form class="form m-3" autocomplete="off">
+								<form class="form m-3" autocomplete="off" action="<?php echo base_url();?>viewonly/login_member" method="post">
 									<div class="input-group">
 										<input
 											type="text"
@@ -248,7 +293,7 @@
 									</button>
 								</form>
 								<div class="text-center text-10 text-default-blue">
-									<a href="#" class="color-inherit">Forgot password?</a>
+									<a href="<?php echo base_url();?>viewonly/forgot_password" class="color-inherit">Forgot password?</a>
 								</div>
 							</div>
 
@@ -258,7 +303,7 @@
 								role="tabpanel"
 								aria-labelledby="register-tab"
 							>
-								<form class="form m-3">
+								<form class="form m-3" autocomplete="off" action="<?php echo base_url();?>viewonly/register" method="post">
 									<div class="input-group">
 										<input
 											type="text"

@@ -33,19 +33,21 @@
 			</div>
 
 			<div class="text-default-reguler my-5">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat
-				nisl eget eros varius varius id ut nisl. Sed auctor leo eu dui molestie
-				convallis. Suspendisse rhoncus mattis velit id blandit. Vivamus neque
-				tellus, volutpat at elit et, rutrum convallis lectus. Maecenas erat
-				ipsum, ullamcorper et velit a, efficitur varius nunc. Nulla ante risus,
-				sagittis at ultricies pretium, consequat ac erat. Nam hendrerit eros et
-				neque dictum, ut fermentum diam rhoncus. Donec nec augue consectetur,
-				varius velit at, placerat tellus. Suspendisse ullamcorper sem non ex
-				imperdiet, vel venenatis lacus pulvinar. Maecenas eu tristique orci.
-				Vestibulum tincidunt cursus arcu vel laoreet. Sed vestibulum, urna vel
-				ultrices varius, lorem dui semper sapien, vitae congue ipsum nisl et
-				leo. Sed porttitor tortor massa, rhoncus sodales nisi luctus a.
-				Pellentesque at diam vitae orci vehicula pellentesque.
+			<ul class="x-ul-icons">
+            ALS Laundry merupakan jasa laundry yang memiliki workshop di jalan raya lembang no 121, Bandung. 
+			Kami menyedikan berbagai layanan laundry untuk meringankan rutinitas kegiatan mencuci, setrika pakaian setiap harinya.
+			 Untuk anda yang sibuk tidak sempat datang untuk mengantarkan cucian kotor ke workshop kami, tidak perlu khawatir kami memberikan layanan antar-jemput untuk laundry kiloan, laundry satuan, cuci karpet masjid dll. 
+			 Anda bisa langsung hubungi kami melalui kontak atau booking,
+			 lalu tim kami akan melakukan pick up kerumah anda, ketika laundry selesai kami akan mengantarkan kembali kerumah anda.  
+			</ul>
+			<ul class="x-ul-icons">
+			 ALS Laundry dalam operasional laundry kiloan menggunakan mesin cuci, mesin pengering modern
+			  (tanpa dijemur sinar matahari). Proses pencucian laundry di ALS Laundry adalah 1 Mesin 1 Pelaanggan
+			   (tidak dicampur, karna kami mengutakamakan kualitas). Deterjen yang kami gunakan ramah lingkungan bekerja 
+			   dengan sangat baik pada suhu rendah, lebih bersih dibandingkan deterjen rumah tangga biasa dan dilengkapi dengan
+			    kemampuan disinfektan. Saat proses mencuci tidak hanya membersihkan, tetapi juga higienis dan disterilkan.
+			  Hal ini membuat mesin cuci menjadi bersih dan higienis untuk pelanggan berikutnya.
+			  </ul>
 			</div>
 		</div>
 	</div>
@@ -61,7 +63,7 @@
 				<div class="pb-3">Let's make life easier. Let's make life cleaner.</div>
 				<a
 					class="btn btn-about-us bg-transparent text-default-white underlined"
-					href="<?php echo base_url(); ?>viewonly/order"
+					href="<?php echo base_url(); ?>order/index"
 					>Laundry now &raquo;</a
 				>
 			</div>

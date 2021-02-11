@@ -1,7 +1,7 @@
 <main role="main">
 	<h1 class="my-5">LAUNDRY MEMBER SMART HEMAT Rp. 50.000</h1>
 	<div class="container text-default-black mb-5">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat nisl
+		<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat nisl
 		eget eros varius varius id ut nisl. Sed auctor leo eu dui molestie
 		convallis. Suspendisse rhoncus mattis velit id blandit. Vivamus neque
 		tellus, volutpat at elit et, rutrum convallis lectus. Maecenas erat ipsum,
@@ -13,7 +13,7 @@
 		vel laoreet. Sed vestibulum, urna vel ultrices varius, lorem dui semper
 		sapien, vitae congue ipsum nisl et leo. Sed porttitor tortor massa, rhoncus
 		sodales nisi luctus a. Pellentesque at diam vitae orci vehicula
-		pellentesque.
+		pellentesque. -->
 	</div>
 	<div class="container-table mb-5">
 		<table class="table table-bordered modules-table">
@@ -24,26 +24,17 @@
 				</tr>
 			</thead>
 			<tbody>
+			<?php
+				$no = 1; 
+				foreach($service_item as $s) {
+			?>
 				<tr>
-					<td>50 KG</td>
-					<td>300.000</td>
+				<td><?php echo $s->nama_serviceitem ?></td>
+					<td><?php echo $s->harga ?></td>
 				</tr>
-				<tr>
-					<td>60 KG</td>
-					<td>370.000</td>
-				</tr>
-				<tr>
-					<td>70 KG</td>
-					<td>440.000</td>
-				</tr>
-				<tr>
-					<td>80 KG</td>
-					<td>510.000</td>
-				</tr>
-				<tr>
-					<td>90 KG</td>
-					<td>580.000</td>
-				</tr>
+			<?php 
+				}
+			?>
 			</tbody>
 		</table>
 	</div>

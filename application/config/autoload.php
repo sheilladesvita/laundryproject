@@ -62,7 +62,7 @@ $autoload['packages'] = array();
 // $autoload['libraries'] = array('database','session');
 
 // This is not load the database, UI development purpose, just comment code below and uncomment code above to enable database connection
-$autoload['libraries'] = array('session');
+$autoload['libraries'] = array('database','session','cart');
 
 /*
 | -------------------------------------------------------------------
@@ -93,7 +93,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url','form');
 
 /*
 | -------------------------------------------------------------------
