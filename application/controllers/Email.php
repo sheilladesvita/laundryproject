@@ -14,7 +14,7 @@ class Email extends CI_Controller {
     $subjek = $this->input->post('subjek');
     $pesan = $this->input->post('pesan');
     $attachment = $_FILES['attachment'];
-    $content = $this->load->view('pages/content', array('pesan'=>$pesan), true); // Ambil isi file content.php dan masukan ke variabel $content
+    $content = $this->load->view('pages/v_confirmation', array('pesan'=>$pesan), true); // Ambil isi file content.php dan masukan ke variabel $content
     $sendmail = array(
       'email_penerima'=>$email_penerima,
       'subjek'=>$subjek,

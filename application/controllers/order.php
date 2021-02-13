@@ -7,6 +7,7 @@ class order extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->library('mailer');
         $this->load->model('m_service_item');
         $this->load->model('m_service');
         $this->load->model('m_customer');
@@ -241,6 +242,7 @@ class order extends CI_Controller
         foreach ($this->cart->contents() as $items) {
           $this->m_order->addItem($id_order,$items['id'],$items['qty']);
         }
+        $this->cart->destroy();
 
         if(isset($_SESSION['id_promo'])){
             $data_promo = array(
@@ -250,34 +252,13 @@ class order extends CI_Controller
 
             $this->m_promo->addPromoOrder($data_promo);
         }
-        $this->load->library('mailer');
-        $nama = $this->input->post('name');
-        $email = $this->input->post('email');
-        $nomor_telepon = $this->input->post('phone-number');
-        $alamat = $this->input->post('alamat');
-        $content = $this->load->view('pages/content', array('pesan'=>$pesan, 'alamat'=>$alamat), true); // Ambil isi file content.php dan masukan ke variabel $content
-        $sendmail = array(
-          'email_penerima'=>$email,
-          'subjek'=>'Struk Pesanan Laundry',
-          'content'=>$content,
-          'attachment'=> null,
-        );
-        // if(empty($attachment['name'])){ // Jika tanpa attachment
-        // $send = $this->mailer->send($sendmail); // Panggil fungsi send yang ada di librari Mailer
-        // }else{ // Jika dengan attachment
-        // $send = $this->mailer->send_with_attachment($sendmail); // Panggil fungsi send_with_attachment yang ada di librari Mailer
-        // }
-        echo "<b>".$send['status']."</b><br />";
-        echo $send['message'];
-        echo "<br /><a href='".base_url("index.php/email")."'>Kembali ke Form</a>";
         $_SESSION['id_order']=$id_order;
-
-        $this->cart->destroy();
-        redirect('order/confirmation');
+        $send = $this->send_email();
+        
+        if($send['status'] == 'Sukses') redirect('order/confirmation');
       }
 
-      function confirmation(){
-        $data["active_link"] = "confirmation";
+      function get_data_confirmation(){
         if(isset($_SESSION['success']) && $_SESSION['success']==true){
             $name = 'username';
             $table = 'member';
@@ -285,8 +266,35 @@ class order extends CI_Controller
             $name = 'nama';
             $table = 'not_member';
         }
-        $data1['customer'] = $this->m_order->getOrderById($_SESSION['id_order'],$name,$table)->result();
+        $data1['order'] = $this->m_order->getOrderById($_SESSION['id_order'],$name,$table)->row();
         $data1['items'] = $this->m_order->getOrderItem($_SESSION['id_order'])->result();
+
+        return $data1;
+      }
+
+      function send_email(){
+        $data1 = $this->get_data_confirmation();
+        $nama = (isset($_SESSION['success']) && $_SESSION['success']==true) ? $data1['order']->username : $data1['order']->nama;
+        $data1['pesan'] = 'Hai '.$nama.',<br>Terima kasih telah menggunakan layanan laundry kami. Pesanan akan langsung kami proses setelah pembayaran berhasil.
+            Segera lakukan konfirmasi pembayaran/Tunjukkan bukti transfer melalui Whatsapp/Email/Instagram.
+            Pesanan ini akan dibatalkan secara otomatis dalam waktu 1x24 jam bila tidak ada konfirmasi.';
+        $data1['footer']='';
+        $content = $this->load->view('pages/v_content', $data1, true);
+        $sendmail = array(
+          'email_penerima'=>$data1['order']->email,
+          'subjek'=>'Konfirmasi Pemesanan #'.$_SESSION['id_order'],
+          'content'=>$content,
+          'attachment'=> null,
+        );
+        $send = $this->mailer->send($sendmail);
+
+        return $send;
+      }
+
+      function confirmation(){
+        $data["active_link"] = "confirmation";
+        
+        $data1 = $this->get_data_confirmation();
         $this->load->view('partials/header', $data);
         $this->load->view('pages/v_confirmation',$data1);
         $this->load->view('partials/footer', $data);

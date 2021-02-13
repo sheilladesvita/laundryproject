@@ -82,9 +82,9 @@
                                                      TOTAL 
                                                 </td>
                                                 <td class="width-form-25 text-14 text-weight-800 padding-l-10-px test-black" align="left">
-                                                    <?php foreach($customer as $row){ 
-                                                        echo "Rp " . number_format($row->total_price);
-                                                    }?>
+                                                    <?php 
+                                                        echo "Rp " . number_format($order->total_price);
+                                                    ?>
                                                 </td>
                                             </tr>
                                         </table>
@@ -99,9 +99,6 @@
                                 <tr>
                                     <td style="font-size:0;">
                                         <table class="width-form-100">
-                                            <?php 
-                                                foreach($customer as $row){
-                                            ?>
                                             <tr>
                                                 <td class="width-form-30 text-10 text-weight-800 padding-l-10-px" align="left">
                                                      Nama
@@ -109,9 +106,9 @@
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
                                                     <?php 
                                                     if(isset($_SESSION['success']) && $_SESSION['success']==true)
-                                                        echo $row->username;
+                                                        echo $order->username;
                                                     else
-                                                        echo $row->nama; 
+                                                        echo $order->nama; 
                                                     ?>
                                                 </td>
                                             </tr>
@@ -120,7 +117,7 @@
                                                      Email 
                                                 </td>
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
-                                                     <?php echo $row->email ?>
+                                                     <?php echo $order->email ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -128,7 +125,7 @@
                                                      Nomor Telepon 
                                                 </td>
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
-                                                    <?php echo $row->nomor_telepon ?>
+                                                    <?php echo $order->nomor_telepon ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -136,7 +133,7 @@
                                                      Alamat
                                                 </td>
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
-                                                    <?php echo $row->alamat ?>
+                                                    <?php echo $order->alamat ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -144,7 +141,7 @@
                                                      Tanggal Pickup
                                                 </td>
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
-                                                    <?php echo $row->waktu_pickup ?>
+                                                    <?php echo $order->waktu_pickup ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -152,7 +149,7 @@
                                                      Pembayaran
                                                 </td>
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
-                                                    <?php echo $row->pembayaran ?>
+                                                    <?php echo $order->pembayaran ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -160,12 +157,9 @@
                                                      Catatan
                                                 </td>
                                                 <td class="width-form-70 text-10 text-weight-400 padding-confirm-text" align="left">
-                                                    <?php echo $row->catatan ?>
+                                                    <?php echo $order->catatan ?>
                                                 </td>
                                             </tr>
-                                            <?php 
-                                                }
-                                            ?>
                                         </table>
                                     </td>
                                 </tr>
@@ -233,7 +227,7 @@
     </table>
     <div class="container text-center width-form-25 padding-t-25">
         <a 
-            href="<?php echo base_url();?>order/delete_promo/index"
+            href="<?php echo base_url();?>order/index"
             class="btn btn-block bg-default-sky text-default-white btn-auth"
             type="submit"
         >
