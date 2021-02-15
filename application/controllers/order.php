@@ -255,7 +255,12 @@ class order extends CI_Controller
         $_SESSION['id_order']=$id_order;
         $send = $this->send_email();
         
-        if($send['status'] == 'Sukses') redirect('order/confirmation');
+        if($send['status'] != 'Sukses') {
+            echo '<script>alert("Jika tidak menerima email konfirmasi pemesanan, silahkan hubungi customer service kami melalui whatsapp.");
+                window.location.href="'.base_url('order/confirmation').'";</script>';
+        }
+        
+        redirect('order/confirmation');
       }
 
       function get_data_confirmation(){
