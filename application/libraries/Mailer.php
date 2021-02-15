@@ -3,9 +3,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 class Mailer {
     protected $_ci;
-    protected $email_pengirim = 'istama.siddiq@gmail.com'; // Isikan dengan email pengirim
-    protected $nama_pengirim = 'istamar siddiq'; // Isikan dengan nama pengirim
-    protected $password = 'gixbfyjdforhnwks'; // Isikan dengan password email pengirim
+    protected $email_pengirim = 'alslaundryyy@gmail.com'; // Isikan dengan email pengirim
+    protected $nama_pengirim = 'ALS Laundry'; // Isikan dengan nama pengirim
+    protected $password = 'vvlzhbupycugqxrrs'; // Isikan dengan password email pengirim
     // protected $email_pengirim = 'ishelaa18@gmail.com'; // Isikan dengan email pengirim
     // protected $nama_pengirim = 'Ishela'; // Isikan dengan nama pengirim
     // protected $password = 'brfeepcfabbughsz'; // Isikan dengan password email pengirim
