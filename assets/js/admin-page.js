@@ -30,6 +30,14 @@ $(document).ready(function () {
 		// bLengthChange: false,
 		// bInfo: false,
 	});
+	$("#promo-table").DataTable({
+		pagingType: "simple_numbers",
+		ordering: false,
+		pageLength: 1
+		// columnDefs: [{ orderable: false, targets: 3 }],
+		// bLengthChange: false,
+		// bInfo: false,
+	});
 	$('#serviceUpdateModal').on('show.bs.modal', function (e) {
 		var id = $(e.relatedTarget).data('id');
 		var nama = $(e.relatedTarget).data('nama');
@@ -81,7 +89,8 @@ $(document).ready(function () {
 		$(this).find("#gambar").attr('src',gambar);
 		$(this).find("#desc").text(desc);
 	});
-	$('.orderDetail').click(function(){
+
+	$(document).on('click','.orderDetail',function(){
 		var order = $(this).attr('data-id');
 		var customer = $(this).attr('data-customer');
 
@@ -94,7 +103,7 @@ $(document).ready(function () {
 			},
 			success: function(data){
 				$('#detail_result').html(data);
-				$('#orderDetailModal').modal('show');
+				$('#orderDetailModal').modal('show')
 			}
 		});
 	});

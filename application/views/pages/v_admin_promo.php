@@ -108,7 +108,7 @@
         <div class="text-24 text-default-medium mt-5">Daftar Promo</div>
 
         <table
-            id="admin-table"
+            id="promo-table"
             class="table table-striped table-sm dt-responsive table-responsive-sm"
             style="width: 100%"
         >

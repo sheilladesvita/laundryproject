@@ -59,7 +59,6 @@
                                 data-id=<?php echo $item->id_order;?>
                                 data-customer=<?php echo $item->id_customer;?>
                                 class="orderDetail btn btn-sm bg-default-yellow text-default-white btn-yellow-hover"
-                                
                             >
                                 <i class="fas fa-eye mx-2"></i>
                             </a>
